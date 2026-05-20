@@ -1,0 +1,6689 @@
+{
+  "hydrogen_bonds": [
+    {
+      "id": "hb_fallback_71_75",
+      "distance": 2.203,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 9,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 71,
+        "name": "O",
+        "coordinates": [
+          31.207000732421875,
+          45.268001556396484,
+          15.565999984741211
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 10,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 75,
+        "name": "N",
+        "coordinates": [
+          29.72100067138672,
+          43.67300033569336,
+          15.885000228881836
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_559_564",
+      "distance": 2.204,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 71,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 559,
+        "name": "O",
+        "coordinates": [
+          33.707000732421875,
+          36.196998596191406,
+          25.72800064086914
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 72,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 564,
+        "name": "N",
+        "coordinates": [
+          34.93000030517578,
+          34.38399887084961,
+          25.451000213623047
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_397_403",
+      "distance": 2.211,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 51,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 397,
+        "name": "O",
+        "coordinates": [
+          29.469999313354492,
+          20.677000045776367,
+          20.190000534057617
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 52,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 403,
+        "name": "N",
+        "coordinates": [
+          31.232999801635742,
+          21.09000015258789,
+          21.458999633789062
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_315_321",
+      "distance": 2.215,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 41,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 315,
+        "name": "O",
+        "coordinates": [
+          33.58000183105469,
+          29.009000778198242,
+          22.499000549316406
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 42,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 321,
+        "name": "N",
+        "coordinates": [
+          32.47800064086914,
+          30.91699981689453,
+          22.268999099731445
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_450_455",
+      "distance": 2.215,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 450,
+        "name": "O",
+        "coordinates": [
+          20.496999740600586,
+          18.506000518798828,
+          16.899999618530273
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "TYR",
+        "number": 59,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 455,
+        "name": "N",
+        "coordinates": [
+          21.84600067138672,
+          19.95400047302246,
+          15.904999732971191
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_137_143",
+      "distance": 2.22,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 18,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 137,
+        "name": "O",
+        "coordinates": [
+          28.448999404907227,
+          20.673999786376953,
+          8.359999656677246
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "PRO",
+        "number": 19,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 143,
+        "name": "N",
+        "coordinates": [
+          26.55900001525879,
+          20.219999313354492,
+          7.288000106811523
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_513_516",
+      "distance": 2.223,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "SER",
+        "number": 65,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 513,
+        "name": "O",
+        "coordinates": [
+          23.57900047302246,
+          31.320999145507812,
+          9.553999900817871
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 66,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 516,
+        "name": "N",
+        "coordinates": [
+          22.240999221801758,
+          31.87299919128418,
+          11.241000175476074
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_291_295",
+      "distance": 2.227,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 38,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 291,
+        "name": "O",
+        "coordinates": [
+          37.2130012512207,
+          28.035999298095703,
+          21.70400047302246
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 39,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 295,
+        "name": "N",
+        "coordinates": [
+          39.374000549316406,
+          28.09000015258789,
+          22.239999771118164
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_458_467",
+      "distance": 2.228,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "TYR",
+        "number": 59,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 458,
+        "name": "O",
+        "coordinates": [
+          19.499000549316406,
+          22.645000457763672,
+          15.321000099182129
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASN",
+        "number": 60,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 467,
+        "name": "N",
+        "coordinates": [
+          19.993000030517578,
+          20.884000778198242,
+          14.048999786376953
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_174_179",
+      "distance": 2.229,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 23,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 174,
+        "name": "O",
+        "coordinates": [
+          33.233001708984375,
+          23.659000396728516,
+          16.384000778198242
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 24,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 179,
+        "name": "N",
+        "coordinates": [
+          33.54800033569336,
+          21.525999069213867,
+          16.950000762939453
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_237_243",
+      "distance": 2.23,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 31,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 237,
+        "name": "O",
+        "coordinates": [
+          41.827999114990234,
+          31.808000564575195,
+          12.680999755859375
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 32,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 243,
+        "name": "N",
+        "coordinates": [
+          41.000999450683594,
+          29.878000259399414,
+          11.930999755859375
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_371_377",
+      "distance": 2.232,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 48,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 371,
+        "name": "O",
+        "coordinates": [
+          23.382999420166016,
+          27.62700080871582,
+          21.8700008392334
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 49,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 377,
+        "name": "N",
+        "coordinates": [
+          23.8799991607666,
+          26.726999282836914,
+          23.85099983215332
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_146_150",
+      "distance": 2.234,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 19,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 146,
+        "name": "O",
+        "coordinates": [
+          26.33300018310547,
+          18.535999298095703,
+          10.456999778747559
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 20,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 150,
+        "name": "N",
+        "coordinates": [
+          27.361000061035156,
+          17.958999633789062,
+          8.559000015258789
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_306_312",
+      "distance": 2.234,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 40,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 306,
+        "name": "O",
+        "coordinates": [
+          35.57400131225586,
+          32.61800003051758,
+          23.482999801635742
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 41,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 312,
+        "name": "N",
+        "coordinates": [
+          36.0,
+          30.860000610351562,
+          22.172000885009766
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_414_415",
+      "distance": 2.234,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 53,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 414,
+        "name": "O",
+        "coordinates": [
+          30.197999954223633,
+          15.656999588012695,
+          18.365999221801758
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 54,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 415,
+        "name": "N",
+        "coordinates": [
+          29.34000015258789,
+          17.5939998626709,
+          19.076000213623047
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_254_260",
+      "distance": 2.236,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 33,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 254,
+        "name": "O",
+        "coordinates": [
+          40.16400146484375,
+          35.323001861572266,
+          9.345000267028809
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 34,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 260,
+        "name": "N",
+        "coordinates": [
+          39.654998779296875,
+          34.334999084472656,
+          11.28499984741211
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_229_234",
+      "distance": 2.239,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 30,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 229,
+        "name": "O",
+        "coordinates": [
+          38.54399871826172,
+          32.150001525878906,
+          12.855999946594238
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 31,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 234,
+        "name": "N",
+        "coordinates": [
+          38.882999420166016,
+          30.110000610351562,
+          13.713000297546387
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_367_368",
+      "distance": 2.239,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 47,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 367,
+        "name": "O",
+        "coordinates": [
+          19.990999221801758,
+          28.583999633789062,
+          24.56100082397461
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 48,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 368,
+        "name": "N",
+        "coordinates": [
+          20.801000595092773,
+          27.930999755859375,
+          22.577999114990234
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_98_103",
+      "distance": 2.24,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 13,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 98,
+        "name": "O",
+        "coordinates": [
+          30.024999618530273,
+          34.61800003051758,
+          9.039999961853027
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 14,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 103,
+        "name": "N",
+        "coordinates": [
+          31.243999481201172,
+          34.986000061035156,
+          7.197000026702881
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_470_475",
+      "distance": 2.241,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASN",
+        "number": 60,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 470,
+        "name": "O",
+        "coordinates": [
+          18.570999145507812,
+          23.610000610351562,
+          12.288999557495117
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 61,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 475,
+        "name": "N",
+        "coordinates": [
+          20.716999053955078,
+          22.964000701904297,
+          12.260000228881836
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_362_364",
+      "distance": 2.242,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ALA",
+        "number": 46,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 362,
+        "name": "O",
+        "coordinates": [
+          17.860000610351562,
+          27.993999481201172,
+          21.128000259399414
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 47,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 364,
+        "name": "N",
+        "coordinates": [
+          19.172000885009766,
+          29.808000564575195,
+          21.243000030517578
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_263_269",
+      "distance": 2.245,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 34,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 263,
+        "name": "O",
+        "coordinates": [
+          40.81399917602539,
+          36.52799987792969,
+          13.91100025177002
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 35,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 269,
+        "name": "N",
+        "coordinates": [
+          41.31700134277344,
+          34.393001556396484,
+          13.432000160217285
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_298_303",
+      "distance": 2.245,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 39,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 298,
+        "name": "O",
+        "coordinates": [
+          37.683998107910156,
+          29.389999389648438,
+          25.22100067138672
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 40,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 303,
+        "name": "N",
+        "coordinates": [
+          38.41899871826172,
+          30.37299919128418,
+          23.340999603271484
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_246_251",
+      "distance": 2.246,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 32,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 246,
+        "name": "O",
+        "coordinates": [
+          42.2599983215332,
+          32.0359992980957,
+          9.380999565124512
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 33,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 251,
+        "name": "N",
+        "coordinates": [
+          40.117000579833984,
+          31.75,
+          9.98799991607666
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_418_426",
+      "distance": 2.246,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ARG",
+        "number": 54,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 418,
+        "name": "O",
+        "coordinates": [
+          29.326000213623047,
+          18.785999298095703,
+          16.690000534057617
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 55,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 426,
+        "name": "N",
+        "coordinates": [
+          27.510000228881836,
+          17.68899917602539,
+          15.954000473022461
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_429_433",
+      "distance": 2.248,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 55,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 429,
+        "name": "O",
+        "coordinates": [
+          25.608999252319336,
+          19.38800048828125,
+          15.286999702453613
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 433,
+        "name": "N",
+        "coordinates": [
+          26.584999084472656,
+          20.062999725341797,
+          13.378000259399414
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_106_110",
+      "distance": 2.25,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 14,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 106,
+        "name": "O",
+        "coordinates": [
+          32.61899948120117,
+          32.8120002746582,
+          6.125
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 15,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 110,
+        "name": "N",
+        "coordinates": [
+          30.884000778198242,
+          31.485000610351562,
+          6.665999889373779
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_56_60",
+      "distance": 2.251,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 7,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 56,
+        "name": "O",
+        "coordinates": [
+          28.850000381469727,
+          40.564998626708984,
+          16.858999252319336
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 8,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 60,
+        "name": "N",
+        "coordinates": [
+          30.131999969482422,
+          40.069000244140625,
+          18.642000198364258
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_78_79",
+      "distance": 2.253,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 10,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 78,
+        "name": "O",
+        "coordinates": [
+          29.2189998626709,
+          43.98099899291992,
+          12.300999641418457
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 11,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 79,
+        "name": "N",
+        "coordinates": [
+          30.562999725341797,
+          42.62300109863281,
+          13.494999885559082
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_199_203",
+      "distance": 2.253,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 26,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 199,
+        "name": "O",
+        "coordinates": [
+          34.882999420166016,
+          27.09000015258789,
+          13.093000411987305
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 203,
+        "name": "N",
+        "coordinates": [
+          34.73400115966797,
+          25.82200050354004,
+          14.949000358581543
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_276_281",
+      "distance": 2.253,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 36,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 276,
+        "name": "O",
+        "coordinates": [
+          39.93600082397461,
+          31.336000442504883,
+          17.315000534057617
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "PRO",
+        "number": 37,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 281,
+        "name": "N",
+        "coordinates": [
+          41.18899917602539,
+          32.084999084472656,
+          19.0310001373291
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_436_441",
+      "distance": 2.253,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 436,
+        "name": "O",
+        "coordinates": [
+          23.263999938964844,
+          20.951000213623047,
+          13.329000473022461
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 441,
+        "name": "N",
+        "coordinates": [
+          24.239999771118164,
+          19.232999801635742,
+          12.246000289916992
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_534_541",
+      "distance": 2.255,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "HIS",
+        "number": 68,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 534,
+        "name": "O",
+        "coordinates": [
+          27.506999969482422,
+          32.58700180053711,
+          18.95800018310547
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 69,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 541,
+        "name": "N",
+        "coordinates": [
+          28.524999618530273,
+          34.446998596191406,
+          18.18899917602539
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_182_188",
+      "distance": 2.256,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 24,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 182,
+        "name": "O",
+        "coordinates": [
+          36.53200149536133,
+          23.04599952697754,
+          15.723999977111816
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASN",
+        "number": 25,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 188,
+        "name": "N",
+        "coordinates": [
+          35.138999938964844,
+          21.624000549316406,
+          14.661999702453613
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_29_37",
+      "distance": 2.257,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PHE",
+        "number": 4,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 29,
+        "name": "O",
+        "coordinates": [
+          26.350000381469727,
+          32.77799987792969,
+          11.395000457763672
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 37,
+        "name": "N",
+        "coordinates": [
+          28.260000228881836,
+          33.94300079345703,
+          11.095999717712402
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_284_288",
+      "distance": 2.257,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 37,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 284,
+        "name": "O",
+        "coordinates": [
+          39.263999938964844,
+          30.66200065612793,
+          20.520999908447266
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "PRO",
+        "number": 38,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 288,
+        "name": "N",
+        "coordinates": [
+          40.058998107910156,
+          28.757999420166016,
+          19.60700035095215
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_351_359",
+      "distance": 2.257,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PHE",
+        "number": 45,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 351,
+        "name": "O",
+        "coordinates": [
+          20.820999145507812,
+          27.733999252319336,
+          19.749000549316406
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ALA",
+        "number": 46,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 359,
+        "name": "N",
+        "coordinates": [
+          19.809999465942383,
+          29.378000259399414,
+          18.577999114990234
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_552_556",
+      "distance": 2.257,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 70,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 552,
+        "name": "O",
+        "coordinates": [
+          32.189998626708984,
+          33.69599914550781,
+          22.635000228881836
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 71,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 556,
+        "name": "N",
+        "coordinates": [
+          32.76300048828125,
+          35.83100128173828,
+          23.09000015258789
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_220_226",
+      "distance": 2.258,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 29,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 220,
+        "name": "O",
+        "coordinates": [
+          38.02000045776367,
+          29.77199935913086,
+          10.381999969482422
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 30,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 226,
+        "name": "N",
+        "coordinates": [
+          36.81100082397461,
+          29.170000076293945,
+          12.192000389099121
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_215_217",
+      "distance": 2.259,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ALA",
+        "number": 28,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 215,
+        "name": "O",
+        "coordinates": [
+          39.70399856567383,
+          27.34600067138672,
+          12.277000427246094
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 29,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 217,
+        "name": "N",
+        "coordinates": [
+          37.632999420166016,
+          26.542999267578125,
+          11.866999626159668
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_486_492",
+      "distance": 2.259,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 62,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 486,
+        "name": "O",
+        "coordinates": [
+          21.322999954223633,
+          26.829999923706055,
+          8.008000373840332
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 63,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 492,
+        "name": "N",
+        "coordinates": [
+          20.923999786376953,
+          25.86199951171875,
+          6.00600004196167
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_159_164",
+      "distance": 2.26,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 21,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 159,
+        "name": "O",
+        "coordinates": [
+          29.367000579833984,
+          19.523000717163086,
+          12.440999984741211
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 22,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 164,
+        "name": "N",
+        "coordinates": [
+          31.510000228881836,
+          18.93600082397461,
+          12.85200023651123
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_544_549",
+      "distance": 2.26,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 69,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 544,
+        "name": "O",
+        "coordinates": [
+          30.104999542236328,
+          36.30500030517578,
+          19.788000106811523
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 70,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 549,
+        "name": "N",
+        "coordinates": [
+          30.124000549316406,
+          34.53300094604492,
+          21.19099998474121
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_389_394",
+      "distance": 2.261,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 50,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 389,
+        "name": "O",
+        "coordinates": [
+          28.90399932861328,
+          24.444000244140625,
+          22.097999572753906
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 51,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 394,
+        "name": "N",
+        "coordinates": [
+          27.941999435424805,
+          22.447999954223633,
+          21.648000717163086
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_206_212",
+      "distance": 2.262,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 206,
+        "name": "O",
+        "coordinates": [
+          37.57899856567383,
+          27.926000595092773,
+          15.159000396728516
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ALA",
+        "number": 28,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 212,
+        "name": "N",
+        "coordinates": [
+          37.499000549316406,
+          25.743000030517578,
+          14.571000099182129
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_12_18",
+      "distance": 2.263,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 2,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 12,
+        "name": "O",
+        "coordinates": [
+          24.864999771118164,
+          29.02400016784668,
+          5.329999923706055
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 3,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 18,
+        "name": "N",
+        "coordinates": [
+          26.849000930786133,
+          29.6560001373291,
+          6.2170000076293945
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_504_510",
+      "distance": 2.263,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 64,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 504,
+        "name": "O",
+        "coordinates": [
+          21.06599998474121,
+          32.11199951171875,
+          7.5329999923706055
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 65,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 510,
+        "name": "N",
+        "coordinates": [
+          21.673999786376953,
+          30.034000396728516,
+          8.190999984741211
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_597_598",
+      "distance": 2.263,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 75,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 597,
+        "name": "O",
+        "coordinates": [
+          41.10200119018555,
+          38.52299880981445,
+          31.5
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 76,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 598,
+        "name": "N",
+        "coordinates": [
+          40.94599914550781,
+          38.47200012207031,
+          33.75699996948242
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_4_9",
+      "distance": 2.264,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "MET",
+        "number": 1,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 4,
+        "name": "O",
+        "coordinates": [
+          27.88599967956543,
+          26.46299934387207,
+          4.263000011444092
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 2,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 9,
+        "name": "N",
+        "coordinates": [
+          26.334999084472656,
+          27.770000457763672,
+          3.257999897003174
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_343_348",
+      "distance": 2.264,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 44,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 343,
+        "name": "O",
+        "coordinates": [
+          24.195999145507812,
+          30.947999954223633,
+          18.28700065612793
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "PHE",
+        "number": 45,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 348,
+        "name": "N",
+        "coordinates": [
+          23.141000747680664,
+          29.187000274658203,
+          19.240999221801758
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_380_386",
+      "distance": 2.264,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 49,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 380,
+        "name": "O",
+        "coordinates": [
+          25.325000762939453,
+          24.48900032043457,
+          23.378000259399414
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 50,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 386,
+        "name": "N",
+        "coordinates": [
+          26.46500015258789,
+          25.68899917602539,
+          21.83300018310547
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_495_501",
+      "distance": 2.264,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 63,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 495,
+        "name": "O",
+        "coordinates": [
+          19.95800018310547,
+          28.46500015258789,
+          5.8420000076293945
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 64,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 501,
+        "name": "N",
+        "coordinates": [
+          22.099000930786133,
+          29.163000106811523,
+          5.605000019073486
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_526_531",
+      "distance": 2.265,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 67,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 526,
+        "name": "O",
+        "coordinates": [
+          26.158000946044922,
+          33.72999954223633,
+          14.894000053405762
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "HIS",
+        "number": 68,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 531,
+        "name": "N",
+        "coordinates": [
+          25.621000289916992,
+          32.94499969482422,
+          16.950000762939453
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_406_411",
+      "distance": 2.269,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 52,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 406,
+        "name": "O",
+        "coordinates": [
+          32.54600143432617,
+          19.316999435424805,
+          18.558000564575195
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 53,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 411,
+        "name": "N",
+        "coordinates": [
+          31.69700050354004,
+          18.31100082397461,
+          20.4060001373291
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_444_447",
+      "distance": 2.271,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 444,
+        "name": "O",
+        "coordinates": [
+          20.96299934387207,
+          18.253000259399414,
+          13.395000457763672
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 447,
+        "name": "N",
+        "coordinates": [
+          22.996999740600586,
+          17.97800064086914,
+          14.366000175476074
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_63_68",
+      "distance": 2.275,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 8,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 63,
+        "name": "O",
+        "coordinates": [
+          29.586000442504883,
+          43.56999969482422,
+          19.482999801635742
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 9,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 68,
+        "name": "N",
+        "coordinates": [
+          30.990999221801758,
+          42.57099914550781,
+          17.99799919128418
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_82_88",
+      "distance": 2.275,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 11,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 82,
+        "name": "O",
+        "coordinates": [
+          30.253000259399414,
+          39.99100112915039,
+          13.133000373840332
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 12,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 88,
+        "name": "N",
+        "coordinates": [
+          30.163000106811523,
+          40.3380012512207,
+          10.88599967956543
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_578_583",
+      "distance": 2.275,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 73,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 578,
+        "name": "O",
+        "coordinates": [
+          38.297000885009766,
+          34.94599914550781,
+          29.996000289916992
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 74,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 583,
+        "name": "N",
+        "coordinates": [
+          40.29399871826172,
+          34.4119987487793,
+          29.045000076293945
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_272_273",
+      "distance": 2.277,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 35,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 272,
+        "name": "O",
+        "coordinates": [
+          42.82899856567383,
+          34.0,
+          16.73900032043457
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 36,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 273,
+        "name": "N",
+        "coordinates": [
+          40.641998291015625,
+          33.91600036621094,
+          16.11199951171875
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_586_594",
+      "distance": 2.277,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ARG",
+        "number": 74,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 586,
+        "name": "O",
+        "coordinates": [
+          42.94499969482422,
+          34.99399948120117,
+          30.58300018310547
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 75,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 594,
+        "name": "N",
+        "coordinates": [
+          41.165000915527344,
+          35.53099822998047,
+          31.898000717163086
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_335_340",
+      "distance": 2.279,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 43,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 335,
+        "name": "O",
+        "coordinates": [
+          27.10099983215332,
+          28.34600067138672,
+          21.097000122070312
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 44,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 340,
+        "name": "N",
+        "coordinates": [
+          26.43600082397461,
+          30.23200035095215,
+          20.003999710083008
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_40_44",
+      "distance": 2.282,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 40,
+        "name": "O",
+        "coordinates": [
+          29.52199935913086,
+          36.10300064086914,
+          12.319999694824219
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 6,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 44,
+        "name": "N",
+        "coordinates": [
+          27.750999450683594,
+          35.867000579833984,
+          13.739999771118164
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_191_196",
+      "distance": 2.283,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASN",
+        "number": 25,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 191,
+        "name": "O",
+        "coordinates": [
+          36.066001892089844,
+          24.108999252319336,
+          12.333000183105469
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 26,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 196,
+        "name": "N",
+        "coordinates": [
+          34.00699996948242,
+          23.7450008392334,
+          13.25
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_567_575",
+      "distance": 2.283,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ARG",
+        "number": 72,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 567,
+        "name": "O",
+        "coordinates": [
+          37.30500030517578,
+          33.233001708984375,
+          26.795000076293945
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 73,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 575,
+        "name": "N",
+        "coordinates": [
+          37.196998596191406,
+          35.39699935913086,
+          27.51300048828125
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_47_53",
+      "distance": 2.284,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 6,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 47,
+        "name": "O",
+        "coordinates": [
+          28.21299934387207,
+          36.75299835205078,
+          16.410999298095703
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 7,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 53,
+        "name": "N",
+        "coordinates": [
+          29.426000595092773,
+          38.43000030517578,
+          15.446000099182129
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_153_156",
+      "distance": 2.284,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "SER",
+        "number": 20,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 153,
+        "name": "O",
+        "coordinates": [
+          29.93000030517578,
+          16.476999282836914,
+          10.605999946594238
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 21,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 156,
+        "name": "N",
+        "coordinates": [
+          29.599000930786133,
+          18.599000930786133,
+          9.82800006866455
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_519_523",
+      "distance": 2.286,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 66,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 519,
+        "name": "O",
+        "coordinates": [
+          22.54400062561035,
+          31.941999435424805,
+          14.034000396728516
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 67,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 523,
+        "name": "N",
+        "coordinates": [
+          24.790000915527344,
+          32.020999908447266,
+          13.618000030517578
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_130_134",
+      "distance": 2.287,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 17,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 130,
+        "name": "O",
+        "coordinates": [
+          28.47800064086914,
+          23.52199935913086,
+          4.724999904632568
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 18,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 134,
+        "name": "N",
+        "coordinates": [
+          29.3799991607666,
+          22.05699920654297,
+          6.23199987411499
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_113_118",
+      "distance": 2.29,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 15,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 113,
+        "name": "O",
+        "coordinates": [
+          29.80900001525879,
+          29.395000457763672,
+          5.545000076293945
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 16,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 118,
+        "name": "N",
+        "coordinates": [
+          31.833999633789062,
+          28.41200065612793,
+          5.125
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_478_483",
+      "distance": 2.291,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 61,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 478,
+        "name": "O",
+        "coordinates": [
+          21.840999603271484,
+          23.197999954223633,
+          9.685999870300293
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 62,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 483,
+        "name": "N",
+        "coordinates": [
+          20.291000366210938,
+          24.875,
+          9.506999969482422
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_121_127",
+      "distance": 2.293,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 16,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 121,
+        "name": "O",
+        "coordinates": [
+          32.57600021362305,
+          25.802000045776367,
+          5.460999965667725
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 17,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 127,
+        "name": "N",
+        "coordinates": [
+          30.309999465942383,
+          25.45800018310547,
+          5.383999824523926
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_21_26",
+      "distance": 2.298,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 3,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 21,
+        "name": "O",
+        "coordinates": [
+          27.9060001373291,
+          31.711000442504883,
+          7.263999938964844
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "PHE",
+        "number": 4,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 26,
+        "name": "N",
+        "coordinates": [
+          26.214000701904297,
+          32.09700012207031,
+          8.770999908447266
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_167_171",
+      "distance": 2.3,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 22,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 167,
+        "name": "O",
+        "coordinates": [
+          32.159000396728516,
+          21.31100082397461,
+          13.861000061035156
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 23,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 171,
+        "name": "N",
+        "coordinates": [
+          31.113000869750977,
+          20.863000869750977,
+          15.859999656677246
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_91_95",
+      "distance": 2.302,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 12,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 91,
+        "name": "O",
+        "coordinates": [
+          30.849000930786133,
+          38.849998474121094,
+          8.706000328063965
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 13,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 95,
+        "name": "N",
+        "coordinates": [
+          30.795000076293945,
+          37.01499938964844,
+          10.095000267028809
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_324_332",
+      "distance": 2.318,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ARG",
+        "number": 42,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 324,
+        "name": "O",
+        "coordinates": [
+          29.97800064086914,
+          31.72599983215332,
+          21.268999099731445
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 43,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 332,
+        "name": "N",
+        "coordinates": [
+          29.694000244140625,
+          29.43600082397461,
+          21.054000854492188
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_486_515",
+      "distance": 2.509,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 62,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 486,
+        "name": "O",
+        "coordinates": [
+          21.322999954223633,
+          26.829999923706055,
+          8.008000373840332
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 65,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 515,
+        "name": "OG",
+        "coordinates": [
+          20.54400062561035,
+          28.047000885009766,
+          10.059000015258789
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_1_130",
+      "distance": 2.564,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "MET",
+        "number": 1,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 1,
+        "name": "N",
+        "coordinates": [
+          27.34000015258789,
+          24.43000030517578,
+          2.614000082015991
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 17,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 130,
+        "name": "O",
+        "coordinates": [
+          28.47800064086914,
+          23.52199935913086,
+          4.724999904632568
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_150_156",
+      "distance": 2.651,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "SER",
+        "number": 20,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 150,
+        "name": "N",
+        "coordinates": [
+          27.361000061035156,
+          17.958999633789062,
+          8.559000015258789
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 21,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 156,
+        "name": "N",
+        "coordinates": [
+          29.599000930786133,
+          18.599000930786133,
+          9.82800006866455
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_121_225",
+      "distance": 2.676,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 16,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 121,
+        "name": "O",
+        "coordinates": [
+          32.57600021362305,
+          25.802000045776367,
+          5.460999965667725
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 29,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 225,
+        "name": "NZ",
+        "coordinates": [
+          34.91400146484375,
+          24.944000244140625,
+          6.440999984741211
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_68_75",
+      "distance": 2.7,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 9,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 68,
+        "name": "N",
+        "coordinates": [
+          30.990999221801758,
+          42.57099914550781,
+          17.99799919128418
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 10,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 75,
+        "name": "N",
+        "coordinates": [
+          29.72100067138672,
+          43.67300033569336,
+          15.885000228881836
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_295_303",
+      "distance": 2.709,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 39,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 295,
+        "name": "N",
+        "coordinates": [
+          39.374000549316406,
+          28.09000015258789,
+          22.239999771118164
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 40,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 303,
+        "name": "N",
+        "coordinates": [
+          38.41899871826172,
+          30.37299919128418,
+          23.340999603271484
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_143_150",
+      "distance": 2.715,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 19,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 143,
+        "name": "N",
+        "coordinates": [
+          26.55900001525879,
+          20.219999313354492,
+          7.288000106811523
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 20,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 150,
+        "name": "N",
+        "coordinates": [
+          27.361000061035156,
+          17.958999633789062,
+          8.559000015258789
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_260_269",
+      "distance": 2.716,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 34,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 260,
+        "name": "N",
+        "coordinates": [
+          39.654998779296875,
+          34.334999084472656,
+          11.28499984741211
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 35,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 269,
+        "name": "N",
+        "coordinates": [
+          41.31700134277344,
+          34.393001556396484,
+          13.432000160217285
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_40_95",
+      "distance": 2.721,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 40,
+        "name": "O",
+        "coordinates": [
+          29.52199935913086,
+          36.10300064086914,
+          12.319999694824219
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 13,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 95,
+        "name": "N",
+        "coordinates": [
+          30.795000076293945,
+          37.01499938964844,
+          10.095000267028809
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_306_564",
+      "distance": 2.721,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 40,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 306,
+        "name": "O",
+        "coordinates": [
+          35.57400131225586,
+          32.61800003051758,
+          23.482999801635742
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 72,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 564,
+        "name": "N",
+        "coordinates": [
+          34.93000030517578,
+          34.38399887084961,
+          25.451000213623047
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_60_68",
+      "distance": 2.723,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 8,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 60,
+        "name": "N",
+        "coordinates": [
+          30.131999969482422,
+          40.069000244140625,
+          18.642000198364258
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 9,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 68,
+        "name": "N",
+        "coordinates": [
+          30.990999221801758,
+          42.57099914550781,
+          17.99799919128418
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_303_312",
+      "distance": 2.73,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 40,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 303,
+        "name": "N",
+        "coordinates": [
+          38.41899871826172,
+          30.37299919128418,
+          23.340999603271484
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 41,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 312,
+        "name": "N",
+        "coordinates": [
+          36.0,
+          30.860000610351562,
+          22.172000885009766
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_433_441",
+      "distance": 2.733,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 433,
+        "name": "N",
+        "coordinates": [
+          26.584999084472656,
+          20.062999725341797,
+          13.378000259399414
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 441,
+        "name": "N",
+        "coordinates": [
+          24.239999771118164,
+          19.232999801635742,
+          12.246000289916992
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_226_234",
+      "distance": 2.737,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 30,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 226,
+        "name": "N",
+        "coordinates": [
+          36.81100082397461,
+          29.170000076293945,
+          12.192000389099121
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 31,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 234,
+        "name": "N",
+        "coordinates": [
+          38.882999420166016,
+          30.110000610351562,
+          13.713000297546387
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_237_269",
+      "distance": 2.74,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 31,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 237,
+        "name": "O",
+        "coordinates": [
+          41.827999114990234,
+          31.808000564575195,
+          12.680999755859375
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 35,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 269,
+        "name": "N",
+        "coordinates": [
+          41.31700134277344,
+          34.393001556396484,
+          13.432000160217285
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_75_79",
+      "distance": 2.743,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 10,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 75,
+        "name": "N",
+        "coordinates": [
+          29.72100067138672,
+          43.67300033569336,
+          15.885000228881836
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 11,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 79,
+        "name": "N",
+        "coordinates": [
+          30.562999725341797,
+          42.62300109863281,
+          13.494999885559082
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_171_179",
+      "distance": 2.749,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 23,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 171,
+        "name": "N",
+        "coordinates": [
+          31.113000869750977,
+          20.863000869750977,
+          15.859999656677246
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 24,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 179,
+        "name": "N",
+        "coordinates": [
+          33.54800033569336,
+          21.525999069213867,
+          16.950000762939453
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_328_385",
+      "distance": 2.75,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ARG",
+        "number": 42,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 328,
+        "name": "NE",
+        "coordinates": [
+          27.875,
+          31.316999435424805,
+          26.44300079345703
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 49,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 385,
+        "name": "NE2",
+        "coordinates": [
+          27.777000427246094,
+          28.584999084472656,
+          26.73900032043457
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_447_455",
+      "distance": 2.756,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 447,
+        "name": "N",
+        "coordinates": [
+          22.996999740600586,
+          17.97800064086914,
+          14.366000175476074
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "TYR",
+        "number": 59,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 455,
+        "name": "N",
+        "coordinates": [
+          21.84600067138672,
+          19.95400047302246,
+          15.904999732971191
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_441_447",
+      "distance": 2.759,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 441,
+        "name": "N",
+        "coordinates": [
+          24.239999771118164,
+          19.232999801635742,
+          12.246000289916992
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 447,
+        "name": "N",
+        "coordinates": [
+          22.996999740600586,
+          17.97800064086914,
+          14.366000175476074
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_501_510",
+      "distance": 2.762,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 64,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 501,
+        "name": "N",
+        "coordinates": [
+          22.099000930786133,
+          29.163000106811523,
+          5.605000019073486
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 65,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 510,
+        "name": "N",
+        "coordinates": [
+          21.673999786376953,
+          30.034000396728516,
+          8.190999984741211
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_217_226",
+      "distance": 2.772,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 29,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 217,
+        "name": "N",
+        "coordinates": [
+          37.632999420166016,
+          26.542999267578125,
+          11.866999626159668
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 30,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 226,
+        "name": "N",
+        "coordinates": [
+          36.81100082397461,
+          29.170000076293945,
+          12.192000389099121
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_359_364",
+      "distance": 2.774,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ALA",
+        "number": 46,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 359,
+        "name": "N",
+        "coordinates": [
+          19.809999465942383,
+          29.378000259399414,
+          18.577999114990234
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 47,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 364,
+        "name": "N",
+        "coordinates": [
+          19.172000885009766,
+          29.808000564575195,
+          21.243000030517578
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_234_243",
+      "distance": 2.778,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 31,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 234,
+        "name": "N",
+        "coordinates": [
+          38.882999420166016,
+          30.110000610351562,
+          13.713000297546387
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 32,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 243,
+        "name": "N",
+        "coordinates": [
+          41.000999450683594,
+          29.878000259399414,
+          11.930999755859375
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_196_203",
+      "distance": 2.78,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 26,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 196,
+        "name": "N",
+        "coordinates": [
+          34.00699996948242,
+          23.7450008392334,
+          13.25
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 203,
+        "name": "N",
+        "coordinates": [
+          34.73400115966797,
+          25.82200050354004,
+          14.949000358581543
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_12_501",
+      "distance": 2.783,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 2,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 12,
+        "name": "O",
+        "coordinates": [
+          24.864999771118164,
+          29.02400016784668,
+          5.329999923706055
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 64,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 501,
+        "name": "N",
+        "coordinates": [
+          22.099000930786133,
+          29.163000106811523,
+          5.605000019073486
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_455_467",
+      "distance": 2.783,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "TYR",
+        "number": 59,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 455,
+        "name": "N",
+        "coordinates": [
+          21.84600067138672,
+          19.95400047302246,
+          15.904999732971191
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASN",
+        "number": 60,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 467,
+        "name": "N",
+        "coordinates": [
+          19.993000030517578,
+          20.884000778198242,
+          14.048999786376953
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_188_196",
+      "distance": 2.788,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASN",
+        "number": 25,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 188,
+        "name": "N",
+        "coordinates": [
+          35.138999938964844,
+          21.624000549316406,
+          14.661999702453613
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 26,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 196,
+        "name": "N",
+        "coordinates": [
+          34.00699996948242,
+          23.7450008392334,
+          13.25
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_179_188",
+      "distance": 2.789,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 24,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 179,
+        "name": "N",
+        "coordinates": [
+          33.54800033569336,
+          21.525999069213867,
+          16.950000762939453
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASN",
+        "number": 25,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 188,
+        "name": "N",
+        "coordinates": [
+          35.138999938964844,
+          21.624000549316406,
+          14.661999702453613
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_137_156",
+      "distance": 2.79,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 18,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 137,
+        "name": "O",
+        "coordinates": [
+          28.448999404907227,
+          20.673999786376953,
+          8.359999656677246
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 21,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 156,
+        "name": "N",
+        "coordinates": [
+          29.599000930786133,
+          18.599000930786133,
+          9.82800006866455
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_340_534",
+      "distance": 2.791,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 44,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 340,
+        "name": "N",
+        "coordinates": [
+          26.43600082397461,
+          30.23200035095215,
+          20.003999710083008
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "HIS",
+        "number": 68,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 534,
+        "name": "O",
+        "coordinates": [
+          27.506999969482422,
+          32.58700180053711,
+          18.95800018310547
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_37_98",
+      "distance": 2.792,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 37,
+        "name": "N",
+        "coordinates": [
+          28.260000228881836,
+          33.94300079345703,
+          11.095999717712402
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 13,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 98,
+        "name": "O",
+        "coordinates": [
+          30.024999618530273,
+          34.61800003051758,
+          9.039999961853027
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_203_212",
+      "distance": 2.792,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 203,
+        "name": "N",
+        "coordinates": [
+          34.73400115966797,
+          25.82200050354004,
+          14.949000358581543
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ALA",
+        "number": 28,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 212,
+        "name": "N",
+        "coordinates": [
+          37.499000549316406,
+          25.743000030517578,
+          14.571000099182129
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_343_531",
+      "distance": 2.794,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 44,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 343,
+        "name": "O",
+        "coordinates": [
+          24.195999145507812,
+          30.947999954223633,
+          18.28700065612793
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "HIS",
+        "number": 68,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 531,
+        "name": "N",
+        "coordinates": [
+          25.621000289916992,
+          32.94499969482422,
+          16.950000762939453
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_411_415",
+      "distance": 2.8,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 53,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 411,
+        "name": "N",
+        "coordinates": [
+          31.69700050354004,
+          18.31100082397461,
+          20.4060001373291
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 54,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 415,
+        "name": "N",
+        "coordinates": [
+          29.34000015258789,
+          17.5939998626709,
+          19.076000213623047
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_288_295",
+      "distance": 2.801,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 38,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 288,
+        "name": "N",
+        "coordinates": [
+          40.058998107910156,
+          28.757999420166016,
+          19.60700035095215
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 39,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 295,
+        "name": "N",
+        "coordinates": [
+          39.374000549316406,
+          28.09000015258789,
+          22.239999771118164
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_269_273",
+      "distance": 2.805,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 35,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 269,
+        "name": "N",
+        "coordinates": [
+          41.31700134277344,
+          34.393001556396484,
+          13.432000160217285
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 36,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 273,
+        "name": "N",
+        "coordinates": [
+          40.641998291015625,
+          33.91600036621094,
+          16.11199951171875
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_324_549",
+      "distance": 2.812,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ARG",
+        "number": 42,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 324,
+        "name": "O",
+        "coordinates": [
+          29.97800064086914,
+          31.72599983215332,
+          21.268999099731445
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 70,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 549,
+        "name": "N",
+        "coordinates": [
+          30.124000549316406,
+          34.53300094604492,
+          21.19099998474121
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_321_552",
+      "distance": 2.818,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ARG",
+        "number": 42,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 321,
+        "name": "N",
+        "coordinates": [
+          32.47800064086914,
+          30.91699981689453,
+          22.268999099731445
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 70,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 552,
+        "name": "O",
+        "coordinates": [
+          32.189998626708984,
+          33.69599914550781,
+          22.635000228881836
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_29_523",
+      "distance": 2.819,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PHE",
+        "number": 4,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 29,
+        "name": "O",
+        "coordinates": [
+          26.350000381469727,
+          32.77799987792969,
+          11.395000457763672
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 67,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 523,
+        "name": "N",
+        "coordinates": [
+          24.790000915527344,
+          32.020999908447266,
+          13.618000030517578
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_364_368",
+      "distance": 2.821,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLY",
+        "number": 47,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 364,
+        "name": "N",
+        "coordinates": [
+          19.172000885009766,
+          29.808000564575195,
+          21.243000030517578
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 48,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 368,
+        "name": "N",
+        "coordinates": [
+          20.801000595092773,
+          27.930999755859375,
+          22.577999114990234
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_212_217",
+      "distance": 2.823,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ALA",
+        "number": 28,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 212,
+        "name": "N",
+        "coordinates": [
+          37.499000549316406,
+          25.743000030517578,
+          14.571000099182129
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 29,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 217,
+        "name": "N",
+        "coordinates": [
+          37.632999420166016,
+          26.542999267578125,
+          11.866999626159668
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_335_386",
+      "distance": 2.829,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 43,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 335,
+        "name": "O",
+        "coordinates": [
+          27.10099983215332,
+          28.34600067138672,
+          21.097000122070312
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 50,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 386,
+        "name": "N",
+        "coordinates": [
+          26.46500015258789,
+          25.68899917602539,
+          21.83300018310547
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_351_368",
+      "distance": 2.836,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PHE",
+        "number": 45,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 351,
+        "name": "O",
+        "coordinates": [
+          20.820999145507812,
+          27.733999252319336,
+          19.749000549316406
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 48,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 368,
+        "name": "N",
+        "coordinates": [
+          20.801000595092773,
+          27.930999755859375,
+          22.577999114990234
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_467_475",
+      "distance": 2.837,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASN",
+        "number": 60,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 467,
+        "name": "N",
+        "coordinates": [
+          19.993000030517578,
+          20.884000778198242,
+          14.048999786376953
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 61,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 475,
+        "name": "N",
+        "coordinates": [
+          20.716999053955078,
+          22.964000701904297,
+          12.260000228881836
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_243_251",
+      "distance": 2.839,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 32,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 243,
+        "name": "N",
+        "coordinates": [
+          41.000999450683594,
+          29.878000259399414,
+          11.930999755859375
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 33,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 251,
+        "name": "N",
+        "coordinates": [
+          40.117000579833984,
+          31.75,
+          9.98799991607666
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_146_441",
+      "distance": 2.84,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 19,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 146,
+        "name": "O",
+        "coordinates": [
+          26.33300018310547,
+          18.535999298095703,
+          10.456999778747559
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 441,
+        "name": "N",
+        "coordinates": [
+          24.239999771118164,
+          19.232999801635742,
+          12.246000289916992
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_4_127",
+      "distance": 2.853,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "MET",
+        "number": 1,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 4,
+        "name": "O",
+        "coordinates": [
+          27.88599967956543,
+          26.46299934387207,
+          4.263000011444092
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 17,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 127,
+        "name": "N",
+        "coordinates": [
+          30.309999465942383,
+          25.45800018310547,
+          5.383999824523926
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_26_513",
+      "distance": 2.856,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PHE",
+        "number": 4,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 26,
+        "name": "N",
+        "coordinates": [
+          26.214000701904297,
+          32.09700012207031,
+          8.770999908447266
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 65,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 513,
+        "name": "O",
+        "coordinates": [
+          23.57900047302246,
+          31.320999145507812,
+          9.553999900817871
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_171_418",
+      "distance": 2.863,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 23,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 171,
+        "name": "N",
+        "coordinates": [
+          31.113000869750977,
+          20.863000869750977,
+          15.859999656677246
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 54,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 418,
+        "name": "O",
+        "coordinates": [
+          29.326000213623047,
+          18.785999298095703,
+          16.690000534057617
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_215_243",
+      "distance": 2.866,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ALA",
+        "number": 28,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 215,
+        "name": "O",
+        "coordinates": [
+          39.70399856567383,
+          27.34600067138672,
+          12.277000427246094
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 32,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 243,
+        "name": "N",
+        "coordinates": [
+          41.000999450683594,
+          29.878000259399414,
+          11.930999755859375
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_444_467",
+      "distance": 2.879,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 444,
+        "name": "O",
+        "coordinates": [
+          20.96299934387207,
+          18.253000259399414,
+          13.395000457763672
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASN",
+        "number": 60,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 467,
+        "name": "N",
+        "coordinates": [
+          19.993000030517578,
+          20.884000778198242,
+          14.048999786376953
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_211_410",
+      "distance": 2.902,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 211,
+        "name": "NZ",
+        "coordinates": [
+          33.45500183105469,
+          25.90999984741211,
+          21.54599952697754
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 52,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 410,
+        "name": "OD2",
+        "coordinates": [
+          33.54399871826172,
+          23.086000442504883,
+          20.882999420166016
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_44_526",
+      "distance": 2.905,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 6,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 44,
+        "name": "N",
+        "coordinates": [
+          27.750999450683594,
+          35.867000579833984,
+          13.739999771118164
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 67,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 526,
+        "name": "O",
+        "coordinates": [
+          26.158000946044922,
+          33.72999954223633,
+          14.894000053405762
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_220_251",
+      "distance": 2.909,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 29,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 220,
+        "name": "O",
+        "coordinates": [
+          38.02000045776367,
+          29.77199935913086,
+          10.381999969482422
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 33,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 251,
+        "name": "N",
+        "coordinates": [
+          40.117000579833984,
+          31.75,
+          9.98799991607666
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_53_82",
+      "distance": 2.91,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 7,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 53,
+        "name": "N",
+        "coordinates": [
+          29.426000595092773,
+          38.43000030517578,
+          15.446000099182129
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 11,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 82,
+        "name": "O",
+        "coordinates": [
+          30.253000259399414,
+          39.99100112915039,
+          13.133000373840332
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_179_406",
+      "distance": 2.91,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 24,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 179,
+        "name": "N",
+        "coordinates": [
+          33.54800033569336,
+          21.525999069213867,
+          16.950000762939453
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 52,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 406,
+        "name": "O",
+        "coordinates": [
+          32.54600143432617,
+          19.316999435424805,
+          18.558000564575195
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_229_260",
+      "distance": 2.911,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 30,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 229,
+        "name": "O",
+        "coordinates": [
+          38.54399871826172,
+          32.150001525878906,
+          12.855999946594238
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 34,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 260,
+        "name": "N",
+        "coordinates": [
+          39.654998779296875,
+          34.334999084472656,
+          11.28499984741211
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_206_234",
+      "distance": 2.926,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 206,
+        "name": "O",
+        "coordinates": [
+          37.57899856567383,
+          27.926000595092773,
+          15.159000396728516
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 31,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 234,
+        "name": "N",
+        "coordinates": [
+          38.882999420166016,
+          30.110000610351562,
+          13.713000297546387
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_47_541",
+      "distance": 2.929,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 6,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 47,
+        "name": "O",
+        "coordinates": [
+          28.21299934387207,
+          36.75299835205078,
+          16.410999298095703
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 69,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 541,
+        "name": "N",
+        "coordinates": [
+          28.524999618530273,
+          34.446998596191406,
+          18.18899917602539
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_251_260",
+      "distance": 2.929,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 33,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 251,
+        "name": "N",
+        "coordinates": [
+          40.117000579833984,
+          31.75,
+          9.98799991607666
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLU",
+        "number": 34,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 260,
+        "name": "N",
+        "coordinates": [
+          39.654998779296875,
+          34.334999084472656,
+          11.28499984741211
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_137_150",
+      "distance": 2.932,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 18,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 137,
+        "name": "O",
+        "coordinates": [
+          28.448999404907227,
+          20.673999786376953,
+          8.359999656677246
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 20,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 150,
+        "name": "N",
+        "coordinates": [
+          27.361000061035156,
+          17.958999633789062,
+          8.559000015258789
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_191_217",
+      "distance": 2.932,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASN",
+        "number": 25,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 191,
+        "name": "O",
+        "coordinates": [
+          36.066001892089844,
+          24.108999252319336,
+          12.333000183105469
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 29,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 217,
+        "name": "N",
+        "coordinates": [
+          37.632999420166016,
+          26.542999267578125,
+          11.866999626159668
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_284_303",
+      "distance": 2.958,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 37,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 284,
+        "name": "O",
+        "coordinates": [
+          39.263999938964844,
+          30.66200065612793,
+          20.520999908447266
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 40,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 303,
+        "name": "N",
+        "coordinates": [
+          38.41899871826172,
+          30.37299919128418,
+          23.340999603271484
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_431_446",
+      "distance": 2.958,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 55,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 431,
+        "name": "OG1",
+        "coordinates": [
+          25.924999237060547,
+          16.611000061035156,
+          13.913000106811523
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 446,
+        "name": "OG",
+        "coordinates": [
+          23.913999557495117,
+          16.395000457763672,
+          11.755000114440918
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_394_466",
+      "distance": 2.963,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 51,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 394,
+        "name": "N",
+        "coordinates": [
+          27.941999435424805,
+          22.447999954223633,
+          21.648000717163086
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "TYR",
+        "number": 59,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 466,
+        "name": "OH",
+        "coordinates": [
+          25.24799919128418,
+          21.302000045776367,
+          21.19099998474121
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_276_320",
+      "distance": 2.967,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 36,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 276,
+        "name": "O",
+        "coordinates": [
+          39.93600082397461,
+          31.336000442504883,
+          17.315000534057617
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 41,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 320,
+        "name": "NE2",
+        "coordinates": [
+          37.22800064086914,
+          30.125999450683594,
+          17.232999801635742
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_199_226",
+      "distance": 2.976,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 26,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 199,
+        "name": "O",
+        "coordinates": [
+          34.882999420166016,
+          27.09000015258789,
+          13.093000411987305
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ILE",
+        "number": 30,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 226,
+        "name": "N",
+        "coordinates": [
+          36.81100082397461,
+          29.170000076293945,
+          12.192000389099121
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_159_433",
+      "distance": 2.985,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 21,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 159,
+        "name": "O",
+        "coordinates": [
+          29.367000579833984,
+          19.523000717163086,
+          12.440999984741211
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 433,
+        "name": "N",
+        "coordinates": [
+          26.584999084472656,
+          20.062999725341797,
+          13.378000259399414
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_174_203",
+      "distance": 2.998,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 23,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 174,
+        "name": "O",
+        "coordinates": [
+          33.233001708984375,
+          23.659000396728516,
+          16.384000778198242
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 203,
+        "name": "N",
+        "coordinates": [
+          34.73400115966797,
+          25.82200050354004,
+          14.949000358581543
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_403_411",
+      "distance": 3.008,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 52,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 403,
+        "name": "N",
+        "coordinates": [
+          31.232999801635742,
+          21.09000015258789,
+          21.458999633789062
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 53,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 411,
+        "name": "N",
+        "coordinates": [
+          31.69700050354004,
+          18.31100082397461,
+          20.4060001373291
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_315_574",
+      "distance": 3.01,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 41,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 315,
+        "name": "O",
+        "coordinates": [
+          33.58000183105469,
+          29.009000778198242,
+          22.499000549316406
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 72,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 574,
+        "name": "NH2",
+        "coordinates": [
+          34.013999938964844,
+          28.656999588012695,
+          25.457000732421875
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_4_130",
+      "distance": 3.035,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "MET",
+        "number": 1,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 4,
+        "name": "O",
+        "coordinates": [
+          27.88599967956543,
+          26.46299934387207,
+          4.263000011444092
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 17,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 130,
+        "name": "O",
+        "coordinates": [
+          28.47800064086914,
+          23.52199935913086,
+          4.724999904632568
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_486_495",
+      "distance": 3.038,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 62,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 486,
+        "name": "O",
+        "coordinates": [
+          21.322999954223633,
+          26.829999923706055,
+          8.008000373840332
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 63,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 495,
+        "name": "O",
+        "coordinates": [
+          19.95800018310547,
+          28.46500015258789,
+          5.8420000076293945
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_351_364",
+      "distance": 3.042,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PHE",
+        "number": 45,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 351,
+        "name": "O",
+        "coordinates": [
+          20.820999145507812,
+          27.733999252319336,
+          19.749000549316406
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 47,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 364,
+        "name": "N",
+        "coordinates": [
+          19.172000885009766,
+          29.808000564575195,
+          21.243000030517578
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_206_320",
+      "distance": 3.044,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 206,
+        "name": "O",
+        "coordinates": [
+          37.57899856567383,
+          27.926000595092773,
+          15.159000396728516
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 41,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 320,
+        "name": "NE2",
+        "coordinates": [
+          37.22800064086914,
+          30.125999450683594,
+          17.232999801635742
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_21_110",
+      "distance": 3.046,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 3,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 21,
+        "name": "O",
+        "coordinates": [
+          27.9060001373291,
+          31.711000442504883,
+          7.263999938964844
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 15,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 110,
+        "name": "N",
+        "coordinates": [
+          30.884000778198242,
+          31.485000610351562,
+          6.665999889373779
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_18_113",
+      "distance": 3.047,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ILE",
+        "number": 3,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 18,
+        "name": "N",
+        "coordinates": [
+          26.849000930786133,
+          29.6560001373291,
+          6.2170000076293945
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LEU",
+        "number": 15,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 113,
+        "name": "O",
+        "coordinates": [
+          29.80900001525879,
+          29.395000457763672,
+          5.545000076293945
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_199_217",
+      "distance": 3.06,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "VAL",
+        "number": 26,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 199,
+        "name": "O",
+        "coordinates": [
+          34.882999420166016,
+          27.09000015258789,
+          13.093000411987305
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 29,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 217,
+        "name": "N",
+        "coordinates": [
+          37.632999420166016,
+          26.542999267578125,
+          11.866999626159668
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_348_371",
+      "distance": 3.067,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PHE",
+        "number": 45,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 348,
+        "name": "N",
+        "coordinates": [
+          23.141000747680664,
+          29.187000274658203,
+          19.240999221801758
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 48,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 371,
+        "name": "O",
+        "coordinates": [
+          23.382999420166016,
+          27.62700080871582,
+          21.8700008392334
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_134_163",
+      "distance": 3.08,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 18,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 134,
+        "name": "N",
+        "coordinates": [
+          29.3799991607666,
+          22.05699920654297,
+          6.23199987411499
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 21,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 163,
+        "name": "OD2",
+        "coordinates": [
+          31.83799934387207,
+          21.402000427246094,
+          7.9679999351501465
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_58_82",
+      "distance": 3.085,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 7,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 58,
+        "name": "OG1",
+        "coordinates": [
+          31.73699951171875,
+          40.25699996948242,
+          15.824000358581543
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 11,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 82,
+        "name": "O",
+        "coordinates": [
+          30.253000259399414,
+          39.99100112915039,
+          13.133000373840332
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_426_453",
+      "distance": 3.087,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 55,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 426,
+        "name": "N",
+        "coordinates": [
+          27.510000228881836,
+          17.68899917602539,
+          15.954000473022461
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 453,
+        "name": "OD1",
+        "coordinates": [
+          25.30299949645996,
+          15.894000053405762,
+          17.152000427246094
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_182_212",
+      "distance": 3.088,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLU",
+        "number": 24,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 182,
+        "name": "O",
+        "coordinates": [
+          36.53200149536133,
+          23.04599952697754,
+          15.723999977111816
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ALA",
+        "number": 28,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 212,
+        "name": "N",
+        "coordinates": [
+          37.499000549316406,
+          25.743000030517578,
+          14.571000099182129
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_284_295",
+      "distance": 3.096,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 37,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 284,
+        "name": "O",
+        "coordinates": [
+          39.263999938964844,
+          30.66200065612793,
+          20.520999908447266
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 39,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 295,
+        "name": "N",
+        "coordinates": [
+          39.374000549316406,
+          28.09000015258789,
+          22.239999771118164
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_291_303",
+      "distance": 3.098,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 38,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 291,
+        "name": "O",
+        "coordinates": [
+          37.2130012512207,
+          28.035999298095703,
+          21.70400047302246
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 40,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 303,
+        "name": "N",
+        "coordinates": [
+          38.41899871826172,
+          30.37299919128418,
+          23.340999603271484
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_167_188",
+      "distance": 3.102,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 22,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 167,
+        "name": "O",
+        "coordinates": [
+          32.159000396728516,
+          21.31100082397461,
+          13.861000061035156
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASN",
+        "number": 25,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 188,
+        "name": "N",
+        "coordinates": [
+          35.138999938964844,
+          21.624000549316406,
+          14.661999702453613
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_436_455",
+      "distance": 3.105,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 436,
+        "name": "O",
+        "coordinates": [
+          23.263999938964844,
+          20.951000213623047,
+          13.329000473022461
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "TYR",
+        "number": 59,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 455,
+        "name": "N",
+        "coordinates": [
+          21.84600067138672,
+          19.95400047302246,
+          15.904999732971191
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_429_447",
+      "distance": 3.108,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 55,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 429,
+        "name": "O",
+        "coordinates": [
+          25.608999252319336,
+          19.38800048828125,
+          15.286999702453613
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 447,
+        "name": "N",
+        "coordinates": [
+          22.996999740600586,
+          17.97800064086914,
+          14.366000175476074
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_291_312",
+      "distance": 3.109,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "PRO",
+        "number": 38,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 291,
+        "name": "O",
+        "coordinates": [
+          37.2130012512207,
+          28.035999298095703,
+          21.70400047302246
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 41,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 312,
+        "name": "N",
+        "coordinates": [
+          36.0,
+          30.860000610351562,
+          22.172000885009766
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_167_196",
+      "distance": 3.117,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 22,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 167,
+        "name": "O",
+        "coordinates": [
+          32.159000396728516,
+          21.31100082397461,
+          13.861000061035156
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "VAL",
+        "number": 26,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 196,
+        "name": "N",
+        "coordinates": [
+          34.00699996948242,
+          23.7450008392334,
+          13.25
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_191_212",
+      "distance": 3.12,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASN",
+        "number": 25,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 191,
+        "name": "O",
+        "coordinates": [
+          36.066001892089844,
+          24.108999252319336,
+          12.333000183105469
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ALA",
+        "number": 28,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 212,
+        "name": "N",
+        "coordinates": [
+          37.499000549316406,
+          25.743000030517578,
+          14.571000099182129
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_56_68",
+      "distance": 3.147,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 7,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 56,
+        "name": "O",
+        "coordinates": [
+          28.850000381469727,
+          40.564998626708984,
+          16.858999252319336
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 9,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 68,
+        "name": "N",
+        "coordinates": [
+          30.990999221801758,
+          42.57099914550781,
+          17.99799919128418
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_444_455",
+      "distance": 3.158,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 444,
+        "name": "O",
+        "coordinates": [
+          20.96299934387207,
+          18.253000259399414,
+          13.395000457763672
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "TYR",
+        "number": 59,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 455,
+        "name": "N",
+        "coordinates": [
+          21.84600067138672,
+          19.95400047302246,
+          15.904999732971191
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_436_447",
+      "distance": 3.16,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 436,
+        "name": "O",
+        "coordinates": [
+          23.263999938964844,
+          20.951000213623047,
+          13.329000473022461
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 447,
+        "name": "N",
+        "coordinates": [
+          22.996999740600586,
+          17.97800064086914,
+          14.366000175476074
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_298_571",
+      "distance": 3.164,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 39,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 298,
+        "name": "O",
+        "coordinates": [
+          37.683998107910156,
+          29.389999389648438,
+          25.22100067138672
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ARG",
+        "number": 72,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 571,
+        "name": "NE",
+        "coordinates": [
+          35.040000915527344,
+          30.25200080871582,
+          26.729999542236328
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_301_303",
+      "distance": 3.173,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ASP",
+        "number": 39,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 301,
+        "name": "OD1",
+        "coordinates": [
+          40.715999603271484,
+          29.80900001525879,
+          25.45599937438965
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLN",
+        "number": 40,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 303,
+        "name": "N",
+        "coordinates": [
+          38.41899871826172,
+          30.37299919128418,
+          23.340999603271484
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_583_594",
+      "distance": 3.186,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "ARG",
+        "number": 74,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 583,
+        "name": "N",
+        "coordinates": [
+          40.29399871826172,
+          34.4119987487793,
+          29.045000076293945
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "GLY",
+        "number": 75,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 594,
+        "name": "N",
+        "coordinates": [
+          41.165000915527344,
+          35.53099822998047,
+          31.898000717163086
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_58_73",
+      "distance": 3.187,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 7,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 58,
+        "name": "OG1",
+        "coordinates": [
+          31.73699951171875,
+          40.25699996948242,
+          15.824000358581543
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "THR",
+        "number": 9,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 73,
+        "name": "OG1",
+        "coordinates": [
+          33.17399978637695,
+          43.06700134277344,
+          16.264999389648438
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_446_447",
+      "distance": 3.188,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "SER",
+        "number": 57,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 446,
+        "name": "OG",
+        "coordinates": [
+          23.913999557495117,
+          16.395000457763672,
+          11.755000114440918
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 447,
+        "name": "N",
+        "coordinates": [
+          22.996999740600586,
+          17.97800064086914,
+          14.366000175476074
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_237_251",
+      "distance": 3.191,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "GLN",
+        "number": 31,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 237,
+        "name": "O",
+        "coordinates": [
+          41.827999114990234,
+          31.808000564575195,
+          12.680999755859375
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "LYS",
+        "number": 33,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 251,
+        "name": "N",
+        "coordinates": [
+          40.117000579833984,
+          31.75,
+          9.98799991607666
+        ]
+      }
+    },
+    {
+      "id": "hb_fallback_169_188",
+      "distance": 3.193,
+      "angle": null,
+      "fallback": true,
+      "donor_residue": {
+        "name": "THR",
+        "number": 22,
+        "chain": "A"
+      },
+      "donor_atom": {
+        "id": 169,
+        "name": "OG1",
+        "coordinates": [
+          33.77799987792969,
+          18.73900032043457,
+          14.515999794006348
+        ]
+      },
+      "hydrogen_atom": null,
+      "acceptor_residue": {
+        "name": "ASN",
+        "number": 25,
+        "chain": "A"
+      },
+      "acceptor_atom": {
+        "id": 188,
+        "name": "N",
+        "coordinates": [
+          35.138999938964844,
+          21.624000549316406,
+          14.661999702453613
+        ]
+      }
+    }
+  ],
+  "salt_bridges": [
+    {
+      "id": "sb_211_410",
+      "distance": 2.902,
+      "positive_residue": {
+        "name": "LYS",
+        "number": 27,
+        "chain": "A"
+      },
+      "positive_atom": {
+        "id": 211,
+        "name": "NZ",
+        "coordinates": [
+          33.45500183105469,
+          25.90999984741211,
+          21.54599952697754
+        ]
+      },
+      "negative_residue": {
+        "name": "ASP",
+        "number": 52,
+        "chain": "A"
+      },
+      "negative_atom": {
+        "id": 410,
+        "name": "OD2",
+        "coordinates": [
+          33.54399871826172,
+          23.086000442504883,
+          20.882999420166016
+        ]
+      }
+    },
+    {
+      "id": "sb_87_268",
+      "distance": 3.347,
+      "positive_residue": {
+        "name": "LYS",
+        "number": 11,
+        "chain": "A"
+      },
+      "positive_atom": {
+        "id": 87,
+        "name": "NZ",
+        "coordinates": [
+          35.099998474121094,
+          40.073001861572266,
+          9.10099983215332
+        ]
+      },
+      "negative_residue": {
+        "name": "GLU",
+        "number": 34,
+        "chain": "A"
+      },
+      "negative_atom": {
+        "id": 268,
+        "name": "OE2",
+        "coordinates": [
+          36.861000061035156,
+          37.31999969482422,
+          9.821999549865723
+        ]
+      }
+    },
+    {
+      "id": "sb_424_453",
+      "distance": 3.885,
+      "positive_residue": {
+        "name": "ARG",
+        "number": 54,
+        "chain": "A"
+      },
+      "positive_atom": {
+        "id": 424,
+        "name": "NH1",
+        "coordinates": [
+          27.479000091552734,
+          13.732999801635742,
+          19.53700065612793
+        ]
+      },
+      "negative_residue": {
+        "name": "ASP",
+        "number": 58,
+        "chain": "A"
+      },
+      "negative_atom": {
+        "id": 453,
+        "name": "OD1",
+        "coordinates": [
+          25.30299949645996,
+          15.894000053405762,
+          17.152000427246094
+        ]
+      }
+    },
+    {
+      "id": "sb_87_267",
+      "distance": 3.906,
+      "positive_residue": {
+        "name": "LYS",
+        "number": 11,
+        "chain": "A"
+      },
+      "positive_atom": {
+        "id": 87,
+        "name": "NZ",
+        "coordinates": [
+          35.099998474121094,
+          40.073001861572266,
+          9.10099983215332
+        ]
+      },
+      "negative_residue": {
+        "name": "GLU",
+        "number": 34,
+        "chain": "A"
+      },
+      "negative_atom": {
+        "id": 267,
+        "name": "OE1",
+        "coordinates": [
+          37.51900100708008,
+          38.36000061035156,
+          11.645000457763672
+        ]
+      }
+    }
+  ],
+  "disulfide_bonds": [],
+  "pi_stacking": [],
+  "hydrophobic_contacts": [
+    {
+      "id": "hph_336_390",
+      "distance": 4.304,
+      "residue_a": {
+        "name": "LEU",
+        "number": 43,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 336,
+        "name": "CB",
+        "coordinates": [
+          29.150999069213867,
+          28.655000686645508,
+          18.7549991607666
+        ]
+      },
+      "residue_b": {
+        "name": "LEU",
+        "number": 50,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 390,
+        "name": "CB",
+        "coordinates": [
+          27.042999267578125,
+          24.992000579833984,
+          19.570999145507812
+        ]
+      }
+    },
+    {
+      "id": "hph_479_437",
+      "distance": 4.337,
+      "residue_a": {
+        "name": "ILE",
+        "number": 61,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 479,
+        "name": "CB",
+        "coordinates": [
+          22.649999618530273,
+          24.516000747680664,
+          12.17199993133545
+        ]
+      },
+      "residue_b": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 437,
+        "name": "CB",
+        "coordinates": [
+          26.083999633789062,
+          21.88800048828125,
+          11.833000183105469
+        ]
+      }
+    },
+    {
+      "id": "hph_175_390",
+      "distance": 4.754,
+      "residue_a": {
+        "name": "ILE",
+        "number": 23,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 175,
+        "name": "CB",
+        "coordinates": [
+          30.520000457763672,
+          22.299999237060547,
+          17.763999938964844
+        ]
+      },
+      "residue_b": {
+        "name": "LEU",
+        "number": 50,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 390,
+        "name": "CB",
+        "coordinates": [
+          27.042999267578125,
+          24.992000579833984,
+          19.570999145507812
+        ]
+      }
+    },
+    {
+      "id": "hph_99_41",
+      "distance": 4.906,
+      "residue_a": {
+        "name": "ILE",
+        "number": 13,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 99,
+        "name": "CB",
+        "coordinates": [
+          32.994998931884766,
+          35.882999420166016,
+          9.934000015258789
+        ]
+      },
+      "residue_b": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 41,
+        "name": "CB",
+        "coordinates": [
+          29.96299934387207,
+          33.31700134277344,
+          12.814000129699707
+        ]
+      }
+    },
+    {
+      "id": "hph_147_437",
+      "distance": 4.92,
+      "residue_a": {
+        "name": "PRO",
+        "number": 19,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 147,
+        "name": "CB",
+        "coordinates": [
+          24.4689998626709,
+          19.332000732421875,
+          7.952000141143799
+        ]
+      },
+      "residue_b": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 437,
+        "name": "CB",
+        "coordinates": [
+          26.083999633789062,
+          21.88800048828125,
+          11.833000183105469
+        ]
+      }
+    },
+    {
+      "id": "hph_527_41",
+      "distance": 5.039,
+      "residue_a": {
+        "name": "LEU",
+        "number": 67,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 527,
+        "name": "CB",
+        "coordinates": [
+          26.309999465942383,
+          30.5939998626709,
+          14.967000007629395
+        ]
+      },
+      "residue_b": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 41,
+        "name": "CB",
+        "coordinates": [
+          29.96299934387207,
+          33.31700134277344,
+          12.814000129699707
+        ]
+      }
+    },
+    {
+      "id": "hph_352_527",
+      "distance": 5.058,
+      "residue_a": {
+        "name": "PHE",
+        "number": 45,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 352,
+        "name": "CB",
+        "coordinates": [
+          22.493999481201172,
+          28.05699920654297,
+          17.108999252319336
+        ]
+      },
+      "residue_b": {
+        "name": "LEU",
+        "number": 67,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 527,
+        "name": "CB",
+        "coordinates": [
+          26.309999465942383,
+          30.5939998626709,
+          14.967000007629395
+        ]
+      }
+    },
+    {
+      "id": "hph_336_527",
+      "distance": 5.117,
+      "residue_a": {
+        "name": "LEU",
+        "number": 43,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 336,
+        "name": "CB",
+        "coordinates": [
+          29.150999069213867,
+          28.655000686645508,
+          18.7549991607666
+        ]
+      },
+      "residue_b": {
+        "name": "LEU",
+        "number": 67,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 527,
+        "name": "CB",
+        "coordinates": [
+          26.309999465942383,
+          30.5939998626709,
+          14.967000007629395
+        ]
+      }
+    },
+    {
+      "id": "hph_545_41",
+      "distance": 5.128,
+      "residue_a": {
+        "name": "LEU",
+        "number": 69,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 545,
+        "name": "CB",
+        "coordinates": [
+          30.924999237060547,
+          34.30400085449219,
+          17.753000259399414
+        ]
+      },
+      "residue_b": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 41,
+        "name": "CB",
+        "coordinates": [
+          29.96299934387207,
+          33.31700134277344,
+          12.814000129699707
+        ]
+      }
+    },
+    {
+      "id": "hph_22_114",
+      "distance": 5.291,
+      "residue_a": {
+        "name": "ILE",
+        "number": 3,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 22,
+        "name": "CB",
+        "coordinates": [
+          26.3439998626709,
+          29.049999237060547,
+          8.645000457763672
+        ]
+      },
+      "residue_b": {
+        "name": "LEU",
+        "number": 15,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 114,
+        "name": "CB",
+        "coordinates": [
+          31.562000274658203,
+          29.68600082397461,
+          8.045000076293945
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "num_atoms": 660,
+    "num_residues": 134,
+    "num_segments": 1,
+    "num_protein_atoms": 602,
+    "num_protein_residues": 76,
+    "unique_residues": [
+      "GLU",
+      "TYR",
+      "VAL",
+      "ASP",
+      "ILE",
+      "LEU",
+      "MET",
+      "HOH",
+      "PHE",
+      "GLN",
+      "ALA",
+      "ARG",
+      "PRO",
+      "LYS",
+      "GLY",
+      "THR",
+      "SER",
+      "ASN",
+      "HIS"
+    ],
+    "file_id": "2b9e3144-ae88-469d-ab13-6ab9350f75df",
+    "hbond_method": "Fallback (Distance-only)",
+    "hbond_warning": "No hydrogen atoms found in file. Fallback donor-acceptor mode used.",
+    "salt_bridge_count": 4,
+    "hbond_count": 177,
+    "disulfide_bond_count": 0,
+    "pi_stacking_count": 0,
+    "hydrophobic_contact_count": 10
+  }
+}
