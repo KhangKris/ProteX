@@ -161,6 +161,8 @@ export default function InteractionTable({
                   <th className="p-3">Acceptor</th>
                   <th className="p-3 text-right">Dist (Å)</th>
                   <th className="p-3 text-right">Angle</th>
+                  <th className="p-3 text-right">Energy (kJ/mol)</th>
+                  <th className="p-3 text-center">Strength</th>
                 </tr></thead>
                 <tbody className="divide-y divide-slate-800/40">
                   {filteredHBonds.map(hb => (
@@ -176,6 +178,10 @@ export default function InteractionTable({
                       </td>
                       <td className="p-3 text-right font-mono text-cyan-400 font-bold">{hb.distance.toFixed(3)}</td>
                       <td className="p-3 text-right font-mono text-slate-400">{hb.angle ? `${hb.angle.toFixed(1)}°` : '—'}</td>
+                      <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{hb.energy_kj_mol != null ? hb.energy_kj_mol.toFixed(1) : '—'}</td>
+                      <td className="p-3 text-center">
+                        <StrengthBadge strength={hb.strength} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -191,6 +197,8 @@ export default function InteractionTable({
                   <th className="p-3 pl-4">Positive (LYS/ARG)</th>
                   <th className="p-3">Negative (ASP/GLU)</th>
                   <th className="p-3 text-right">Dist (Å)</th>
+                  <th className="p-3 text-right">Energy (kJ/mol)</th>
+                  <th className="p-3 text-center">Strength</th>
                 </tr></thead>
                 <tbody className="divide-y divide-slate-800/40">
                   {filteredSaltBridges.map(sb => (
@@ -205,6 +213,10 @@ export default function InteractionTable({
                         <span className="text-[10px] text-slate-500 ml-1">{sb.negative_atom.name}</span>
                       </td>
                       <td className="p-3 text-right font-mono text-amber-400 font-bold">{sb.distance.toFixed(3)}</td>
+                      <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{sb.energy_kj_mol != null ? sb.energy_kj_mol.toFixed(1) : '—'}</td>
+                      <td className="p-3 text-center">
+                        <StrengthBadge strength={sb.strength} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -220,6 +232,8 @@ export default function InteractionTable({
                   <th className="p-3 pl-4">CYS A</th>
                   <th className="p-3">CYS B</th>
                   <th className="p-3 text-right">S–S Dist (Å)</th>
+                  <th className="p-3 text-right">Energy (kJ/mol)</th>
+                  <th className="p-3 text-center">Strength</th>
                 </tr></thead>
                 <tbody className="divide-y divide-slate-800/40">
                   {filteredDisulfide.map(ss => (
@@ -228,6 +242,10 @@ export default function InteractionTable({
                       <td className="p-3 pl-4"><ResidueChip chain={ss.residue_a.chain} name={ss.residue_a.name} number={ss.residue_a.number} color="#d4a017" /></td>
                       <td className="p-3"><ResidueChip chain={ss.residue_b.chain} name={ss.residue_b.name} number={ss.residue_b.number} color="#d4a017" /></td>
                       <td className="p-3 text-right font-mono font-bold" style={{ color: '#d4a017' }}>{ss.distance.toFixed(3)}</td>
+                      <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{ss.energy_kj_mol != null ? ss.energy_kj_mol.toFixed(1) : '—'}</td>
+                      <td className="p-3 text-center">
+                        <StrengthBadge strength={ss.strength || 'covalent'} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -245,6 +263,8 @@ export default function InteractionTable({
                   <th className="p-3 text-right">Dist (Å)</th>
                   <th className="p-3 text-right">Angle</th>
                   <th className="p-3 text-right">Type</th>
+                  <th className="p-3 text-right">Energy (kJ/mol)</th>
+                  <th className="p-3 text-center">Strength</th>
                 </tr></thead>
                 <tbody className="divide-y divide-slate-800/40">
                   {filteredPiStack.map(pi => (
@@ -258,6 +278,10 @@ export default function InteractionTable({
                         <span className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${pi.stack_type === 'parallel' ? 'bg-purple-500/20 text-purple-300' : 'bg-indigo-500/20 text-indigo-300'}`}>
                           {pi.stack_type === 'parallel' ? '∥ parallel' : '⊥ T-shaped'}
                         </span>
+                      </td>
+                      <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{pi.energy_kj_mol != null ? pi.energy_kj_mol.toFixed(1) : '—'}</td>
+                      <td className="p-3 text-center">
+                        <StrengthBadge strength={pi.strength} />
                       </td>
                     </tr>
                   ))}
@@ -274,6 +298,8 @@ export default function InteractionTable({
                   <th className="p-3 pl-4">Residue A</th>
                   <th className="p-3">Residue B</th>
                   <th className="p-3 text-right">Cβ–Cβ (Å)</th>
+                  <th className="p-3 text-right">Energy (kJ/mol)</th>
+                  <th className="p-3 text-center">Strength</th>
                 </tr></thead>
                 <tbody className="divide-y divide-slate-800/40">
                   {filteredHydrophobic.map(hc => (
@@ -282,6 +308,10 @@ export default function InteractionTable({
                       <td className="p-3 pl-4"><ResidueChip chain={hc.residue_a.chain} name={hc.residue_a.name} number={hc.residue_a.number} color="#f97316" /></td>
                       <td className="p-3"><ResidueChip chain={hc.residue_b.chain} name={hc.residue_b.name} number={hc.residue_b.number} color="#f97316" /></td>
                       <td className="p-3 text-right font-mono font-bold text-orange-400">{hc.distance.toFixed(3)}</td>
+                      <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{hc.energy_kj_mol != null ? hc.energy_kj_mol.toFixed(1) : '—'}</td>
+                      <td className="p-3 text-center">
+                        <StrengthBadge strength={hc.strength} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -293,12 +323,27 @@ export default function InteractionTable({
       <div className="p-3 bg-slate-950/80 border-t border-slate-800 text-[10px] text-slate-500 flex items-center justify-between select-none">
         <span>Click any row to focus the 3D camera on that interaction.</span>
         {selectedInteractionId && (
-          <button onClick={() => onSelectInteraction(null)} className="text-cyan-400 hover:underline font-semibold">
+          <button onClick={() => onSelectInteraction(null)} className="text-cyan-400 hover:underline font-semibold" id="clear-selection-btn">
             Clear Selection
           </button>
         )}
       </div>
     </div>
+  );
+}
+
+function StrengthBadge({ strength }: { strength?: string }) {
+  if (!strength) return <span className="text-slate-500">—</span>;
+  const classes: Record<string, string> = {
+    covalent: 'bg-purple-500/20 text-purple-300 border border-purple-500/30',
+    strong: 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30',
+    moderate: 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
+    weak: 'bg-slate-500/25 text-slate-400 border border-slate-500/15',
+  };
+  return (
+    <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${classes[strength] || classes.weak}`}>
+      {strength}
+    </span>
   );
 }
 

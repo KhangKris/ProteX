@@ -6,11 +6,14 @@ import {
   Database,
   FileCheck,
   RotateCcw,
+  Upload,
+  FlaskConical,
 } from 'lucide-react';
 
 import UploadZone from './components/UploadZone';
 import Viewer3D from './components/Viewer3D';
 import InteractionTable from './components/InteractionTable';
+import SequenceInput from './components/SequenceInput';
 import {
   analyzeProtein,
   SaltBridge,
@@ -19,6 +22,7 @@ import {
   PiStack,
   HydrophobicContact,
   AnalysisMetadata,
+  PredictResponse,
 } from './utils/api';
 
 // Reusable toggle row component
@@ -59,6 +63,9 @@ export default function App() {
   const [fileId, setFileId] = useState<string | null>('2b9e3144-ae88-469d-ab13-6ab9350f75df');
   const [filename, setFilename] = useState<string | null>('1ubq.pdb');
   const [extension, setExtension] = useState<string | null>('.pdb');
+
+  // Input mode: "upload" or "predict"
+  const [inputMode, setInputMode] = useState<'upload' | 'predict'>('upload');
 
   // Interaction data
   const [saltBridges, setSaltBridges] = useState<SaltBridge[]>([]);
@@ -156,6 +163,21 @@ export default function App() {
     setError(err);
   };
 
+  const handlePredictionComplete = (result: PredictResponse) => {
+    setFileId(result.file_id);
+    setFilename(`predicted_${result.file_id.slice(0, 8)}${result.extension}`);
+    setExtension(result.extension);
+    const a = result.analysis;
+    setSaltBridges(a.salt_bridges ?? []);
+    setHydrogenBonds(a.hydrogen_bonds ?? []);
+    setDisulfideBonds(a.disulfide_bonds ?? []);
+    setPiStacking(a.pi_stacking ?? []);
+    setHydrophobicContacts(a.hydrophobic_contacts ?? []);
+    setMetadata(a.metadata ?? null);
+    setSelectedInteractionId(null);
+    setError(null);
+  };
+
   const resetAll = () => {
     setFileId(null);
     setFilename(null);
@@ -215,18 +237,56 @@ export default function App() {
         {/* Left Column - Controls & Upload (Columns 1-4) */}
         <section className="lg:col-span-4 flex flex-col gap-6 w-full">
 
-          {/* File Upload Card / Active File */}
+          {/* Mode Tabs + Input */}
           {!fileId ? (
             <div className="glass-panel p-6 rounded-2xl shadow-xl flex flex-col gap-4 border border-slate-800">
-              <div>
-                <h2 className="text-lg font-bold text-slate-200">Select Protein Structure</h2>
-                <p className="text-xs text-slate-400">Upload a molecular file to analyze interactions</p>
+              {/* Mode Switch Tabs */}
+              <div className="flex gap-1 p-1 bg-slate-950/80 rounded-xl border border-slate-800">
+                <button
+                  onClick={() => setInputMode('upload')}
+                  className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+                    inputMode === 'upload'
+                      ? 'bg-cyan-500/15 text-cyan-400 border border-cyan-500/30'
+                      : 'text-slate-400 hover:text-slate-200 border border-transparent'
+                  }`}
+                  id="mode-upload-btn"
+                >
+                  <Upload className="h-3.5 w-3.5" />
+                  Upload File
+                </button>
+                <button
+                  onClick={() => setInputMode('predict')}
+                  className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+                    inputMode === 'predict'
+                      ? 'bg-purple-500/15 text-purple-400 border border-purple-500/30'
+                      : 'text-slate-400 hover:text-slate-200 border border-transparent'
+                  }`}
+                  id="mode-predict-btn"
+                >
+                  <FlaskConical className="h-3.5 w-3.5" />
+                  Predict from Sequence
+                </button>
               </div>
-              <UploadZone
-                onUploadStart={handleUploadStart}
-                onUploadSuccess={handleUploadSuccess}
-                onUploadError={handleUploadError}
-              />
+
+              {/* Upload Mode */}
+              {inputMode === 'upload' && (
+                <>
+                  <div>
+                    <h2 className="text-lg font-bold text-slate-200">Upload Structure File</h2>
+                    <p className="text-xs text-slate-400">Upload a .pdb, .cif or .mmcif file to analyze</p>
+                  </div>
+                  <UploadZone
+                    onUploadStart={handleUploadStart}
+                    onUploadSuccess={handleUploadSuccess}
+                    onUploadError={handleUploadError}
+                  />
+                </>
+              )}
+
+              {/* Predict Mode */}
+              {inputMode === 'predict' && (
+                <SequenceInput onPredictionComplete={handlePredictionComplete} />
+              )}
             </div>
           ) : (
             <div className="glass-panel p-6 rounded-2xl shadow-xl flex flex-col gap-5 border border-slate-800">
@@ -304,6 +364,39 @@ export default function App() {
                   Structure Metadata
                 </h3>
               </div>
+
+              {/* Confidence scores (when predicted via NIM) */}
+              {metadata.prediction_source && (
+                <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl">
+                  <p className="text-[10px] text-purple-300 font-semibold mb-2 flex items-center gap-1.5">
+                    <Sparkles className="h-3 w-3" />
+                    OpenFold 3 Prediction Confidence
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { label: 'pLDDT', value: metadata.complex_plddt_score, max: 100 },
+                      { label: 'pTM', value: metadata.ptm_score, max: 1 },
+                      { label: 'ipTM', value: metadata.iptm_score, max: 1 },
+                      { label: 'Confidence', value: metadata.confidence_score, max: 1 },
+                    ].map(({ label, value, max }) => {
+                      const pct = value != null ? (value / max) * 100 : 0;
+                      const color = pct >= 70 ? 'bg-emerald-500' : pct >= 50 ? 'bg-amber-500' : 'bg-rose-500';
+                      return (
+                        <div key={label} className="p-2 bg-slate-950/40 rounded-lg">
+                          <div className="flex justify-between text-[10px]">
+                            <span className="text-slate-400">{label}</span>
+                            <span className="text-white font-bold">{value != null ? (max === 100 ? value.toFixed(1) : value.toFixed(3)) : '—'}</span>
+                          </div>
+                          <div className="h-1 mt-1 bg-slate-800 rounded-full overflow-hidden">
+                            <div className={`h-full rounded-full ${color} transition-all`} style={{ width: `${pct}%` }} />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
               <div className="grid grid-cols-2 gap-3 text-xs">
                 {[
                   { label: 'TOTAL ATOMS', value: metadata.num_atoms },
@@ -350,21 +443,30 @@ export default function App() {
                 Macromolecular Bond Visualization Engine
               </h2>
               <p className="text-slate-400 text-sm max-w-lg mt-3 leading-relaxed">
-                An advanced computational platform to parse structures, automatically detect 5 types of molecular interactions, and render full interactome networks in WebGL.
+                Upload a structure file or predict from amino acid / nucleotide sequences using NVIDIA OpenFold 3.
+                Automatically detect 5 types of molecular interactions with energy estimates.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-2xl mt-10">
-                {[
-                  { step: 1, color: 'text-neon-cyan', title: 'Upload File', desc: 'Select a .pdb, .cif or .mmcif macromolecular file.' },
-                  { step: 2, color: 'text-neon-purple', title: 'Backend Analysis', desc: 'MDAnalysis detects 5 interaction types automatically.' },
-                  { step: 3, color: 'text-neon-yellow', title: 'Explore in 3D', desc: 'Toggle each interaction layer and zoom to any bond.' },
-                ].map(({ step, color, title, desc }) => (
-                  <div key={step} className="flex flex-col items-center p-4 bg-slate-900/10 rounded-xl border border-slate-800/40">
-                    <div className={`h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold ${color} mb-2`}>{step}</div>
-                    <h4 className="text-xs font-bold text-slate-200">{title}</h4>
-                    <p className="text-[10px] text-slate-400 text-center mt-1">{desc}</p>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mt-10">
+                <button
+                  onClick={() => setInputMode('upload')}
+                  className="flex flex-col items-center p-6 bg-cyan-500/5 hover:bg-cyan-500/10 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all group cursor-pointer"
+                  id="hero-upload-btn"
+                >
+                  <Upload className="h-8 w-8 text-cyan-400 mb-3 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-sm font-bold text-white">Upload Structure</h4>
+                  <p className="text-[11px] text-slate-400 mt-1">.pdb, .cif, .mmcif files</p>
+                </button>
+                <button
+                  onClick={() => setInputMode('predict')}
+                  className="flex flex-col items-center p-6 bg-purple-500/5 hover:bg-purple-500/10 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all group cursor-pointer"
+                  id="hero-predict-btn"
+                >
+                  <FlaskConical className="h-8 w-8 text-purple-400 mb-3 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-sm font-bold text-white">Predict from Sequence</h4>
+                  <p className="text-[11px] text-slate-400 mt-1">Protein · DNA · RNA · Ligand</p>
+                </button>
               </div>
+              <p className="text-[10px] text-slate-600 mt-6">Powered by NVIDIA NIM OpenFold 3 + MDAnalysis</p>
             </div>
           ) : (
             <div className="flex flex-col gap-6 w-full">

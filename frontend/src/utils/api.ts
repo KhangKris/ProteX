@@ -1,5 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
+// ── Shared types ────────────────────────────────────────────────────────────
+
 export interface ResidueInfo {
   name: string;
   number: number;
@@ -12,7 +14,14 @@ export interface AtomInfo {
   coordinates: [number, number, number];
 }
 
-export interface SaltBridge {
+// Energy info added by our interaction_forces module (not in OpenFold 3)
+export interface EnergyInfo {
+  energy_kj_mol?: number;
+  strength?: 'weak' | 'moderate' | 'strong' | 'covalent';
+  force_type?: 'electrostatic' | 'hydrogen' | 'covalent' | 'dispersion' | 'van_der_waals';
+}
+
+export interface SaltBridge extends EnergyInfo {
   id: string;
   distance: number;
   positive_residue: ResidueInfo;
@@ -21,7 +30,7 @@ export interface SaltBridge {
   negative_atom: AtomInfo;
 }
 
-export interface HydrogenBond {
+export interface HydrogenBond extends EnergyInfo {
   id: string;
   distance: number;
   angle: number | null;
@@ -33,7 +42,7 @@ export interface HydrogenBond {
   acceptor_atom: AtomInfo;
 }
 
-export interface DisulfideBond {
+export interface DisulfideBond extends EnergyInfo {
   id: string;
   distance: number;
   residue_a: ResidueInfo;
@@ -42,7 +51,7 @@ export interface DisulfideBond {
   atom_b: AtomInfo;
 }
 
-export interface PiStack {
+export interface PiStack extends EnergyInfo {
   id: string;
   distance: number;
   angle: number;
@@ -53,7 +62,7 @@ export interface PiStack {
   residue_b: ResidueInfo;
 }
 
-export interface HydrophobicContact {
+export interface HydrophobicContact extends EnergyInfo {
   id: string;
   distance: number;
   residue_a: ResidueInfo;
@@ -77,6 +86,14 @@ export interface AnalysisMetadata {
   disulfide_bond_count: number;
   pi_stacking_count: number;
   hydrophobic_contact_count: number;
+  // NIM prediction metadata (only present when predicted)
+  prediction_source?: string;
+  confidence_score?: number;
+  complex_plddt_score?: number;
+  complex_pde_score?: number;
+  ptm_score?: number;
+  iptm_score?: number;
+  input_molecules?: MoleculeInput[];
 }
 
 export interface AnalysisResponse {
@@ -94,6 +111,25 @@ export interface UploadResponse {
   extension: string;
   status: string;
 }
+
+// ── Prediction types ────────────────────────────────────────────────────────
+
+export interface MoleculeInput {
+  type: 'protein' | 'dna' | 'rna' | 'ligand';
+  sequence?: string;
+  id?: string;  // Chain ID
+  smiles?: string;
+  ccd_codes?: string[];
+}
+
+export interface PredictResponse {
+  file_id: string;
+  extension: string;
+  status: string;
+  analysis: AnalysisResponse;
+}
+
+// ── API Functions ───────────────────────────────────────────────────────────
 
 export async function uploadProteinFile(file: File): Promise<UploadResponse> {
   const formData = new FormData();
@@ -125,6 +161,27 @@ export async function analyzeProtein(fileId: string, refresh = false): Promise<A
     throw new Error(errorData.detail || 'Analysis failed');
   }
 
+  return response.json();
+}
+
+export async function predictStructure(molecules: MoleculeInput[]): Promise<PredictResponse> {
+  const response = await fetch(`${API_URL}/predict`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ molecules, output_format: 'pdb' }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ detail: 'Prediction failed' }));
+    throw new Error(errorData.detail || 'Prediction failed');
+  }
+
+  return response.json();
+}
+
+export async function checkNimStatus(): Promise<{ configured: boolean; message: string }> {
+  const response = await fetch(`${API_URL}/nim-status`);
+  if (!response.ok) return { configured: false, message: 'Backend unreachable' };
   return response.json();
 }
 
