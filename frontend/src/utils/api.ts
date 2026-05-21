@@ -14,10 +14,12 @@ export interface AtomInfo {
   coordinates: [number, number, number];
 }
 
-// Energy info added by our interaction_forces module (not in OpenFold 3)
 export interface EnergyInfo {
   energy_kj_mol?: number;
+  force_pn?: number;
+  force_vector?: [number, number, number];
   strength?: 'weak' | 'moderate' | 'strong' | 'covalent';
+  detailed_strength?: string;
   force_type?: 'electrostatic' | 'hydrogen' | 'covalent' | 'dispersion' | 'van_der_waals';
 }
 

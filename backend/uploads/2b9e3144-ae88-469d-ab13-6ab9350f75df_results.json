@@ -33,7 +33,17 @@
           43.67300033569336,
           15.885000228881836
         ]
-      }
+      },
+      "energy_kj_mol": 457.01,
+      "force_pn": 61238.85,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (457.0 kJ/mol, 61238.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        41304.42377085549,
+        44334.188175645744,
+        -8866.837635129148
+      ]
     },
     {
       "id": "hb_fallback_559_564",
@@ -68,7 +78,17 @@
           34.38399887084961,
           25.451000213623047
         ]
-      }
+      },
+      "energy_kj_mol": 453.34,
+      "force_pn": 60788.79,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (453.3 kJ/mol, 60788.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -33725.421228539184,
+        49995.258204952355,
+        7638.560386676142
+      ]
     },
     {
       "id": "hb_fallback_397_403",
@@ -103,7 +123,17 @@
           21.09000015258789,
           21.458999633789062
         ]
-      }
+      },
+      "energy_kj_mol": 428.36,
+      "force_pn": 57729.35,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (428.4 kJ/mol, 57729.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -46029.33721807385,
+        -10782.82241774142,
+        -33131.69104559688
+      ]
     },
     {
       "id": "hb_fallback_315_321",
@@ -138,7 +168,17 @@
           30.91699981689453,
           22.268999099731445
         ]
-      }
+      },
+      "energy_kj_mol": 414.66,
+      "force_pn": 56050.43,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (414.7 kJ/mol, 56050.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        27881.68483051608,
+        -48274.20181361188,
+        5819.25680752665
+      ]
     },
     {
       "id": "hb_fallback_450_455",
@@ -173,7 +213,17 @@
           19.95400047302246,
           15.904999732971191
         ]
-      }
+      },
+      "energy_kj_mol": 414.66,
+      "force_pn": 56050.43,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (414.7 kJ/mol, 56050.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -34135.31151448447,
+        -36640.39689103753,
+        25177.618691962434
+      ]
     },
     {
       "id": "hb_fallback_137_143",
@@ -208,7 +258,17 @@
           20.219999313354492,
           7.288000106811523
         ]
-      }
+      },
+      "energy_kj_mol": 398.09,
+      "force_pn": 54019.89,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (398.1 kJ/mol, 54019.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        45994.569889254555,
+        11048.44615323946,
+        26087.92282558353
+      ]
     },
     {
       "id": "hb_fallback_513_516",
@@ -243,7 +303,17 @@
           31.87299919128418,
           11.241000175476074
         ]
-      }
+      },
+      "energy_kj_mol": 388.44,
+      "force_pn": 52836.81,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (388.4 kJ/mol, 52836.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        31804.543468907454,
+        -13121.145764786357,
+        -40100.31643727915
+      ]
     },
     {
       "id": "hb_fallback_291_295",
@@ -278,7 +348,17 @@
           28.09000015258789,
           22.239999771118164
         ]
-      }
+      },
+      "energy_kj_mol": 375.9,
+      "force_pn": 51299.29,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (375.9 kJ/mol, 51299.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -49775.93789899743,
+        -1243.8426898447246,
+        -12346.078871672255
+      ]
     },
     {
       "id": "hb_fallback_458_467",
@@ -313,7 +393,17 @@
           20.884000778198242,
           14.048999786376953
         ]
-      }
+      },
+      "energy_kj_mol": 372.82,
+      "force_pn": 50921.89,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (372.8 kJ/mol, 50921.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -11291.528522544244,
+        40251.81982307951,
+        29074.580762314316
+      ]
     },
     {
       "id": "hb_fallback_174_179",
@@ -348,7 +438,17 @@
           21.525999069213867,
           16.950000762939453
         ]
-      }
+      },
+      "energy_kj_mol": 369.76,
+      "force_pn": 50547.25,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (369.8 kJ/mol, 50547.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -7142.654570274583,
+        48366.21619449021,
+        -12834.1587391176
+      ]
     },
     {
       "id": "hb_fallback_237_243",
@@ -383,7 +483,17 @@
           29.878000259399414,
           11.930999755859375
         ]
-      }
+      },
+      "energy_kj_mol": 366.73,
+      "force_pn": 50175.33,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (366.7 kJ/mol, 50175.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        18610.55453646592,
+        43432.15298035681,
+        16877.776986828412
+      ]
     },
     {
       "id": "hb_fallback_371_377",
@@ -418,7 +528,17 @@
           26.726999282836914,
           23.85099983215332
         ]
-      }
+      },
+      "energy_kj_mol": 360.73,
+      "force_pn": 49439.62,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (360.7 kJ/mol, 49439.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -11009.230414559508,
+        19936.27634469703,
+        -43881.862670010516
+      ]
     },
     {
       "id": "hb_fallback_146_150",
@@ -453,7 +573,17 @@
           17.958999633789062,
           8.559000015258789
         ]
-      }
+      },
+      "energy_kj_mol": 354.82,
+      "force_pn": 48714.59,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (354.8 kJ/mol, 48714.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -22413.508286016873,
+        12580.338806081452,
+        41382.13859663832
+      ]
     },
     {
       "id": "hb_fallback_306_312",
@@ -488,7 +618,17 @@
           30.860000610351562,
           22.172000885009766
         ]
-      }
+      },
+      "energy_kj_mol": 354.82,
+      "force_pn": 48714.59,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (354.8 kJ/mol, 48714.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -9289.326414871166,
+        38334.931352851294,
+        28587.639390559772
+      ]
     },
     {
       "id": "hb_fallback_414_415",
@@ -523,7 +663,17 @@
           17.5939998626709,
           19.076000213623047
         ]
-      }
+      },
+      "energy_kj_mol": 354.82,
+      "force_pn": 48714.59,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (354.8 kJ/mol, 48714.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        18706.767953561462,
+        -42231.961586628844,
+        -15479.984698688837
+      ]
     },
     {
       "id": "hb_fallback_254_260",
@@ -558,7 +708,17 @@
           34.334999084472656,
           11.28499984741211
         ]
-      }
+      },
+      "energy_kj_mol": 349.0,
+      "force_pn": 48000.09,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (349.0 kJ/mol, 48000.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        10927.678163156656,
+        21211.2365592917,
+        -41649.46797542063
+      ]
     },
     {
       "id": "hb_fallback_229_234",
@@ -593,7 +753,17 @@
           30.110000610351562,
           13.713000297546387
         ]
-      }
+      },
+      "energy_kj_mol": 340.42,
+      "force_pn": 46947.73,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (340.4 kJ/mol, 46947.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -7109.7467291689845,
+        42784.24721600385,
+        -17973.577658841652
+      ]
     },
     {
       "id": "hb_fallback_367_368",
@@ -628,7 +798,17 @@
           27.930999755859375,
           22.577999114990234
         ]
-      }
+      },
+      "energy_kj_mol": 340.42,
+      "force_pn": 46947.73,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (340.4 kJ/mol, 46947.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -16981.392214660274,
+        13689.911411132047,
+        41572.929247993896
+      ]
     },
     {
       "id": "hb_fallback_98_103",
@@ -663,7 +843,17 @@
           34.986000061035156,
           7.197000026702881
         ]
-      }
+      },
+      "energy_kj_mol": 337.6,
+      "force_pn": 46602.04,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (337.6 kJ/mol, 46602.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -25359.567668144657,
+        -7655.720038673484,
+        38341.00642589198
+      ]
     },
     {
       "id": "hb_fallback_470_475",
@@ -698,7 +888,17 @@
           22.964000701904297,
           12.260000228881836
         ]
-      }
+      },
+      "energy_kj_mol": 334.81,
+      "force_pn": 46258.87,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (334.8 kJ/mol, 46258.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -44291.73538161154,
+        13332.925546205668,
+        598.5231332620124
+      ]
     },
     {
       "id": "hb_fallback_362_364",
@@ -733,7 +933,17 @@
           29.808000564575195,
           21.243000030517578
         ]
-      }
+      },
+      "energy_kj_mol": 332.03,
+      "force_pn": 45918.19,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (332.0 kJ/mol, 45918.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -26874.682152001962,
+        -37157.5398882934,
+        -2355.626257135335
+      ]
     },
     {
       "id": "hb_fallback_263_269",
@@ -768,7 +978,17 @@
           34.393001556396484,
           13.432000160217285
         ]
-      }
+      },
+      "energy_kj_mol": 323.83,
+      "force_pn": 44910.96,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (323.8 kJ/mol, 44911.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -10061.854252546967,
+        42707.65289060838,
+        9581.726335931298
+      ]
     },
     {
       "id": "hb_fallback_298_303",
@@ -803,7 +1023,17 @@
           30.37299919128418,
           23.340999603271484
         ]
-      }
+      },
+      "energy_kj_mol": 323.83,
+      "force_pn": 44910.96,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (323.8 kJ/mol, 44911.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -14702.296082245895,
+        -19663.0505184545,
+        37605.86310962095
+      ]
     },
     {
       "id": "hb_fallback_246_251",
@@ -838,7 +1068,17 @@
           31.75,
           9.98799991607666
         ]
-      }
+      },
+      "energy_kj_mol": 321.13,
+      "force_pn": 44580.08,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (321.1 kJ/mol, 44580.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        42543.35120273457,
+        5677.732806649327,
+        -12050.329595897869
+      ]
     },
     {
       "id": "hb_fallback_418_426",
@@ -873,7 +1113,17 @@
           17.68899917602539,
           15.954000473022461
         ]
-      }
+      },
+      "energy_kj_mol": 321.13,
+      "force_pn": 44580.08,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (321.1 kJ/mol, 44580.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        36050.71629267569,
+        21777.335080442288,
+        14610.864325283317
+      ]
     },
     {
       "id": "hb_fallback_429_433",
@@ -908,7 +1158,17 @@
           20.062999725341797,
           13.378000259399414
         ]
-      }
+      },
+      "energy_kj_mol": 315.8,
+      "force_pn": 43925.54,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (315.8 kJ/mol, 43925.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -19072.80545987945,
+        -13190.70834840109,
+        37305.30867004422
+      ]
     },
     {
       "id": "hb_fallback_106_110",
@@ -943,7 +1203,17 @@
           31.485000610351562,
           6.665999889373779
         ]
-      }
+      },
+      "energy_kj_mol": 310.55,
+      "force_pn": 43280.47,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (310.6 kJ/mol, 43280.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        33369.64522382386,
+        25522.502082222705,
+        -10405.180328541428
+      ]
     },
     {
       "id": "hb_fallback_56_60",
@@ -978,7 +1248,17 @@
           40.069000244140625,
           18.642000198364258
         ]
-      }
+      },
+      "energy_kj_mol": 307.96,
+      "force_pn": 42961.45,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (308.0 kJ/mol, 42961.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -24463.664974504536,
+        9464.85347772851,
+        -34023.98737185528
+      ]
     },
     {
       "id": "hb_fallback_78_79",
@@ -1013,7 +1293,17 @@
           42.62300109863281,
           13.494999885559082
         ]
-      }
+      },
+      "energy_kj_mol": 302.82,
+      "force_pn": 42330.34,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (302.8 kJ/mol, 42330.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -25251.350312785708,
+        25514.34825634796,
+        -22433.12613025866
+      ]
     },
     {
       "id": "hb_fallback_199_203",
@@ -1048,7 +1338,17 @@
           25.82200050354004,
           14.949000358581543
         ]
-      }
+      },
+      "energy_kj_mol": 302.82,
+      "force_pn": 42330.34,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (302.8 kJ/mol, 42330.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        2799.7886061510694,
+        23826.660513625702,
+        -34875.625300066225
+      ]
     },
     {
       "id": "hb_fallback_276_281",
@@ -1083,7 +1383,17 @@
           32.084999084472656,
           19.0310001373291
         ]
-      }
+      },
+      "energy_kj_mol": 302.82,
+      "force_pn": 42330.34,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (302.8 kJ/mol, 42330.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -23542.689534167966,
+        -14072.997351113894,
+        -32242.058287191318
+      ]
     },
     {
       "id": "hb_fallback_436_441",
@@ -1118,7 +1428,17 @@
           19.232999801635742,
           12.246000289916992
         ]
-      }
+      },
+      "energy_kj_mol": 302.82,
+      "force_pn": 42330.34,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (302.8 kJ/mol, 42330.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -18335.735688714827,
+        32275.416889983568,
+        20345.910372177394
+      ]
     },
     {
       "id": "hb_fallback_534_541",
@@ -1153,7 +1473,17 @@
           34.446998596191406,
           18.18899917602539
         ]
-      }
+      },
+      "energy_kj_mol": 297.76,
+      "force_pn": 41708.37,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (297.8 kJ/mol, 41708.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -18824.708861261883,
+        -34394.803764246004,
+        14220.260376159715
+      ]
     },
     {
       "id": "hb_fallback_182_188",
@@ -1188,7 +1518,17 @@
           21.624000549316406,
           14.661999702453613
         ]
-      }
+      },
+      "energy_kj_mol": 295.26,
+      "force_pn": 41400.76,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (295.3 kJ/mol, 41400.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        25561.415939651815,
+        26093.515234673716,
+        19487.581061134344
+      ]
     },
     {
       "id": "hb_fallback_29_37",
@@ -1223,7 +1563,17 @@
           33.94300079345703,
           11.095999717712402
         ]
-      }
+      },
+      "energy_kj_mol": 292.77,
+      "force_pn": 41095.39,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (292.8 kJ/mol, 41095.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -34774.90772545996,
+        -21210.891400033994,
+        5443.834542298622
+      ]
     },
     {
       "id": "hb_fallback_284_288",
@@ -1258,7 +1608,17 @@
           28.757999420166016,
           19.60700035095215
         ]
-      }
+      },
+      "energy_kj_mol": 292.77,
+      "force_pn": 41095.39,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (292.8 kJ/mol, 41095.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -14477.310218916798,
+        34672.80507927535,
+        16644.384415833458
+      ]
     },
     {
       "id": "hb_fallback_351_359",
@@ -1293,7 +1653,17 @@
           29.378000259399414,
           18.577999114990234
         ]
-      }
+      },
+      "energy_kj_mol": 292.77,
+      "force_pn": 41095.39,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (292.8 kJ/mol, 41095.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        18404.54268161197,
+        -29927.889508752498,
+        21317.262818074003
+      ]
     },
     {
       "id": "hb_fallback_552_556",
@@ -1328,7 +1698,17 @@
           35.83100128173828,
           23.09000015258789
         ]
-      }
+      },
+      "energy_kj_mol": 292.77,
+      "force_pn": 41095.39,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (292.8 kJ/mol, 41095.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -10433.672186971182,
+        -38875.81158425698,
+        -8284.999347156838
+      ]
     },
     {
       "id": "hb_fallback_220_226",
@@ -1363,7 +1743,17 @@
           29.170000076293945,
           12.192000389099121
         ]
-      }
+      },
+      "energy_kj_mol": 290.31,
+      "force_pn": 40792.24,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (290.3 kJ/mol, 40792.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        21837.895160315664,
+        10873.78098203083,
+        -32693.64050991363
+      ]
     },
     {
       "id": "hb_fallback_215_217",
@@ -1398,7 +1788,17 @@
           26.542999267578125,
           11.866999626159668
         ]
-      }
+      },
+      "energy_kj_mol": 287.86,
+      "force_pn": 40491.29,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (287.9 kJ/mol, 40491.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        37125.59557693954,
+        14394.938515632577,
+        7349.845585582572
+      ]
     },
     {
       "id": "hb_fallback_486_492",
@@ -1433,7 +1833,17 @@
           25.86199951171875,
           6.00600004196167
         ]
-      }
+      },
+      "energy_kj_mol": 287.86,
+      "force_pn": 40491.29,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (287.9 kJ/mol, 40491.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        7151.044637401146,
+        17348.900358868657,
+        35880.670964673525
+      ]
     },
     {
       "id": "hb_fallback_159_164",
@@ -1468,7 +1878,17 @@
           18.93600082397461,
           12.85200023651123
         ]
-      }
+      },
+      "energy_kj_mol": 285.43,
+      "force_pn": 40192.52,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (285.4 kJ/mol, 40192.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -38117.95180952089,
+        10441.081336944559,
+        -7310.541463518802
+      ]
     },
     {
       "id": "hb_fallback_544_549",
@@ -1503,7 +1923,17 @@
           34.53300094604492,
           21.19099998474121
         ]
-      }
+      },
+      "energy_kj_mol": 285.43,
+      "force_pn": 40192.52,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (285.4 kJ/mol, 40192.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -337.881521474428,
+        31510.216115996747,
+        -24948.55832564483
+      ]
     },
     {
       "id": "hb_fallback_389_394",
@@ -1538,7 +1968,17 @@
           22.447999954223633,
           21.648000717163086
         ]
-      }
+      },
+      "energy_kj_mol": 283.02,
+      "force_pn": 39895.92,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (283.0 kJ/mol, 39895.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        16974.998133820714,
+        35220.48332474015,
+        7940.4683804668975
+      ]
     },
     {
       "id": "hb_fallback_206_212",
@@ -1573,7 +2013,17 @@
           25.743000030517578,
           14.571000099182129
         ]
-      }
+      },
+      "energy_kj_mol": 280.62,
+      "force_pn": 39601.46,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (280.6 kJ/mol, 39601.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        1400.4118969452436,
+        38214.69707461893,
+        10293.287878692603
+      ]
     },
     {
       "id": "hb_fallback_12_18",
@@ -1608,7 +2058,17 @@
           29.6560001373291,
           6.2170000076293945
         ]
-      }
+      },
+      "energy_kj_mol": 278.25,
+      "force_pn": 39309.15,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (278.2 kJ/mol, 39309.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -34458.51452872293,
+        -10976.69727884992,
+        -15405.588414054153
+      ]
     },
     {
       "id": "hb_fallback_504_510",
@@ -1643,7 +2103,17 @@
           30.034000396728516,
           8.190999984741211
         ]
-      }
+      },
+      "energy_kj_mol": 278.25,
+      "force_pn": 39309.15,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (278.2 kJ/mol, 39309.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -10561.657503968347,
+        36097.240306708016,
+        -11430.218461149541
+      ]
     },
     {
       "id": "hb_fallback_597_598",
@@ -1678,7 +2148,17 @@
           38.47200012207031,
           33.75699996948242
         ]
-      }
+      },
+      "energy_kj_mol": 278.25,
+      "force_pn": 39309.15,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (278.2 kJ/mol, 39309.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        2709.861731789592,
+        885.8819291428061,
+        -39205.62617358842
+      ]
     },
     {
       "id": "hb_fallback_4_9",
@@ -1713,7 +2193,17 @@
           27.770000457763672,
           3.257999897003174
         ]
-      }
+      },
+      "energy_kj_mol": 275.89,
+      "force_pn": 39018.95,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (275.9 kJ/mol, 39019.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        26735.488478457177,
+        -22529.529216389157,
+        17323.76445598728
+      ]
     },
     {
       "id": "hb_fallback_343_348",
@@ -1748,7 +2238,17 @@
           29.187000274658203,
           19.240999221801758
         ]
-      }
+      },
+      "energy_kj_mol": 275.89,
+      "force_pn": 39018.95,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (275.9 kJ/mol, 39019.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        18184.94857444344,
+        30354.25331305147,
+        -16444.0200976625
+      ]
     },
     {
       "id": "hb_fallback_380_386",
@@ -1783,7 +2283,17 @@
           25.68899917602539,
           21.83300018310547
         ]
-      }
+      },
+      "energy_kj_mol": 275.89,
+      "force_pn": 39018.95,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (275.9 kJ/mol, 39019.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -19645.570365369913,
+        -20679.539103212137,
+        26624.93330167038
+      ]
     },
     {
       "id": "hb_fallback_495_501",
@@ -1818,7 +2328,17 @@
           29.163000106811523,
           5.605000019073486
         ]
-      }
+      },
+      "energy_kj_mol": 275.89,
+      "force_pn": 39018.95,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (275.9 kJ/mol, 39019.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -36893.50389445253,
+        -12027.863165098817,
+        4083.9593401565503
+      ]
     },
     {
       "id": "hb_fallback_526_531",
@@ -1853,7 +2373,17 @@
           32.94499969482422,
           16.950000762939453
         ]
-      }
+      },
+      "energy_kj_mol": 273.55,
+      "force_pn": 38730.86,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (273.5 kJ/mol, 38730.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        9181.210880665216,
+        13421.304160685439,
+        -35151.86782291224
+      ]
     },
     {
       "id": "hb_fallback_406_411",
@@ -1888,7 +2418,17 @@
           18.31100082397461,
           20.4060001373291
         ]
-      }
+      },
+      "energy_kj_mol": 264.36,
+      "force_pn": 37599.23,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (264.4 kJ/mol, 37599.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        14069.235819044738,
+        16670.926008312847,
+        -30624.161693785154
+      ]
     },
     {
       "id": "hb_fallback_444_447",
@@ -1923,7 +2463,17 @@
           17.97800064086914,
           14.366000175476074
         ]
-      }
+      },
+      "energy_kj_mol": 259.86,
+      "force_pn": 37045.65,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (259.9 kJ/mol, 37045.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -33185.44459386561,
+        4486.7172193028055,
+        -15842.207988076902
+      ]
     },
     {
       "id": "hb_fallback_63_68",
@@ -1958,7 +2508,17 @@
           42.57099914550781,
           17.99799919128418
         ]
-      }
+      },
+      "energy_kj_mol": 251.07,
+      "force_pn": 35962.33,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (251.1 kJ/mol, 35962.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -22206.19427411105,
+        15789.337759542863,
+        23470.63395111494
+      ]
     },
     {
       "id": "hb_fallback_82_88",
@@ -1993,7 +2553,17 @@
           40.3380012512207,
           10.88599967956543
         ]
-      }
+      },
+      "energy_kj_mol": 251.07,
+      "force_pn": 35962.33,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (251.1 kJ/mol, 35962.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        1422.4272972203073,
+        -5484.240099366254,
+        35513.21895024927
+      ]
     },
     {
       "id": "hb_fallback_578_583",
@@ -2028,7 +2598,17 @@
           34.4119987487793,
           29.045000076293945
         ]
-      }
+      },
+      "energy_kj_mol": 251.07,
+      "force_pn": 35962.33,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (251.1 kJ/mol, 35962.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -31561.880891372664,
+        8439.69714781596,
+        15030.239377457377
+      ]
     },
     {
       "id": "hb_fallback_272_273",
@@ -2063,7 +2643,17 @@
           33.91600036621094,
           16.11199951171875
         ]
-      }
+      },
+      "energy_kj_mol": 246.77,
+      "force_pn": 35432.36,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (246.8 kJ/mol, 35432.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        34037.03998288878,
+        1307.3152879567754,
+        9758.22995673803
+      ]
     },
     {
       "id": "hb_fallback_586_594",
@@ -2098,7 +2688,17 @@
           35.53099822998047,
           31.898000717163086
         ]
-      }
+      },
+      "energy_kj_mol": 246.77,
+      "force_pn": 35432.36,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (246.8 kJ/mol, 35432.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        27695.16600783157,
+        -8355.213310491836,
+        -20460.21520615816
+      ]
     },
     {
       "id": "hb_fallback_335_340",
@@ -2133,7 +2733,17 @@
           30.23200035095215,
           20.003999710083008
         ]
-      }
+      },
+      "energy_kj_mol": 242.53,
+      "force_pn": 34910.04,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (242.5 kJ/mol, 34910.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        10186.520799003436,
+        -28889.93025030816,
+        16742.688775613784
+      ]
     },
     {
       "id": "hb_fallback_40_44",
@@ -2168,7 +2778,17 @@
           35.867000579833984,
           13.739999771118164
         ]
-      }
+      },
+      "energy_kj_mol": 236.3,
+      "force_pn": 34140.65,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (236.3 kJ/mol, 34140.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        26493.07714604503,
+        3530.4167965528186,
+        -21242.333999683276
+      ]
     },
     {
       "id": "hb_fallback_191_196",
@@ -2203,7 +2823,17 @@
           23.7450008392334,
           13.25
         ]
-      }
+      },
+      "energy_kj_mol": 234.25,
+      "force_pn": 33887.88,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (234.2 kJ/mol, 33887.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        30560.654199200675,
+        5402.63197874541,
+        -13610.533335178097
+      ]
     },
     {
       "id": "hb_fallback_567_575",
@@ -2238,7 +2868,17 @@
           35.39699935913086,
           27.51300048828125
         ]
-      }
+      },
+      "energy_kj_mol": 234.25,
+      "force_pn": 33887.88,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (234.2 kJ/mol, 33887.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        1603.4413968260706,
+        -32127.67138139646,
+        -10659.753390431782
+      ]
     },
     {
       "id": "hb_fallback_47_53",
@@ -2273,7 +2913,17 @@
           38.43000030517578,
           15.446000099182129
         ]
-      }
+      },
+      "energy_kj_mol": 232.21,
+      "force_pn": 33636.95,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (232.2 kJ/mol, 33636.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -17867.078786265924,
+        -24701.64477658439,
+        14214.096397939526
+      ]
     },
     {
       "id": "hb_fallback_153_156",
@@ -2308,7 +2958,17 @@
           18.599000930786133,
           9.82800006866455
         ]
-      }
+      },
+      "energy_kj_mol": 232.21,
+      "force_pn": 33636.95,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (232.2 kJ/mol, 33636.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        4874.193162889072,
+        -31247.93194290971,
+        11456.582637734462
+      ]
     },
     {
       "id": "hb_fallback_519_523",
@@ -2343,7 +3003,17 @@
           32.020999908447266,
           13.618000030517578
         ]
-      }
+      },
+      "energy_kj_mol": 228.19,
+      "force_pn": 33140.51,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (228.2 kJ/mol, 33140.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -32566.80117488828,
+        -1145.4997175177105,
+        6031.967705388414
+      ]
     },
     {
       "id": "hb_fallback_130_134",
@@ -2378,7 +3048,17 @@
           22.05699920654297,
           6.23199987411499
         ]
-      }
+      },
+      "energy_kj_mol": 226.2,
+      "force_pn": 32894.98,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (226.2 kJ/mol, 32895.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -12973.233290541715,
+        21070.753810507907,
+        -21674.827332485227
+      ]
     },
     {
       "id": "hb_fallback_113_118",
@@ -2413,7 +3093,17 @@
           28.41200065612793,
           5.125
         ]
-      }
+      },
+      "energy_kj_mol": 220.33,
+      "force_pn": 32168.98,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (220.3 kJ/mol, 32169.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -28448.502955477667,
+        13809.816311158136,
+        5900.432425968144
+      ]
     },
     {
       "id": "hb_fallback_478_483",
@@ -2448,7 +3138,17 @@
           24.875,
           9.506999969482422
         ]
-      }
+      },
+      "energy_kj_mol": 218.4,
+      "force_pn": 31930.47,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (218.4 kJ/mol, 31930.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        21606.617555976376,
+        -23376.978364944473,
+        2495.21567950189
+      ]
     },
     {
       "id": "hb_fallback_121_127",
@@ -2483,7 +3183,17 @@
           25.45800018310547,
           5.383999824523926
         ]
-      }
+      },
+      "energy_kj_mol": 214.58,
+      "force_pn": 31458.61,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (214.6 kJ/mol, 31458.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        31084.724523057732,
+        4718.9485608243485,
+        1056.2786345685963
+      ]
     },
     {
       "id": "hb_fallback_21_26",
@@ -2518,7 +3228,17 @@
           32.09700012207031,
           8.770999908447266
         ]
-      }
+      },
+      "energy_kj_mol": 205.28,
+      "force_pn": 30308.46,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (205.3 kJ/mol, 30308.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        22311.44059646149,
+        -5089.959689445768,
+        -19871.95716146006
+      ]
     },
     {
       "id": "hb_fallback_167_171",
@@ -2553,7 +3273,17 @@
           20.863000869750977,
           15.859999656677246
         ]
-      }
+      },
+      "energy_kj_mol": 201.66,
+      "force_pn": 29859.94,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (201.7 kJ/mol, 29859.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        13578.725663395448,
+        5815.746870550025,
+        -25950.171496631312
+      ]
     },
     {
       "id": "hb_fallback_91_95",
@@ -2588,7 +3318,17 @@
           37.01499938964844,
           10.095000267028809
         ]
-      }
+      },
+      "energy_kj_mol": 198.09,
+      "force_pn": 29417.87,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (198.1 kJ/mol, 29417.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        690.0747986875681,
+        23449.381231412517,
+        -17749.9756674569
+      ]
     },
     {
       "id": "hb_fallback_324_332",
@@ -2623,7 +3363,17 @@
           29.43600082397461,
           21.054000854492188
         ]
-      }
+      },
+      "energy_kj_mol": 171.37,
+      "force_pn": 26102.57,
+      "strength": "covalent",
+      "detailed_strength": "Covalent (171.4 kJ/mol, 26102.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        3198.7160678343794,
+        25792.416866897103,
+        2421.5400736232796
+      ]
     },
     {
       "id": "hb_fallback_486_515",
@@ -2658,7 +3408,17 @@
           28.047000885009766,
           10.059000015258789
         ]
-      }
+      },
+      "energy_kj_mol": 13.61,
+      "force_pn": 5839.93,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (13.6 kJ/mol, 5839.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        1813.2728454981552,
+        -2832.8070577486596,
+        -4774.101618971711
+      ]
     },
     {
       "id": "hb_fallback_1_130",
@@ -2693,7 +3453,17 @@
           23.52199935913086,
           4.724999904632568
         ]
-      }
+      },
+      "energy_kj_mol": -1.79,
+      "force_pn": 3609.75,
+      "strength": "weak",
+      "detailed_strength": "Weak (-1.8 kJ/mol, 3609.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -1601.9326930954005,
+        1278.168520848146,
+        -2971.59769770883
+      ]
     },
     {
       "id": "hb_fallback_150_156",
@@ -2728,7 +3498,17 @@
           18.599000930786133,
           9.82800006866455
         ]
-      }
+      },
+      "energy_kj_mol": -14.59,
+      "force_pn": 1500.88,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-14.6 kJ/mol, 1500.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -1266.9869337316045,
+        -362.3203600259522,
+        -718.4119131949711
+      ]
     },
     {
       "id": "hb_fallback_121_225",
@@ -2763,7 +3543,17 @@
           24.944000244140625,
           6.440999984741211
         ]
-      }
+      },
+      "energy_kj_mol": -16.54,
+      "force_pn": 1110.65,
+      "strength": "strong",
+      "detailed_strength": "Strong (-16.5 kJ/mol, 1110.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -970.2401936486668,
+        356.05878878590767,
+        -406.687296589389
+      ]
     },
     {
       "id": "hb_fallback_68_75",
@@ -2798,7 +3588,17 @@
           43.67300033569336,
           15.885000228881836
         ]
-      }
+      },
+      "energy_kj_mol": -17.92,
+      "force_pn": 801.02,
+      "strength": "strong",
+      "detailed_strength": "Strong (-17.9 kJ/mol, 801.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        376.72312365167465,
+        -326.8896098337202,
+        626.7846283201018
+      ]
     },
     {
       "id": "hb_fallback_295_303",
@@ -2833,7 +3633,17 @@
           30.37299919128418,
           23.340999603271484
         ]
-      }
+      },
+      "energy_kj_mol": -18.32,
+      "force_pn": 699.21,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.3 kJ/mol, 699.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        246.53182756570473,
+        -589.3516714192699,
+        -284.22092182852464
+      ]
     },
     {
       "id": "hb_fallback_143_150",
@@ -2868,7 +3678,17 @@
           17.958999633789062,
           8.559000015258789
         ]
-      }
+      },
+      "energy_kj_mol": -18.57,
+      "force_pn": 635.28,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.6 kJ/mol, 635.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -187.66590155015223,
+        529.0679788671341,
+        -297.4106360031653
+      ]
     },
     {
       "id": "hb_fallback_260_269",
@@ -2903,7 +3723,17 @@
           34.393001556396484,
           13.432000160217285
         ]
-      }
+      },
+      "energy_kj_mol": -18.6,
+      "force_pn": 624.92,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.6 kJ/mol, 624.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -382.44696523687315,
+        -13.347072893259005,
+        -494.0508348418899
+      ]
     },
     {
       "id": "hb_fallback_40_95",
@@ -2938,7 +3768,17 @@
           37.01499938964844,
           10.095000267028809
         ]
-      }
+      },
+      "energy_kj_mol": -18.78,
+      "force_pn": 574.36,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.8 kJ/mol, 574.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -268.72760925516866,
+        -192.52089971271255,
+        469.6924116099917
+      ]
     },
     {
       "id": "hb_fallback_306_564",
@@ -2973,7 +3813,17 @@
           34.38399887084961,
           25.451000213623047
         ]
-      }
+      },
+      "energy_kj_mol": -18.78,
+      "force_pn": 574.36,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.8 kJ/mol, 574.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        135.91394962638813,
+        -372.70730136498355,
+        -415.33896052788947
+      ]
     },
     {
       "id": "hb_fallback_60_68",
@@ -3008,7 +3858,17 @@
           42.57099914550781,
           17.99799919128418
         ]
-      }
+      },
+      "energy_kj_mol": -18.85,
+      "force_pn": 554.7,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.9 kJ/mol, 554.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -175.01050547809686,
+        -509.7514244065169,
+        131.20726411946714
+      ]
     },
     {
       "id": "hb_fallback_303_312",
@@ -3043,7 +3903,17 @@
           30.860000610351562,
           22.172000885009766
         ]
-      }
+      },
+      "energy_kj_mol": -19.07,
+      "force_pn": 488.34,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.1 kJ/mol, 488.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        432.6363094961412,
+        -87.09987941461179,
+        209.0746421055981
+      ]
     },
     {
       "id": "hb_fallback_433_441",
@@ -3078,7 +3948,17 @@
           19.232999801635742,
           12.246000289916992
         ]
-      }
+      },
+      "energy_kj_mol": -19.16,
+      "force_pn": 461.03,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.2 kJ/mol, 461.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        395.5781942213185,
+        140.01277917382478,
+        190.9572003865023
+      ]
     },
     {
       "id": "hb_fallback_226_234",
@@ -3113,7 +3993,17 @@
           30.110000610351562,
           13.713000297546387
         ]
-      }
+      },
+      "energy_kj_mol": -19.26,
+      "force_pn": 425.65,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.3 kJ/mol, 425.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -322.2519238155836,
+        -146.19555295285556,
+        -236.55669821466395
+      ]
     },
     {
       "id": "hb_fallback_237_269",
@@ -3148,7 +4038,17 @@
           34.393001556396484,
           13.432000160217285
         ]
-      }
+      },
+      "energy_kj_mol": -19.34,
+      "force_pn": 399.87,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.3 kJ/mol, 399.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        74.5744398058336,
+        -377.25213561363597,
+        -109.60015384408506
+      ]
     },
     {
       "id": "hb_fallback_75_79",
@@ -3183,7 +4083,17 @@
           42.62300109863281,
           13.494999885559082
         ]
-      }
+      },
+      "energy_kj_mol": -19.41,
+      "force_pn": 374.71,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.4 kJ/mol, 374.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -115.02565460007543,
+        143.44060008755403,
+        326.498411956377
+      ]
     },
     {
       "id": "hb_fallback_171_179",
@@ -3218,7 +4128,17 @@
           21.525999069213867,
           16.950000762939453
         ]
-      }
+      },
+      "energy_kj_mol": -19.54,
+      "force_pn": 326.23,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.5 kJ/mol, 326.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -288.96896443268224,
+        -78.68005960542487,
+        -129.3538234042968
+      ]
     },
     {
       "id": "hb_fallback_328_385",
@@ -3253,7 +4173,17 @@
           28.584999084472656,
           26.73900032043457
         ]
-      }
+      },
+      "energy_kj_mol": -19.55,
+      "force_pn": 318.38,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.6 kJ/mol, 318.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        11.347021093435352,
+        316.32857918037354,
+        -34.272729787254555
+      ]
     },
     {
       "id": "hb_fallback_447_455",
@@ -3288,7 +4218,17 @@
           19.95400047302246,
           15.904999732971191
         ]
-      }
+      },
+      "energy_kj_mol": -19.66,
+      "force_pn": 272.64,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.7 kJ/mol, 272.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        113.84766902469282,
+        -195.45017967520127,
+        -152.22558986995736
+      ]
     },
     {
       "id": "hb_fallback_441_447",
@@ -3323,7 +4263,17 @@
           17.97800064086914,
           14.366000175476074
         ]
-      }
+      },
+      "energy_kj_mol": -19.71,
+      "force_pn": 250.62,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.7 kJ/mol, 250.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        112.89385964000829,
+        113.98366502446301,
+        -192.54622979975548
+      ]
     },
     {
       "id": "hb_fallback_501_510",
@@ -3358,7 +4308,17 @@
           30.034000396728516,
           8.190999984741211
         ]
-      }
+      },
+      "energy_kj_mol": -19.75,
+      "force_pn": 229.15,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.8 kJ/mol, 229.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        35.26470605167274,
+        -72.27173290919974,
+        -214.57478371189623
+      ]
     },
     {
       "id": "hb_fallback_217_226",
@@ -3393,7 +4353,17 @@
           29.170000076293945,
           12.192000389099121
         ]
-      }
+      },
+      "energy_kj_mol": -19.87,
+      "force_pn": 161.39,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.9 kJ/mol, 161.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        47.86183181565861,
+        -152.96020147591372,
+        -18.923550390281633
+      ]
     },
     {
       "id": "hb_fallback_359_364",
@@ -3428,7 +4398,17 @@
           29.808000564575195,
           21.243000030517578
         ]
-      }
+      },
+      "energy_kj_mol": -19.89,
+      "force_pn": 148.51,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.9 kJ/mol, 148.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        34.159049088020325,
+        -23.022624142661783,
+        -142.686676450041
+      ]
     },
     {
       "id": "hb_fallback_234_243",
@@ -3463,7 +4443,17 @@
           29.878000259399414,
           11.930999755859375
         ]
-      }
+      },
+      "energy_kj_mol": -19.92,
+      "force_pn": 123.42,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.9 kJ/mol, 123.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -94.11155963997643,
+        10.3087415252742,
+        79.18170341879778
+      ]
     },
     {
       "id": "hb_fallback_196_203",
@@ -3498,7 +4488,17 @@
           25.82200050354004,
           14.949000358581543
         ]
-      }
+      },
+      "energy_kj_mol": -19.93,
+      "force_pn": 111.2,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.9 kJ/mol, 111.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -29.077981379293416,
+        -83.07408347996382,
+        -67.95518557216951
+      ]
     },
     {
       "id": "hb_fallback_12_501",
@@ -3533,7 +4533,17 @@
           29.163000106811523,
           5.605000019073486
         ]
-      }
+      },
+      "energy_kj_mol": -19.95,
+      "force_pn": 93.25,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 93.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        92.67813522139654,
+        -4.65736100511281,
+        -9.214210668758042
+      ]
     },
     {
       "id": "hb_fallback_455_467",
@@ -3568,7 +4578,17 @@
           20.884000778198242,
           14.048999786376953
         ]
-      }
+      },
+      "energy_kj_mol": -19.95,
+      "force_pn": 93.25,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 93.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        62.096839760831166,
+        -31.16570963566272,
+        62.197351008856295
+      ]
     },
     {
       "id": "hb_fallback_188_196",
@@ -3603,7 +4623,17 @@
           23.7450008392334,
           13.25
         ]
-      }
+      },
+      "energy_kj_mol": -19.98,
+      "force_pn": 64.36,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 64.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        26.131946096816666,
+        -48.96277980712794,
+        32.59567235687277
+      ]
     },
     {
       "id": "hb_fallback_179_188",
@@ -3638,7 +4668,17 @@
           21.624000549316406,
           14.661999702453613
         ]
-      }
+      },
+      "energy_kj_mol": -19.98,
+      "force_pn": 58.74,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 58.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -33.51223255727932,
+        -2.064267260281305,
+        48.19361580772146
+      ]
     },
     {
       "id": "hb_fallback_137_156",
@@ -3673,7 +4713,17 @@
           18.599000930786133,
           9.82800006866455
         ]
-      }
+      },
+      "energy_kj_mol": -19.98,
+      "force_pn": 53.16,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 53.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -21.912329505282166,
+        39.537389841321996,
+        -27.9715357045039
+      ]
     },
     {
       "id": "hb_fallback_340_534",
@@ -3708,7 +4758,17 @@
           32.58700180053711,
           18.95800018310547
         ]
-      }
+      },
+      "energy_kj_mol": -19.99,
+      "force_pn": 47.63,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 47.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -18.279470732229214,
+        -40.1944112211541,
+        17.85278524218211
+      ]
     },
     {
       "id": "hb_fallback_37_98",
@@ -3743,7 +4803,17 @@
           34.61800003051758,
           9.039999961853027
         ]
-      }
+      },
+      "energy_kj_mol": -19.99,
+      "force_pn": 42.15,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 42.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -26.63918037489809,
+        -10.187780536601855,
+        31.03125625329182
+      ]
     },
     {
       "id": "hb_fallback_203_212",
@@ -3778,7 +4848,17 @@
           25.743000030517578,
           14.571000099182129
         ]
-      }
+      },
+      "energy_kj_mol": -19.99,
+      "force_pn": 42.15,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 42.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -41.741935469151215,
+        1.192634131957357,
+        5.706497619581374
+      ]
     },
     {
       "id": "hb_fallback_343_531",
@@ -3813,7 +4893,17 @@
           32.94499969482422,
           16.950000762939453
         ]
-      }
+      },
+      "energy_kj_mol": -19.99,
+      "force_pn": 31.33,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 31.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -15.978513264541986,
+        -22.392323662100083,
+        14.991756751788945
+      ]
     },
     {
       "id": "hb_fallback_411_415",
@@ -3848,7 +4938,17 @@
           17.5939998626709,
           19.076000213623047
         ]
-      }
+      },
+      "energy_kj_mol": -20.0,
+      "force_pn": 0.0,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 0.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        9.933083559181485e-13,
+        3.021650148573865e-13,
+        5.605005688921703e-13
+      ]
     },
     {
       "id": "hb_fallback_288_295",
@@ -3883,7 +4983,17 @@
           28.09000015258789,
           22.239999771118164
         ]
-      }
+      },
+      "energy_kj_mol": -20.0,
+      "force_pn": 5.06,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 5.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -1.2374045531391324,
+        -1.206698220781541,
+        4.756346106714213
+      ]
     },
     {
       "id": "hb_fallback_269_273",
@@ -3918,7 +5028,17 @@
           33.91600036621094,
           16.11199951171875
         ]
-      }
+      },
+      "energy_kj_mol": -20.0,
+      "force_pn": 24.86,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 24.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -5.982325463693286,
+        -4.227501429553312,
+        23.751934634098703
+      ]
     },
     {
       "id": "hb_fallback_324_549",
@@ -3953,7 +5073,17 @@
           34.53300094604492,
           21.19099998474121
         ]
-      }
+      },
+      "energy_kj_mol": -19.98,
+      "force_pn": 57.82,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 57.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        3.002386660408067,
+        57.724027293775805,
+        -1.6039975974019216
+      ]
     },
     {
       "id": "hb_fallback_321_552",
@@ -3988,7 +5118,17 @@
           33.69599914550781,
           22.635000228881836
         ]
-      }
+      },
+      "energy_kj_mol": -19.95,
+      "force_pn": 84.46,
+      "strength": "strong",
+      "detailed_strength": "Strong (-20.0 kJ/mol, 84.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -8.632258364555872,
+        83.29469593978945,
+        10.97011879503183
+      ]
     },
     {
       "id": "hb_fallback_29_523",
@@ -4023,7 +5163,17 @@
           32.020999908447266,
           13.618000030517578
         ]
-      }
+      },
+      "energy_kj_mol": -19.95,
+      "force_pn": 88.75,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.9 kJ/mol, 88.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -49.11029900105719,
+        -23.83109459759648,
+        69.98218658441446
+      ]
     },
     {
       "id": "hb_fallback_364_368",
@@ -4058,7 +5208,17 @@
           27.930999755859375,
           22.577999114990234
         ]
-      }
+      },
+      "energy_kj_mol": -19.94,
+      "force_pn": 97.23,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.9 kJ/mol, 97.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        56.14295925324448,
+        -64.69023859842764,
+        46.01032077461069
+      ]
     },
     {
       "id": "hb_fallback_212_217",
@@ -4093,7 +5253,17 @@
           26.542999267578125,
           11.866999626159668
         ]
-      }
+      },
+      "energy_kj_mol": -19.92,
+      "force_pn": 105.55,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.9 kJ/mol, 105.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        5.010127226563483,
+        29.911430845752868,
+        -101.10075036180696
+      ]
     },
     {
       "id": "hb_fallback_335_386",
@@ -4128,7 +5298,17 @@
           25.68899917602539,
           21.83300018310547
         ]
-      }
+      },
+      "energy_kj_mol": -19.88,
+      "force_pn": 129.6,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.9 kJ/mol, 129.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -29.13162955915131,
+        -121.70255078409097,
+        33.71209423916566
+      ]
     },
     {
       "id": "hb_fallback_351_368",
@@ -4163,7 +5343,17 @@
           27.930999755859375,
           22.577999114990234
         ]
-      }
+      },
+      "energy_kj_mol": -19.82,
+      "force_pn": 155.99,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.8 kJ/mol, 156.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -1.1000381013313394,
+        10.836188392561509,
+        155.61158915361526
+      ]
     },
     {
       "id": "hb_fallback_467_475",
@@ -4198,7 +5388,17 @@
           22.964000701904297,
           12.260000228881836
         ]
-      }
+      },
+      "energy_kj_mol": -19.81,
+      "force_pn": 159.62,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.8 kJ/mol, 159.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        40.72860856852862,
+        117.010520695138,
+        -100.64027760774951
+      ]
     },
     {
       "id": "hb_fallback_243_251",
@@ -4233,7 +5433,17 @@
           31.75,
           9.98799991607666
         ]
-      }
+      },
+      "energy_kj_mol": -19.79,
+      "force_pn": 166.77,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.8 kJ/mol, 166.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -51.925679358047745,
+        109.96038738754407,
+        -114.13089993692948
+      ]
     },
     {
       "id": "hb_fallback_146_441",
@@ -4268,7 +5478,17 @@
           19.232999801635742,
           12.246000289916992
         ]
-      }
+      },
+      "energy_kj_mol": -19.78,
+      "force_pn": 170.3,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.8 kJ/mol, 170.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -125.4946033688347,
+        41.79158362256731,
+        107.2670164277122
+      ]
     },
     {
       "id": "hb_fallback_4_127",
@@ -4303,7 +5523,17 @@
           25.45800018310547,
           5.383999824523926
         ]
-      }
+      },
+      "energy_kj_mol": -19.63,
+      "force_pn": 213.13,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.6 kJ/mol, 213.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        181.04969068841123,
+        -75.06386272041136,
+        83.72800631439875
+      ]
     },
     {
       "id": "hb_fallback_26_513",
@@ -4338,7 +5568,17 @@
           31.320999145507812,
           9.553999900817871
         ]
-      }
+      },
+      "energy_kj_mol": -19.59,
+      "force_pn": 222.25,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.6 kJ/mol, 222.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -205.03458301516446,
+        -60.382171851411854,
+        60.92677912392826
+      ]
     },
     {
       "id": "hb_fallback_171_418",
@@ -4373,7 +5613,17 @@
           18.785999298095703,
           16.690000534057617
         ]
-      }
+      },
+      "energy_kj_mol": -19.49,
+      "force_pn": 242.5,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.5 kJ/mol, 242.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -151.3695235430004,
+        -175.93431609630844,
+        70.30598277538901
+      ]
     },
     {
       "id": "hb_fallback_215_243",
@@ -4408,7 +5658,17 @@
           29.878000259399414,
           11.930999755859375
         ]
-      }
+      },
+      "energy_kj_mol": -19.45,
+      "force_pn": 250.75,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.4 kJ/mol, 250.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        113.48315937174102,
+        221.5413390203383,
+        -30.27388013957504
+      ]
     },
     {
       "id": "hb_fallback_444_467",
@@ -4443,7 +5703,17 @@
           20.884000778198242,
           14.048999786376953
         ]
-      }
+      },
+      "energy_kj_mol": -19.24,
+      "force_pn": 283.64,
+      "strength": "strong",
+      "detailed_strength": "Strong (-19.2 kJ/mol, 283.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -95.55243357201455,
+        259.1738971763434,
+        64.42399138134738
+      ]
     },
     {
       "id": "hb_fallback_211_410",
@@ -4478,7 +5748,17 @@
           23.086000442504883,
           20.882999420166016
         ]
-      }
+      },
+      "energy_kj_mol": -18.81,
+      "force_pn": 331.57,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.8 kJ/mol, 331.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        10.167800110789154,
+        -322.63894123946,
+        -75.74706004952084
+      ]
     },
     {
       "id": "hb_fallback_44_526",
@@ -4513,7 +5793,17 @@
           33.72999954223633,
           14.894000053405762
         ]
-      }
+      },
+      "energy_kj_mol": -18.75,
+      "force_pn": 336.94,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.8 kJ/mol, 336.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -184.79892263970348,
+        -247.90700573667587,
+        133.87207098542348
+      ]
     },
     {
       "id": "hb_fallback_220_251",
@@ -4548,7 +5838,17 @@
           31.75,
           9.98799991607666
         ]
-      }
+      },
+      "energy_kj_mol": -18.67,
+      "force_pn": 343.82,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.7 kJ/mol, 343.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        247.80518569542218,
+        233.74286484653166,
+        -46.55949008807322
+      ]
     },
     {
       "id": "hb_fallback_53_82",
@@ -4583,7 +5883,17 @@
           39.99100112915039,
           13.133000373840332
         ]
-      }
+      },
+      "energy_kj_mol": -18.65,
+      "force_pn": 345.49,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.6 kJ/mol, 345.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        98.16989267617207,
+        185.30029692996703,
+        -274.5671426447233
+      ]
     },
     {
       "id": "hb_fallback_179_406",
@@ -4618,7 +5928,17 @@
           19.316999435424805,
           18.558000564575195
         ]
-      }
+      },
+      "energy_kj_mol": -18.65,
+      "force_pn": 345.49,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.6 kJ/mol, 345.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -118.95232117276943,
+        -262.2414391377809,
+        190.8937311098214
+      ]
     },
     {
       "id": "hb_fallback_229_260",
@@ -4653,7 +5973,17 @@
           34.334999084472656,
           11.28499984741211
         ]
-      }
+      },
+      "energy_kj_mol": -18.63,
+      "force_pn": 347.13,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.6 kJ/mol, 347.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        132.4649379912595,
+        260.5180469931726,
+        -187.31090845173054
+      ]
     },
     {
       "id": "hb_fallback_206_234",
@@ -4688,7 +6018,17 @@
           30.110000610351562,
           13.713000297546387
         ]
-      }
+      },
+      "energy_kj_mol": -18.3,
+      "force_pn": 369.54,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.3 kJ/mol, 369.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        164.6937576487069,
+        275.836605458266,
+        -182.62809343591152
+      ]
     },
     {
       "id": "hb_fallback_47_541",
@@ -4723,7 +6063,17 @@
           34.446998596191406,
           18.18899917602539
         ]
-      }
+      },
+      "energy_kj_mol": -18.24,
+      "force_pn": 373.53,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.2 kJ/mol, 373.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        39.795437269108064,
+        -294.12880718586734,
+        226.78275743233343
+      ]
     },
     {
       "id": "hb_fallback_251_260",
@@ -4758,7 +6108,17 @@
           34.334999084472656,
           11.28499984741211
         ]
-      }
+      },
+      "energy_kj_mol": -18.24,
+      "force_pn": 373.53,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.2 kJ/mol, 373.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -58.92249903541788,
+        329.6840096387499,
+        165.41597265249527
+      ]
     },
     {
       "id": "hb_fallback_137_150",
@@ -4793,7 +6153,17 @@
           17.958999633789062,
           8.559000015258789
         ]
-      }
+      },
+      "energy_kj_mol": -18.17,
+      "force_pn": 377.36,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.2 kJ/mol, 377.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -140.0476298517909,
+        -349.47570378488484,
+        25.61539096137411
+      ]
     },
     {
       "id": "hb_fallback_191_217",
@@ -4828,7 +6198,17 @@
           26.542999267578125,
           11.866999626159668
         ]
-      }
+      },
+      "energy_kj_mol": -18.17,
+      "force_pn": 377.36,
+      "strength": "strong",
+      "detailed_strength": "Strong (-18.2 kJ/mol, 377.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        201.67599035891254,
+        313.26109634236946,
+        -59.97528531217999
+      ]
     },
     {
       "id": "hb_fallback_284_303",
@@ -4863,7 +6243,17 @@
           30.37299919128418,
           23.340999603271484
         ]
-      }
+      },
+      "energy_kj_mol": -17.56,
+      "force_pn": 404.54,
+      "strength": "strong",
+      "detailed_strength": "Strong (-17.6 kJ/mol, 404.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -115.56273239598431,
+        -39.52396532160683,
+        385.6643778793105
+      ]
     },
     {
       "id": "hb_fallback_431_446",
@@ -4898,7 +6288,17 @@
           16.395000457763672,
           11.755000114440918
         ]
-      }
+      },
+      "energy_kj_mol": -17.56,
+      "force_pn": 404.54,
+      "strength": "strong",
+      "detailed_strength": "Strong (-17.6 kJ/mol, 404.5 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -275.05988800267596,
+        -29.543926480045908,
+        -295.16625101576585
+      ]
     },
     {
       "id": "hb_fallback_394_466",
@@ -4933,7 +6333,17 @@
           21.302000045776367,
           21.19099998474121
         ]
-      }
+      },
+      "energy_kj_mol": -17.43,
+      "force_pn": 408.63,
+      "strength": "strong",
+      "detailed_strength": "Strong (-17.4 kJ/mol, 408.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -371.52722595906715,
+        -158.04384868219506,
+        -63.02457275096606
+      ]
     },
     {
       "id": "hb_fallback_276_320",
@@ -4968,7 +6378,17 @@
           30.125999450683594,
           17.232999801635742
         ]
-      }
+      },
+      "energy_kj_mol": -17.34,
+      "force_pn": 411.67,
+      "strength": "strong",
+      "detailed_strength": "Strong (-17.3 kJ/mol, 411.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -375.71226725387515,
+        -167.87746871393338,
+        -11.376912485792507
+      ]
     },
     {
       "id": "hb_fallback_199_226",
@@ -5003,7 +6423,17 @@
           29.170000076293945,
           12.192000389099121
         ]
-      }
+      },
+      "energy_kj_mol": -17.11,
+      "force_pn": 417.76,
+      "strength": "strong",
+      "detailed_strength": "Strong (-17.1 kJ/mol, 417.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        270.66115988940305,
+        291.99936826189213,
+        -126.48627266222921
+      ]
     },
     {
       "id": "hb_fallback_159_433",
@@ -5038,7 +6468,17 @@
           20.062999725341797,
           13.378000259399414
         ]
-      }
+      },
+      "energy_kj_mol": -16.88,
+      "force_pn": 422.87,
+      "strength": "strong",
+      "detailed_strength": "Strong (-16.9 kJ/mol, 422.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -394.1393479683082,
+        76.5042209150384,
+        132.74927346936735
+      ]
     },
     {
       "id": "hb_fallback_174_203",
@@ -5073,7 +6513,17 @@
           25.82200050354004,
           14.949000358581543
         ]
-      }
+      },
+      "energy_kj_mol": -16.55,
+      "force_pn": 428.69,
+      "strength": "strong",
+      "detailed_strength": "Strong (-16.5 kJ/mol, 428.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        214.597350318195,
+        309.2433454578074,
+        -205.16149264078314
+      ]
     },
     {
       "id": "hb_fallback_403_411",
@@ -5108,7 +6558,17 @@
           18.31100082397461,
           20.4060001373291
         ]
-      }
+      },
+      "energy_kj_mol": -16.29,
+      "force_pn": 432.0,
+      "strength": "strong",
+      "detailed_strength": "Strong (-16.3 kJ/mol, 432.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        66.64330169386689,
+        -399.14097091609034,
+        -151.2397779530627
+      ]
     },
     {
       "id": "hb_fallback_315_574",
@@ -5143,7 +6603,17 @@
           28.656999588012695,
           25.457000732421875
         ]
-      }
+      },
+      "energy_kj_mol": -16.24,
+      "force_pn": 432.56,
+      "strength": "strong",
+      "detailed_strength": "Strong (-16.2 kJ/mol, 432.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        62.361542574802364,
+        -50.57933849951558,
+        425.03746212919395
+      ]
     },
     {
       "id": "hb_fallback_4_130",
@@ -5178,7 +6648,17 @@
           23.52199935913086,
           4.724999904632568
         ]
-      }
+      },
+      "energy_kj_mol": -15.58,
+      "force_pn": 436.57,
+      "strength": "strong",
+      "detailed_strength": "Strong (-15.6 kJ/mol, 436.6 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        85.14693263527765,
+        -423.001217818365,
+        66.44900321816098
+      ]
     },
     {
       "id": "hb_fallback_486_495",
@@ -5213,7 +6693,17 @@
           28.46500015258789,
           5.8420000076293945
         ]
-      }
+      },
+      "energy_kj_mol": -15.5,
+      "force_pn": 436.73,
+      "strength": "strong",
+      "detailed_strength": "Strong (-15.5 kJ/mol, 436.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -196.24079183144573,
+        235.05772407385342,
+        -311.3975811323706
+      ]
     },
     {
       "id": "hb_fallback_351_364",
@@ -5248,7 +6738,17 @@
           29.808000564575195,
           21.243000030517578
         ]
-      }
+      },
+      "energy_kj_mol": -15.4,
+      "force_pn": 436.84,
+      "strength": "strong",
+      "detailed_strength": "Strong (-15.4 kJ/mol, 436.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -236.81190250904075,
+        297.8464006464238,
+        214.55259715308136
+      ]
     },
     {
       "id": "hb_fallback_206_320",
@@ -5283,7 +6783,17 @@
           30.125999450683594,
           17.232999801635742
         ]
-      }
+      },
+      "energy_kj_mol": -15.35,
+      "force_pn": 436.85,
+      "strength": "strong",
+      "detailed_strength": "Strong (-15.3 kJ/mol, 436.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -50.3755574744914,
+        315.745937402051,
+        297.66237587331074
+      ]
     },
     {
       "id": "hb_fallback_21_110",
@@ -5318,7 +6828,17 @@
           31.485000610351562,
           6.665999889373779
         ]
-      }
+      },
+      "energy_kj_mol": -15.29,
+      "force_pn": 436.83,
+      "strength": "strong",
+      "detailed_strength": "Strong (-15.3 kJ/mol, 436.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        427.10332413127946,
+        -32.412779984366644,
+        -85.76486032470156
+      ]
     },
     {
       "id": "hb_fallback_18_113",
@@ -5353,7 +6873,17 @@
           29.395000457763672,
           5.545000076293945
         ]
-      }
+      },
+      "energy_kj_mol": -15.27,
+      "force_pn": 436.82,
+      "strength": "strong",
+      "detailed_strength": "Strong (-15.3 kJ/mol, 436.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        424.41035257438904,
+        -37.42263523230149,
+        -96.35264054105414
+      ]
     },
     {
       "id": "hb_fallback_199_217",
@@ -5388,7 +6918,17 @@
           26.542999267578125,
           11.866999626159668
         ]
-      }
+      },
+      "energy_kj_mol": -14.93,
+      "force_pn": 436.02,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-14.9 kJ/mol, 436.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        391.8201624763027,
+        -77.93671841425736,
+        -174.68066439965799
+      ]
     },
     {
       "id": "hb_fallback_348_371",
@@ -5423,7 +6963,17 @@
           27.62700080871582,
           21.8700008392334
         ]
-      }
+      },
+      "energy_kj_mol": -14.74,
+      "force_pn": 435.17,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-14.7 kJ/mol, 435.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        34.34155326944861,
+        -221.37644066297324,
+        373.07642295418054
+      ]
     },
     {
       "id": "hb_fallback_134_163",
@@ -5458,7 +7008,17 @@
           21.402000427246094,
           7.9679999351501465
         ]
-      }
+      },
+      "energy_kj_mol": -14.4,
+      "force_pn": 432.9,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-14.4 kJ/mol, 432.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        345.51087983054396,
+        -92.07045877306389,
+        244.02232050134805
+      ]
     },
     {
       "id": "hb_fallback_58_82",
@@ -5493,7 +7053,17 @@
           39.99100112915039,
           13.133000373840332
         ]
-      }
+      },
+      "energy_kj_mol": -14.27,
+      "force_pn": 431.8,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-14.3 kJ/mol, 431.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -207.74266622436,
+        -37.236749423424214,
+        -376.7087555914446
+      ]
     },
     {
       "id": "hb_fallback_426_453",
@@ -5528,7 +7098,17 @@
           15.894000053405762,
           17.152000427246094
         ]
-      }
+      },
+      "energy_kj_mol": -14.22,
+      "force_pn": 431.33,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-14.2 kJ/mol, 431.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -308.3970497792685,
+        -250.82566835616794,
+        167.40350199740837
+      ]
     },
     {
       "id": "hb_fallback_182_212",
@@ -5563,7 +7143,17 @@
           25.743000030517578,
           14.571000099182129
         ]
-      }
+      },
+      "energy_kj_mol": -14.19,
+      "force_pn": 431.09,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-14.2 kJ/mol, 431.1 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        134.97599080581764,
+        376.45364148000175,
+        -160.938421072929
+      ]
     },
     {
       "id": "hb_fallback_284_295",
@@ -5598,7 +7188,17 @@
           28.09000015258789,
           22.239999771118164
         ]
-      }
+      },
+      "energy_kj_mol": -13.99,
+      "force_pn": 428.99,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-14.0 kJ/mol, 429.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        15.244348120013216,
+        -356.4386680719604,
+        238.22624475499427
+      ]
     },
     {
       "id": "hb_fallback_291_303",
@@ -5633,7 +7233,17 @@
           30.37299919128418,
           23.340999603271484
         ]
-      }
+      },
+      "energy_kj_mol": -13.94,
+      "force_pn": 428.42,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-13.9 kJ/mol, 428.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        166.79379936367005,
+        323.2155140870957,
+        226.402883879334
+      ]
     },
     {
       "id": "hb_fallback_167_188",
@@ -5668,7 +7278,17 @@
           21.624000549316406,
           14.661999702453613
         ]
-      }
+      },
+      "energy_kj_mol": -13.83,
+      "force_pn": 427.24,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-13.8 kJ/mol, 427.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        410.4902908346145,
+        43.11522416888993,
+        110.33645176922941
+      ]
     },
     {
       "id": "hb_fallback_436_455",
@@ -5703,7 +7323,17 @@
           19.95400047302246,
           15.904999732971191
         ]
-      }
+      },
+      "energy_kj_mol": -13.75,
+      "force_pn": 426.31,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-13.8 kJ/mol, 426.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -194.69540003196246,
+        -136.89094752462506,
+        353.69214770777387
+      ]
     },
     {
       "id": "hb_fallback_429_447",
@@ -5738,7 +7368,17 @@
           17.97800064086914,
           14.366000175476074
         ]
-      }
+      },
+      "energy_kj_mol": -13.68,
+      "force_pn": 425.35,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-13.7 kJ/mol, 425.4 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -357.48546732367294,
+        -192.97647343231975,
+        -126.0505389948553
+      ]
     },
     {
       "id": "hb_fallback_291_312",
@@ -5773,7 +7413,17 @@
           30.860000610351562,
           22.172000885009766
         ]
-      }
+      },
+      "energy_kj_mol": -13.65,
+      "force_pn": 425.02,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-13.7 kJ/mol, 425.0 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -165.83091931740518,
+        386.07275408303786,
+        63.980922099360896
+      ]
     },
     {
       "id": "hb_fallback_167_196",
@@ -5808,7 +7458,17 @@
           23.7450008392334,
           13.25
         ]
-      }
+      },
+      "energy_kj_mol": -13.45,
+      "force_pn": 422.27,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-13.4 kJ/mol, 422.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        250.3935523627388,
+        329.79331773512735,
+        -82.78707313143755
+      ]
     },
     {
       "id": "hb_fallback_191_212",
@@ -5843,7 +7503,17 @@
           25.743000030517578,
           14.571000099182129
         ]
-      }
+      },
+      "energy_kj_mol": -13.37,
+      "force_pn": 421.18,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-13.4 kJ/mol, 421.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        193.47078211636932,
+        220.6083075811204,
+        302.1549196547944
+      ]
     },
     {
       "id": "hb_fallback_56_68",
@@ -5878,7 +7548,17 @@
           42.57099914550781,
           17.99799919128418
         ]
-      }
+      },
+      "energy_kj_mol": -12.7,
+      "force_pn": 410.19,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-12.7 kJ/mol, 410.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        279.03869729013655,
+        261.44421985868775,
+        148.44709543747626
+      ]
     },
     {
       "id": "hb_fallback_444_455",
@@ -5913,7 +7593,17 @@
           19.95400047302246,
           15.904999732971191
         ]
-      }
+      },
+      "energy_kj_mol": -12.43,
+      "force_pn": 405.17,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-12.4 kJ/mol, 405.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        113.2872028103969,
+        218.2347298657326,
+        322.0275984688894
+      ]
     },
     {
       "id": "hb_fallback_436_447",
@@ -5948,7 +7638,17 @@
           17.97800064086914,
           14.366000175476074
         ]
-      }
+      },
+      "energy_kj_mol": -12.38,
+      "force_pn": 404.23,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-12.4 kJ/mol, 404.2 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -34.155175852589196,
+        -380.31178942627855,
+        132.65498457819578
+      ]
     },
     {
       "id": "hb_fallback_298_571",
@@ -5983,7 +7683,17 @@
           30.25200080871582,
           26.729999542236328
         ]
-      }
+      },
+      "energy_kj_mol": -12.28,
+      "force_pn": 402.32,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-12.3 kJ/mol, 402.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -336.2026266384733,
+        109.60947390241614,
+        191.8796984488912
+      ]
     },
     {
       "id": "hb_fallback_301_303",
@@ -6018,7 +7728,17 @@
           30.37299919128418,
           23.340999603271484
         ]
-      }
+      },
+      "energy_kj_mol": -12.06,
+      "force_pn": 397.92,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-12.1 kJ/mol, 397.9 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -288.0717681752908,
+        70.73233665138558,
+        -265.24662124967125
+      ]
     },
     {
       "id": "hb_fallback_583_594",
@@ -6053,7 +7773,17 @@
           35.53099822998047,
           31.898000717163086
         ]
-      }
+      },
+      "energy_kj_mol": -11.75,
+      "force_pn": 391.33,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-11.8 kJ/mol, 391.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        106.98353135548864,
+        137.44456266549736,
+        350.4286033696081
+      ]
     },
     {
       "id": "hb_fallback_58_73",
@@ -6088,7 +7818,17 @@
           43.06700134277344,
           16.264999389648438
         ]
-      }
+      },
+      "energy_kj_mol": -11.73,
+      "force_pn": 390.81,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-11.7 kJ/mol, 390.8 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        176.22560112810672,
+        344.60270461451285,
+        54.08163151893693
+      ]
     },
     {
       "id": "hb_fallback_446_447",
@@ -6123,7 +7863,17 @@
           17.97800064086914,
           14.366000175476074
         ]
-      }
+      },
+      "energy_kj_mol": -11.71,
+      "force_pn": 390.29,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-11.7 kJ/mol, 390.3 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -112.25892654654719,
+        193.79055263088065,
+        319.63808352481675
+      ]
     },
     {
       "id": "hb_fallback_237_251",
@@ -6158,7 +7908,17 @@
           31.75,
           9.98799991607666
         ]
-      }
+      },
+      "energy_kj_mol": -11.64,
+      "force_pn": 388.72,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-11.6 kJ/mol, 388.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        -208.4237925797446,
+        -7.065288129790619,
+        -328.0454240557844
+      ]
     },
     {
       "id": "hb_fallback_169_188",
@@ -6193,7 +7953,17 @@
           21.624000549316406,
           14.661999702453613
         ]
-      }
+      },
+      "energy_kj_mol": -11.59,
+      "force_pn": 387.67,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-11.6 kJ/mol, 387.7 pN)",
+      "force_type": "hydrogen",
+      "force_vector": [
+        165.22903608250866,
+        350.2467197197644,
+        17.724778147716098
+      ]
     }
   ],
   "salt_bridges": [
@@ -6227,7 +7997,17 @@
           23.086000442504883,
           20.882999420166016
         ]
-      }
+      },
+      "energy_kj_mol": -20.98,
+      "force_pn": 205.22,
+      "strength": "strong",
+      "detailed_strength": "Strong (-21.0 kJ/mol, 205.2 pN)",
+      "force_type": "electrostatic",
+      "force_vector": [
+        6.293297662073801,
+        -199.6953984610413,
+        -46.8831793233999
+      ]
     },
     {
       "id": "sb_87_268",
@@ -6259,7 +8039,17 @@
           37.31999969482422,
           9.821999549865723
         ]
-      }
+      },
+      "energy_kj_mol": -16.35,
+      "force_pn": 144.71,
+      "strength": "strong",
+      "detailed_strength": "Strong (-16.3 kJ/mol, 144.7 pN)",
+      "force_type": "electrostatic",
+      "force_vector": [
+        76.14733269621918,
+        -119.04235263758791,
+        31.176692733557232
+      ]
     },
     {
       "id": "sb_424_453",
@@ -6291,7 +8081,17 @@
           15.894000053405762,
           17.152000427246094
         ]
-      }
+      },
+      "energy_kj_mol": -12.46,
+      "force_pn": 98.91,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-12.5 kJ/mol, 98.9 pN)",
+      "force_type": "electrostatic",
+      "force_vector": [
+        -55.40074793694679,
+        55.01884076225868,
+        -60.721856789845965
+      ]
     },
     {
       "id": "sb_87_267",
@@ -6323,7 +8123,17 @@
           38.36000061035156,
           11.645000457763672
         ]
-      }
+      },
+      "energy_kj_mol": -12.34,
+      "force_pn": 97.53,
+      "strength": "moderate",
+      "detailed_strength": "Moderate (-12.3 kJ/mol, 97.5 pN)",
+      "force_type": "electrostatic",
+      "force_vector": [
+        60.397083806615576,
+        -42.76981058149573,
+        63.51800665587649
+      ]
     }
   ],
   "disulfide_bonds": [],
@@ -6359,17 +8169,41 @@
           24.992000579833984,
           19.570999145507812
         ]
-      }
+      },
+      "energy_kj_mol": -4.37,
+      "force_pn": 53.05,
+      "strength": "weak",
+      "detailed_strength": "Weak (-4.4 kJ/mol, 53.0 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        -25.979811853021314,
+        -45.1442421952393,
+        10.056702120747236
+      ]
     },
     {
-      "id": "hph_479_437",
+      "id": "hph_437_479",
       "distance": 4.337,
       "residue_a": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 437,
+        "name": "CB",
+        "coordinates": [
+          26.083999633789062,
+          21.88800048828125,
+          11.833000183105469
+        ]
+      },
+      "residue_b": {
         "name": "ILE",
         "number": 61,
         "chain": "A"
       },
-      "atom_a": {
+      "atom_b": {
         "id": 479,
         "name": "CB",
         "coordinates": [
@@ -6378,30 +8212,40 @@
           12.17199993133545
         ]
       },
-      "residue_b": {
-        "name": "LEU",
-        "number": 56,
-        "chain": "A"
-      },
-      "atom_b": {
-        "id": 437,
-        "name": "CB",
-        "coordinates": [
-          26.083999633789062,
-          21.88800048828125,
-          11.833000183105469
-        ]
-      }
+      "energy_kj_mol": -4.26,
+      "force_pn": 54.37,
+      "strength": "weak",
+      "detailed_strength": "Weak (-4.3 kJ/mol, 54.4 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        -43.04291933407855,
+        32.940245390983755,
+        4.249137668171022
+      ]
     },
     {
-      "id": "hph_175_390",
+      "id": "hph_390_175",
       "distance": 4.754,
       "residue_a": {
+        "name": "LEU",
+        "number": 50,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 390,
+        "name": "CB",
+        "coordinates": [
+          27.042999267578125,
+          24.992000579833984,
+          19.570999145507812
+        ]
+      },
+      "residue_b": {
         "name": "ILE",
         "number": 23,
         "chain": "A"
       },
-      "atom_a": {
+      "atom_b": {
         "id": 175,
         "name": "CB",
         "coordinates": [
@@ -6410,30 +8254,40 @@
           17.763999938964844
         ]
       },
-      "residue_b": {
-        "name": "LEU",
-        "number": 50,
-        "chain": "A"
-      },
-      "atom_b": {
-        "id": 390,
-        "name": "CB",
-        "coordinates": [
-          27.042999267578125,
-          24.992000579833984,
-          19.570999145507812
-        ]
-      }
+      "energy_kj_mol": -2.92,
+      "force_pn": 47.98,
+      "strength": "weak",
+      "detailed_strength": "Weak (-2.9 kJ/mol, 48.0 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        35.088388199553684,
+        -27.166510156964744,
+        -18.23545238190777
+      ]
     },
     {
-      "id": "hph_99_41",
+      "id": "hph_41_99",
       "distance": 4.906,
       "residue_a": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 41,
+        "name": "CB",
+        "coordinates": [
+          29.96299934387207,
+          33.31700134277344,
+          12.814000129699707
+        ]
+      },
+      "residue_b": {
         "name": "ILE",
         "number": 13,
         "chain": "A"
       },
-      "atom_a": {
+      "atom_b": {
         "id": 99,
         "name": "CB",
         "coordinates": [
@@ -6442,30 +8296,40 @@
           9.934000015258789
         ]
       },
-      "residue_b": {
-        "name": "VAL",
-        "number": 5,
-        "chain": "A"
-      },
-      "atom_b": {
-        "id": 41,
-        "name": "CB",
-        "coordinates": [
-          29.96299934387207,
-          33.31700134277344,
-          12.814000129699707
-        ]
-      }
+      "energy_kj_mol": -2.51,
+      "force_pn": 42.13,
+      "strength": "weak",
+      "detailed_strength": "Weak (-2.5 kJ/mol, 42.1 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        26.037188134763046,
+        22.03541681161702,
+        -24.73189808610334
+      ]
     },
     {
-      "id": "hph_147_437",
+      "id": "hph_437_147",
       "distance": 4.92,
       "residue_a": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 437,
+        "name": "CB",
+        "coordinates": [
+          26.083999633789062,
+          21.88800048828125,
+          11.833000183105469
+        ]
+      },
+      "residue_b": {
         "name": "PRO",
         "number": 19,
         "chain": "A"
       },
-      "atom_a": {
+      "atom_b": {
         "id": 147,
         "name": "CB",
         "coordinates": [
@@ -6474,30 +8338,40 @@
           7.952000141143799
         ]
       },
-      "residue_b": {
-        "name": "LEU",
-        "number": 56,
-        "chain": "A"
-      },
-      "atom_b": {
-        "id": 437,
-        "name": "CB",
-        "coordinates": [
-          26.083999633789062,
-          21.88800048828125,
-          11.833000183105469
-        ]
-      }
+      "energy_kj_mol": -2.47,
+      "force_pn": 41.59,
+      "strength": "weak",
+      "detailed_strength": "Weak (-2.5 kJ/mol, 41.6 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        -13.653400038331455,
+        -21.608725764997153,
+        -32.81043568507529
+      ]
     },
     {
-      "id": "hph_527_41",
+      "id": "hph_41_527",
       "distance": 5.039,
       "residue_a": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 41,
+        "name": "CB",
+        "coordinates": [
+          29.96299934387207,
+          33.31700134277344,
+          12.814000129699707
+        ]
+      },
+      "residue_b": {
         "name": "LEU",
         "number": 67,
         "chain": "A"
       },
-      "atom_a": {
+      "atom_b": {
         "id": 527,
         "name": "CB",
         "coordinates": [
@@ -6506,20 +8380,16 @@
           14.967000007629395
         ]
       },
-      "residue_b": {
-        "name": "VAL",
-        "number": 5,
-        "chain": "A"
-      },
-      "atom_b": {
-        "id": 41,
-        "name": "CB",
-        "coordinates": [
-          29.96299934387207,
-          33.31700134277344,
-          12.814000129699707
-        ]
-      }
+      "energy_kj_mol": -2.19,
+      "force_pn": 37.09,
+      "strength": "weak",
+      "detailed_strength": "Weak (-2.2 kJ/mol, 37.1 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        -26.8888609542868,
+        -20.04336452874188,
+        15.847718665968733
+      ]
     },
     {
       "id": "hph_352_527",
@@ -6551,7 +8421,17 @@
           30.5939998626709,
           14.967000007629395
         ]
-      }
+      },
+      "energy_kj_mol": -2.15,
+      "force_pn": 36.4,
+      "strength": "weak",
+      "detailed_strength": "Weak (-2.1 kJ/mol, 36.4 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        27.458667493013138,
+        18.25541344987644,
+        -15.413114587372078
+      ]
     },
     {
       "id": "hph_336_527",
@@ -6583,17 +8463,41 @@
           30.5939998626709,
           14.967000007629395
         ]
-      }
+      },
+      "energy_kj_mol": -2.02,
+      "force_pn": 34.29,
+      "strength": "weak",
+      "detailed_strength": "Weak (-2.0 kJ/mol, 34.3 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        -19.039620192457736,
+        12.994654354228047,
+        -25.38615812618684
+      ]
     },
     {
-      "id": "hph_545_41",
+      "id": "hph_41_545",
       "distance": 5.128,
       "residue_a": {
+        "name": "VAL",
+        "number": 5,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 41,
+        "name": "CB",
+        "coordinates": [
+          29.96299934387207,
+          33.31700134277344,
+          12.814000129699707
+        ]
+      },
+      "residue_b": {
         "name": "LEU",
         "number": 69,
         "chain": "A"
       },
-      "atom_a": {
+      "atom_b": {
         "id": 545,
         "name": "CB",
         "coordinates": [
@@ -6602,30 +8506,40 @@
           17.753000259399414
         ]
       },
-      "residue_b": {
-        "name": "VAL",
-        "number": 5,
-        "chain": "A"
-      },
-      "atom_b": {
-        "id": 41,
-        "name": "CB",
-        "coordinates": [
-          29.96299934387207,
-          33.31700134277344,
-          12.814000129699707
-        ]
-      }
+      "energy_kj_mol": -2.0,
+      "force_pn": 33.91,
+      "strength": "weak",
+      "detailed_strength": "Weak (-2.0 kJ/mol, 33.9 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        6.361153740313905,
+        6.526461884364928,
+        32.65877612971288
+      ]
     },
     {
-      "id": "hph_22_114",
+      "id": "hph_114_22",
       "distance": 5.291,
       "residue_a": {
+        "name": "LEU",
+        "number": 15,
+        "chain": "A"
+      },
+      "atom_a": {
+        "id": 114,
+        "name": "CB",
+        "coordinates": [
+          31.562000274658203,
+          29.68600082397461,
+          8.045000076293945
+        ]
+      },
+      "residue_b": {
         "name": "ILE",
         "number": 3,
         "chain": "A"
       },
-      "atom_a": {
+      "atom_b": {
         "id": 22,
         "name": "CB",
         "coordinates": [
@@ -6634,20 +8548,16 @@
           8.645000457763672
         ]
       },
-      "residue_b": {
-        "name": "LEU",
-        "number": 15,
-        "chain": "A"
-      },
-      "atom_b": {
-        "id": 114,
-        "name": "CB",
-        "coordinates": [
-          31.562000274658203,
-          29.68600082397461,
-          8.045000076293945
-        ]
-      }
+      "energy_kj_mol": -1.69,
+      "force_pn": 28.59,
+      "strength": "weak",
+      "detailed_strength": "Weak (-1.7 kJ/mol, 28.6 pN)",
+      "force_type": "van_der_waals",
+      "force_vector": [
+        -28.199159741862452,
+        -3.437084884904624,
+        3.2425268812501566
+      ]
     }
   ],
   "metadata": {
@@ -6657,25 +8567,25 @@
     "num_protein_atoms": 602,
     "num_protein_residues": 76,
     "unique_residues": [
-      "GLU",
+      "PHE",
+      "GLY",
+      "ASN",
+      "ARG",
       "TYR",
-      "VAL",
-      "ASP",
-      "ILE",
+      "SER",
       "LEU",
       "MET",
-      "HOH",
-      "PHE",
-      "GLN",
-      "ALA",
-      "ARG",
       "PRO",
+      "GLN",
+      "GLU",
+      "HOH",
       "LYS",
-      "GLY",
+      "VAL",
       "THR",
-      "SER",
-      "ASN",
-      "HIS"
+      "HIS",
+      "ILE",
+      "ALA",
+      "ASP"
     ],
     "file_id": "2b9e3144-ae88-469d-ab13-6ab9350f75df",
     "hbond_method": "Fallback (Distance-only)",

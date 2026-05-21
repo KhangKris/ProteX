@@ -59,6 +59,8 @@ function ToggleRow({
   );
 }
 
+import { recalculateEnvironmentalForces, findAllostericPath } from './utils/physicsEngine';
+
 export default function App() {
   const [fileId, setFileId] = useState<string | null>('2b9e3144-ae88-469d-ab13-6ab9350f75df');
   const [filename, setFilename] = useState<string | null>('1ubq.pdb');
@@ -67,13 +69,20 @@ export default function App() {
   // Input mode: "upload" or "predict"
   const [inputMode, setInputMode] = useState<'upload' | 'predict'>('upload');
 
-  // Interaction data
-  const [saltBridges, setSaltBridges] = useState<SaltBridge[]>([]);
-  const [hydrogenBonds, setHydrogenBonds] = useState<HydrogenBond[]>([]);
-  const [disulfideBonds, setDisulfideBonds] = useState<DisulfideBond[]>([]);
-  const [piStacking, setPiStacking] = useState<PiStack[]>([]);
-  const [hydrophobicContacts, setHydrophobicContacts] = useState<HydrophobicContact[]>([]);
+  // Raw backend interaction data
+  const [rawSaltBridges, setRawSaltBridges] = useState<SaltBridge[]>([]);
+  const [rawHydrogenBonds, setRawHydrogenBonds] = useState<HydrogenBond[]>([]);
+  const [rawDisulfideBonds, setRawDisulfideBonds] = useState<DisulfideBond[]>([]);
+  const [rawPiStacking, setRawPiStacking] = useState<PiStack[]>([]);
+  const [rawHydrophobicContacts, setRawHydrophobicContacts] = useState<HydrophobicContact[]>([]);
   const [metadata, setMetadata] = useState<AnalysisMetadata | null>(null);
+
+  // Environmental and Allosteric Simulation States
+  const [pH, setPH] = useState(7.0);
+  const [temperature, setTemperature] = useState(298.15); // Kelvin (room temp)
+  const [colorMode, setColorMode] = useState<'default' | 'rmsf' | 'allosteric'>('default');
+  const [allostericSource, setAllostericSource] = useState<string>('');
+  const [allostericTarget, setAllostericTarget] = useState<string>('');
 
   // Visibility toggles
   const [showSaltBridges, setShowSaltBridges] = useState(true);
@@ -90,6 +99,47 @@ export default function App() {
   // Debug console
   const [showConsole, setShowConsole] = useState(false);
   const [consoleLogs, setConsoleLogs] = useState<string[]>([]);
+
+  // Real-time environmental recalculations
+  const recalculated = recalculateEnvironmentalForces(
+    {
+      salt_bridges: rawSaltBridges,
+      hydrogen_bonds: rawHydrogenBonds,
+      disulfide_bonds: rawDisulfideBonds,
+      pi_stacking: rawPiStacking,
+      hydrophobic_contacts: rawHydrophobicContacts,
+    },
+    pH,
+    temperature
+  );
+
+  const saltBridges = recalculated.saltBridges;
+  const hydrogenBonds = recalculated.hydrogenBonds;
+  const disulfideBonds = recalculated.disulfideBonds;
+  const piStacking = recalculated.piStacking;
+  const hydrophobicContacts = recalculated.hydrophobicContacts;
+  const resFluc = recalculated.resFluc;
+
+  // Derive sorted unique residues for Allosteric Path drop downs
+  const availableResidues = Array.from(new Set(
+    [
+      ...rawSaltBridges.flatMap(x => [x.positive_residue, x.negative_residue]),
+      ...rawHydrogenBonds.flatMap(x => [x.donor_residue, x.acceptor_residue]),
+      ...rawDisulfideBonds.flatMap(x => [x.residue_a, x.residue_b]),
+      ...rawPiStacking.flatMap(x => [x.residue_a, x.residue_b]),
+      ...rawHydrophobicContacts.flatMap(x => [x.residue_a, x.residue_b]),
+    ].map(r => `${r.chain}_${r.number}_${r.name}`)
+  )).sort((a, b) => {
+    const [c1, n1] = a.split('_');
+    const [c2, n2] = b.split('_');
+    if (c1 !== c2) return c1.localeCompare(c2);
+    return Number(n1) - Number(n2);
+  });
+
+  // Calculate stress transmission path via Dijkstra
+  const allostericPath = (allostericSource && allostericTarget)
+    ? findAllostericPath(recalculated, allostericSource.split('_').slice(0, 2).join('_'), allostericTarget.split('_').slice(0, 2).join('_'))
+    : [];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -118,7 +168,7 @@ export default function App() {
 
   // Auto-load analysis when file is set
   useEffect(() => {
-    if (fileId && saltBridges.length === 0 && hydrogenBonds.length === 0) {
+    if (fileId && rawSaltBridges.length === 0 && rawHydrogenBonds.length === 0) {
       runAnalysis(fileId);
     }
   }, [fileId]);
@@ -127,11 +177,11 @@ export default function App() {
     setIsAnalyzing(true);
     try {
       const data = await analyzeProtein(id, refresh);
-      setSaltBridges(data.salt_bridges ?? []);
-      setHydrogenBonds(data.hydrogen_bonds ?? []);
-      setDisulfideBonds(data.disulfide_bonds ?? []);
-      setPiStacking(data.pi_stacking ?? []);
-      setHydrophobicContacts(data.hydrophobic_contacts ?? []);
+      setRawSaltBridges(data.salt_bridges ?? []);
+      setRawHydrogenBonds(data.hydrogen_bonds ?? []);
+      setRawDisulfideBonds(data.disulfide_bonds ?? []);
+      setRawPiStacking(data.pi_stacking ?? []);
+      setRawHydrophobicContacts(data.hydrophobic_contacts ?? []);
       setMetadata(data.metadata ?? null);
     } catch (err: any) {
       console.error('Failed to run analysis:', err);
@@ -149,11 +199,11 @@ export default function App() {
     setFileId(id);
     setFilename(name);
     setExtension(ext);
-    setSaltBridges([]);
-    setHydrogenBonds([]);
-    setDisulfideBonds([]);
-    setPiStacking([]);
-    setHydrophobicContacts([]);
+    setRawSaltBridges([]);
+    setRawHydrogenBonds([]);
+    setRawDisulfideBonds([]);
+    setRawPiStacking([]);
+    setRawHydrophobicContacts([]);
     setMetadata(null);
     setSelectedInteractionId(null);
     await runAnalysis(id);
@@ -168,11 +218,11 @@ export default function App() {
     setFilename(`predicted_${result.file_id.slice(0, 8)}${result.extension}`);
     setExtension(result.extension);
     const a = result.analysis;
-    setSaltBridges(a.salt_bridges ?? []);
-    setHydrogenBonds(a.hydrogen_bonds ?? []);
-    setDisulfideBonds(a.disulfide_bonds ?? []);
-    setPiStacking(a.pi_stacking ?? []);
-    setHydrophobicContacts(a.hydrophobic_contacts ?? []);
+    setRawSaltBridges(a.salt_bridges ?? []);
+    setRawHydrogenBonds(a.hydrogen_bonds ?? []);
+    setRawDisulfideBonds(a.disulfide_bonds ?? []);
+    setRawPiStacking(a.pi_stacking ?? []);
+    setRawHydrophobicContacts(a.hydrophobic_contacts ?? []);
     setMetadata(a.metadata ?? null);
     setSelectedInteractionId(null);
     setError(null);
@@ -182,11 +232,11 @@ export default function App() {
     setFileId(null);
     setFilename(null);
     setExtension(null);
-    setSaltBridges([]);
-    setHydrogenBonds([]);
-    setDisulfideBonds([]);
-    setPiStacking([]);
-    setHydrophobicContacts([]);
+    setRawSaltBridges([]);
+    setRawHydrogenBonds([]);
+    setRawDisulfideBonds([]);
+    setRawPiStacking([]);
+    setRawHydrophobicContacts([]);
     setMetadata(null);
     setError(null);
     setSelectedInteractionId(null);
@@ -355,6 +405,149 @@ export default function App() {
             </div>
           )}
 
+          {/* Environmental Simulation Chamber & Allosteric Network Card */}
+          {fileId && (
+            <div className="glass-panel p-6 rounded-2xl shadow-xl flex flex-col gap-5 border border-slate-800">
+              <div className="flex items-center gap-2">
+                <FlaskConical className="h-4.5 w-4.5 text-neon-cyan animate-pulse" />
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  Environmental Chamber & Stress Network
+                </h3>
+              </div>
+
+              {/* pH & Temperature Sliders */}
+              <div className="space-y-4 pt-1">
+                <div>
+                  <div className="flex justify-between items-center text-xs font-semibold mb-1">
+                    <span className="text-slate-400">Solution pH</span>
+                    <span className="text-cyan-400 font-mono font-bold bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-800/20">{pH.toFixed(1)}</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="14"
+                    step="0.1"
+                    value={pH}
+                    onChange={(e) => setPH(parseFloat(e.target.value))}
+                    className="w-full accent-cyan-400 bg-slate-900 border-none rounded-lg h-1.5 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[9px] text-slate-500 font-mono mt-0.5">
+                    <span>Acidic (pH 0)</span>
+                    <span>Neutral (7)</span>
+                    <span>Basic (14)</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between items-center text-xs font-semibold mb-1">
+                    <span className="text-slate-400">Temperature (T)</span>
+                    <span className="text-purple-400 font-mono font-bold bg-purple-950/40 px-2 py-0.5 rounded border border-purple-800/20">{temperature.toFixed(0)} K</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="100"
+                    max="500"
+                    step="1"
+                    value={temperature}
+                    onChange={(e) => {
+                      setTemperature(parseFloat(e.target.value));
+                      if (colorMode === 'default') {
+                        setColorMode('rmsf');
+                      }
+                    }}
+                    className="w-full accent-purple-400 bg-slate-900 border-none rounded-lg h-1.5 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[9px] text-slate-500 font-mono mt-0.5">
+                    <span>Cryogenic (100 K)</span>
+                    <span>Room Temp (298 K)</span>
+                    <span>Denaturing (500 K)</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3D Color Mode Toggle */}
+              <div className="border-t border-slate-800/80 pt-4">
+                <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2.5">
+                  Structure Color Theme
+                </h4>
+                <div className="flex gap-1.5 p-1 bg-slate-950/80 rounded-xl border border-slate-800">
+                  {[
+                    { mode: 'default', label: 'Default' },
+                    { mode: 'rmsf', label: 'Thermal Fluctuations' },
+                    { mode: 'allosteric', label: 'Stress Path' },
+                  ].map((x) => (
+                    <button
+                      key={x.mode}
+                      onClick={() => setColorMode(x.mode as any)}
+                      className={`flex-1 py-1.5 rounded-lg text-[9px] font-bold tracking-wide uppercase transition-all ${
+                        colorMode === x.mode
+                          ? 'bg-slate-800 text-cyan-400 border border-slate-700/50 shadow-inner'
+                          : 'text-slate-400 hover:text-slate-200 border border-transparent'
+                      }`}
+                    >
+                      {x.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Allosteric Dijkstra Path Selection */}
+              <div className="border-t border-slate-800/80 pt-4 space-y-3">
+                <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                  Allosteric Mechanical Pathway
+                </h4>
+                
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <label className="text-[9px] text-slate-400 font-bold uppercase block mb-1">Source node</label>
+                    <select
+                      value={allostericSource}
+                      onChange={(e) => {
+                        setAllostericSource(e.target.value);
+                        setColorMode('allosteric');
+                      }}
+                      className="w-full text-[11px] bg-slate-950 border border-slate-800 rounded-lg p-1.5 text-slate-200 focus:ring-0"
+                    >
+                      <option value="">-- Choose --</option>
+                      {availableResidues.map(res => (
+                        <option key={res} value={res}>{res.replace(/_/g, ' ')}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-[9px] text-slate-400 font-bold uppercase block mb-1">Target node</label>
+                    <select
+                      value={allostericTarget}
+                      onChange={(e) => {
+                        setAllostericTarget(e.target.value);
+                        setColorMode('allosteric');
+                      }}
+                      className="w-full text-[11px] bg-slate-950 border border-slate-800 rounded-lg p-1.5 text-slate-200 focus:ring-0"
+                    >
+                      <option value="">-- Choose --</option>
+                      {availableResidues.map(res => (
+                        <option key={res} value={res}>{res.replace(/_/g, ' ')}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {allostericSource && allostericTarget && (
+                  <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl text-[10px]">
+                    {allostericPath.length > 0 ? (
+                      <div>
+                        <p className="text-purple-300 font-bold mb-1">Path Found ({allostericPath.length} steps):</p>
+                        <p className="text-slate-400 break-words font-mono">{allostericPath.join(' → ')}</p>
+                      </div>
+                    ) : (
+                      <p className="text-rose-400 italic">No mechanical bond pathway connects these residues.</p>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Molecular Metadata Card */}
           {metadata && (
             <div className="glass-panel p-6 rounded-2xl shadow-xl flex flex-col gap-4 border border-slate-800">
@@ -487,6 +680,9 @@ export default function App() {
                   showHydrophobic={showHydrophobic}
                   selectedInteractionId={selectedInteractionId}
                   onSelectInteraction={setSelectedInteractionId}
+                  resFluc={resFluc}
+                  allostericPath={allostericPath}
+                  colorMode={colorMode}
                 />
               </div>
 

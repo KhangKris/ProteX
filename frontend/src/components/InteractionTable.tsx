@@ -14,8 +14,8 @@ interface TabDef {
 }
 
 interface InteractionTableProps {
-  saltBridges: SaltBridge[];
-  hydrogenBonds: HydrogenBond[];
+  saltBridges: (SaltBridge & { snapped?: boolean })[];
+  hydrogenBonds: (HydrogenBond & { snapped?: boolean })[];
   disulfideBonds: DisulfideBond[];
   piStacking: PiStack[];
   hydrophobicContacts: HydrophobicContact[];
@@ -167,7 +167,7 @@ export default function InteractionTable({
                 <tbody className="divide-y divide-slate-800/40">
                   {filteredHBonds.map(hb => (
                     <tr key={hb.id} onClick={() => onSelectInteraction(selectedInteractionId === hb.id ? null : hb.id)}
-                      className={`${rowBase} ${selectedInteractionId === hb.id ? 'bg-cyan-500/10 text-cyan-300 font-medium' : 'hover:bg-slate-900/50 text-slate-300'}`}>
+                      className={`${rowBase} ${selectedInteractionId === hb.id ? 'bg-cyan-500/10 text-cyan-300 font-medium' : 'hover:bg-slate-900/50 text-slate-300'} ${hb.snapped ? 'opacity-40 line-through decoration-rose-500/40' : ''}`}>
                       <td className="p-3 pl-4">
                         <ResidueChip chain={hb.donor_residue.chain} name={hb.donor_residue.name} number={hb.donor_residue.number} color="#06b6d4" />
                         <span className="text-[10px] text-slate-500 ml-1">{hb.donor_atom.name}</span>
@@ -180,7 +180,7 @@ export default function InteractionTable({
                       <td className="p-3 text-right font-mono text-slate-400">{hb.angle ? `${hb.angle.toFixed(1)}°` : '—'}</td>
                       <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{hb.energy_kj_mol != null ? hb.energy_kj_mol.toFixed(1) : '—'}</td>
                       <td className="p-3 text-center">
-                        <StrengthBadge strength={hb.strength} />
+                        <StrengthBadge strength={hb.strength} forcePn={hb.force_pn} snapped={hb.snapped} />
                       </td>
                     </tr>
                   ))}
@@ -203,7 +203,7 @@ export default function InteractionTable({
                 <tbody className="divide-y divide-slate-800/40">
                   {filteredSaltBridges.map(sb => (
                     <tr key={sb.id} onClick={() => onSelectInteraction(selectedInteractionId === sb.id ? null : sb.id)}
-                      className={`${rowBase} ${selectedInteractionId === sb.id ? 'bg-amber-500/10 text-amber-300 font-medium' : 'hover:bg-slate-900/50 text-slate-300'}`}>
+                      className={`${rowBase} ${selectedInteractionId === sb.id ? 'bg-amber-500/10 text-amber-300 font-medium' : 'hover:bg-slate-900/50 text-slate-300'} ${sb.snapped ? 'opacity-40 line-through decoration-rose-500/40' : ''}`}>
                       <td className="p-3 pl-4">
                         <ResidueChip chain={sb.positive_residue.chain} name={sb.positive_residue.name} number={sb.positive_residue.number} color="#fbbf24" />
                         <span className="text-[10px] text-slate-500 ml-1">{sb.positive_atom.name}</span>
@@ -215,7 +215,7 @@ export default function InteractionTable({
                       <td className="p-3 text-right font-mono text-amber-400 font-bold">{sb.distance.toFixed(3)}</td>
                       <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{sb.energy_kj_mol != null ? sb.energy_kj_mol.toFixed(1) : '—'}</td>
                       <td className="p-3 text-center">
-                        <StrengthBadge strength={sb.strength} />
+                        <StrengthBadge strength={sb.strength} forcePn={sb.force_pn} snapped={sb.snapped} />
                       </td>
                     </tr>
                   ))}
@@ -244,7 +244,7 @@ export default function InteractionTable({
                       <td className="p-3 text-right font-mono font-bold" style={{ color: '#d4a017' }}>{ss.distance.toFixed(3)}</td>
                       <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{ss.energy_kj_mol != null ? ss.energy_kj_mol.toFixed(1) : '—'}</td>
                       <td className="p-3 text-center">
-                        <StrengthBadge strength={ss.strength || 'covalent'} />
+                        <StrengthBadge strength={ss.strength || 'covalent'} forcePn={ss.force_pn} />
                       </td>
                     </tr>
                   ))}
@@ -281,7 +281,7 @@ export default function InteractionTable({
                       </td>
                       <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{pi.energy_kj_mol != null ? pi.energy_kj_mol.toFixed(1) : '—'}</td>
                       <td className="p-3 text-center">
-                        <StrengthBadge strength={pi.strength} />
+                        <StrengthBadge strength={pi.strength} forcePn={pi.force_pn} />
                       </td>
                     </tr>
                   ))}
@@ -310,7 +310,7 @@ export default function InteractionTable({
                       <td className="p-3 text-right font-mono font-bold text-orange-400">{hc.distance.toFixed(3)}</td>
                       <td className="p-3 text-right font-mono text-emerald-400 font-semibold">{hc.energy_kj_mol != null ? hc.energy_kj_mol.toFixed(1) : '—'}</td>
                       <td className="p-3 text-center">
-                        <StrengthBadge strength={hc.strength} />
+                        <StrengthBadge strength={hc.strength} forcePn={hc.force_pn} />
                       </td>
                     </tr>
                   ))}
@@ -332,7 +332,16 @@ export default function InteractionTable({
   );
 }
 
-function StrengthBadge({ strength }: { strength?: string }) {
+function StrengthBadge({ strength, forcePn, snapped }: { strength?: string; forcePn?: number; snapped?: boolean }) {
+  if (snapped) {
+    return (
+      <div className="flex items-center justify-center gap-1.5 min-w-max">
+        <span className="px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-rose-500/10 text-rose-400 border border-rose-500/20">
+          Snapped
+        </span>
+      </div>
+    );
+  }
   if (!strength) return <span className="text-slate-500">—</span>;
   const classes: Record<string, string> = {
     covalent: 'bg-purple-500/20 text-purple-300 border border-purple-500/30',
@@ -341,9 +350,16 @@ function StrengthBadge({ strength }: { strength?: string }) {
     weak: 'bg-slate-500/25 text-slate-400 border border-slate-500/15',
   };
   return (
-    <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${classes[strength] || classes.weak}`}>
-      {strength}
-    </span>
+    <div className="flex items-center justify-center gap-1.5 min-w-max">
+      <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${classes[strength] || classes.weak}`}>
+        {strength}
+      </span>
+      {forcePn != null && (
+        <span className="text-[10px] text-slate-400 font-mono font-medium">
+          ({forcePn.toFixed(1)} pN)
+        </span>
+      )}
+    </div>
   );
 }
 

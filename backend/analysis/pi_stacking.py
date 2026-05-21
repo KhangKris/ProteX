@@ -39,24 +39,10 @@ def _ring_centroid_and_normal(atoms) -> tuple:
 
 
 def detect_pi_stacking(u: mda.Universe,
-                       centroid_cutoff: float = CENTROID_CUTOFF) -> List[Dict[str, Any]]:
+                        centroid_cutoff: float = CENTROID_CUTOFF) -> List[Dict[str, Any]]:
     """
     Detects π–π stacking interactions between aromatic residues.
-
-    Criteria:
-    - Ring centroid–centroid distance < centroid_cutoff (default 5.5 Å)
-    - Angle between ring normal vectors < 35° (face-to-face/parallel)
-      OR 55–90° (T-shaped/edge-to-face)
-    - Residues must be different
-
-    Aromatic residues supported: PHE, TYR, TRP, HIS
-
-    Parameters:
-    - u: MDAnalysis Universe object
-    - centroid_cutoff: Maximum centroid–centroid distance in Å
-
-    Returns:
-    - List of dicts describing each π–π stacking interaction.
+    Also calculates the ring centroid offset (slippage) for dispersion modeling.
     """
     # Collect (residue, centroid, normal) for every aromatic ring
     ring_data = []
@@ -104,6 +90,13 @@ def detect_pi_stacking(u: mda.Universe,
             cos_angle = min(1.0, cos_angle)  # numerical safety
             angle_deg = float(np.degrees(np.arccos(cos_angle)))
 
+            # Centroid slippage (offset) calculation:
+            # offset = sqrt(dist^2 - d_perp^2) where d_perp = |vec . normal_i|
+            d_perp = abs(np.dot(vec, ri["normal"]))
+            offset = 0.0
+            if dist > d_perp:
+                offset = float(np.sqrt(dist**2 - d_perp**2))
+
             # Classify stacking type
             if angle_deg <= PARALLEL_ANGLE_MAX:
                 stack_type = "parallel"
@@ -119,6 +112,7 @@ def detect_pi_stacking(u: mda.Universe,
                 "id": f"pi_{res_i.resid}_{res_j.resid}",
                 "distance": round(dist, 3),
                 "angle": round(angle_deg, 1),
+                "offset": round(offset, 3),
                 "stack_type": stack_type,
                 # Centroid coordinates used for drawing the inter-ring connector
                 "centroid_a": [float(x) for x in ri["centroid"]],

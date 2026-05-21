@@ -19,6 +19,7 @@ import { Loci } from 'molstar/lib/mol-model/loci';
 import { OrderedSet } from 'molstar/lib/mol-data/int';
 import { Script } from 'molstar/lib/mol-script/script';
 import { StructureElement } from 'molstar/lib/mol-model/structure';
+import { setStructureOverpaint, clearStructureOverpaint } from 'molstar/lib/mol-plugin-state/helpers/structure-overpaint';
 
 import 'molstar/build/viewer/molstar.css';
 
@@ -63,6 +64,9 @@ interface Viewer3DProps {
   showHydrophobic: boolean;
   selectedInteractionId: string | null;
   onSelectInteraction: (id: string | null) => void;
+  resFluc?: Record<string, number>;
+  allostericPath?: string[];
+  colorMode?: 'default' | 'rmsf' | 'allosteric';
 }
 
 export default function Viewer3D({
@@ -80,6 +84,9 @@ export default function Viewer3D({
   showHydrophobic,
   selectedInteractionId,
   onSelectInteraction,
+  resFluc,
+  allostericPath,
+  colorMode = 'default',
 }: Viewer3DProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [plugin, setPlugin] = useState<PluginUIContext | null>(null);
@@ -319,21 +326,23 @@ export default function Viewer3D({
 
         if (!active.current) return;
 
-        // 2. Render Salt Bridges — yellow solid thick cylinders
+        // 2. Render Salt Bridges — yellow solid thick cylinders (only active/non-snapped)
         if (showSaltBridges && saltBridges.length > 0) {
-          await commitShape(active, 'Salt Bridges', saltBridges, buildSaltBridgesMesh(), 0xfbbf24,
+          const activeSaltBridges = saltBridges.filter(sb => !(sb as any).snapped);
+          await commitShape(active, 'Salt Bridges', activeSaltBridges, buildSaltBridgesMesh(activeSaltBridges), 0xfbbf24,
             (g) => {
-              const sb = saltBridges[g];
+              const sb = activeSaltBridges[g];
               if (!sb) return 'Salt Bridge';
               return `Salt Bridge (${sb.distance} Å): ${sb.positive_residue.name}${sb.positive_residue.number} – ${sb.negative_residue.name}${sb.negative_residue.number}`;
             }, saltBridgesCellRef);
         }
 
-        // 3. Render Hydrogen Bonds — cyan dashed thin cylinders
+        // 3. Render Hydrogen Bonds — cyan dashed thin cylinders (only active/non-snapped)
         if (showHydrogenBonds && hydrogenBonds.length > 0) {
-          await commitShape(active, 'Hydrogen Bonds', hydrogenBonds, buildHydrogenBondsMesh(), 0x06b6d4,
+          const activeHBonds = hydrogenBonds.filter(hb => !(hb as any).snapped);
+          await commitShape(active, 'Hydrogen Bonds', activeHBonds, buildHydrogenBondsMesh(activeHBonds), 0x06b6d4,
             (g) => {
-              const hb = hydrogenBonds[g];
+              const hb = activeHBonds[g];
               if (!hb) return 'Hydrogen Bond';
               const angleText = hb.angle ? `, ${hb.angle}°` : '';
               return `H-Bond (${hb.distance} Å${angleText}): ${hb.donor_residue.name}${hb.donor_residue.number} → ${hb.acceptor_residue.name}${hb.acceptor_residue.number}${hb.fallback ? ' [fallback]' : ''}`;
@@ -497,6 +506,89 @@ export default function Viewer3D({
     }
   }, [plugin, selectedInteractionId, saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts]);
 
+  // Overpaint effect for RMSF / Temperature Heatmap & Allosteric Path
+  useEffect(() => {
+    if (!plugin || !isStructureLoaded || !structureRef.current) return;
+    
+    async function applyColoring() {
+      try {
+        const structures = plugin!.managers.structure.hierarchy.current.structures;
+        if (structures.length === 0) return;
+        const components = structures[0].components;
+        
+        // 1. Clear previous overpaint colors
+        await clearStructureOverpaint(plugin!, components);
+        
+        if (colorMode === 'rmsf' && resFluc) {
+          // Dynamic color-coding based on fluctuation value
+          const categories: Record<number, string[]> = {
+            0xef4444: [], // Red (High RMSF > 0.6)
+            0xf59e0b: [], // Amber (Medium 0.4 - 0.6)
+            0x3b82f6: [], // Blue (Low <= 0.4)
+          };
+          
+          for (const [key, val] of Object.entries(resFluc)) {
+            const [chain, num] = key.split('_');
+            if (val > 0.6) {
+              categories[0xef4444].push(`(chain ${chain} and resi ${num})`);
+            } else if (val > 0.4) {
+              categories[0xf59e0b].push(`(chain ${chain} and resi ${num})`);
+            } else {
+              categories[0x3b82f6].push(`(chain ${chain} and resi ${num})`);
+            }
+          }
+          
+          for (const [colorHex, selections] of Object.entries(categories)) {
+            if (selections.length === 0) continue;
+            const queryStr = selections.join(' or ');
+            const script = Script(queryStr, 'pymol');
+            const loci = Script.toLoci(script, structures[0].cell.obj!.data);
+            
+            await setStructureOverpaint(
+              plugin!,
+              components,
+              Color(Number(colorHex)),
+              async () => loci
+            );
+          }
+        } else if (colorMode === 'allosteric' && allostericPath && allostericPath.length > 0) {
+          // Color the path residues neon magenta (0xec4899) and others dimmed gray (0x334155)
+          const pathSelections = allostericPath.map(key => {
+            const [chain, num] = key.split('_');
+            return `(chain ${chain} and resi ${num})`;
+          });
+          
+          const pathQuery = pathSelections.join(' or ');
+          const scriptPath = Script(pathQuery, 'pymol');
+          const lociPath = Script.toLoci(scriptPath, structures[0].cell.obj!.data);
+          
+          // Color entire structure dimmed gray first
+          const scriptAll = Script('all', 'pymol');
+          const lociAll = Script.toLoci(scriptAll, structures[0].cell.obj!.data);
+          
+          await setStructureOverpaint(
+            plugin!,
+            components,
+            Color(0x334155),
+            async () => lociAll
+          );
+          
+          // Overpaint path in hot pink
+          await setStructureOverpaint(
+            plugin!,
+            components,
+            Color(0xec4899),
+            async () => lociPath
+          );
+        }
+      } catch (err) {
+        console.error('[ERROR] Failed to apply overpaint coloring:', err);
+      }
+    }
+    
+    applyColoring();
+  }, [plugin, isStructureLoaded, colorMode, resFluc, allostericPath]);
+
   const clearViewer = async () => {
     if (plugin) {
       await plugin.clear();
@@ -551,10 +643,10 @@ export default function Viewer3D({
   };
 
 
-  const buildSaltBridgesMesh = () => {
+  const buildSaltBridgesMesh = (sbList: SaltBridge[]) => {
     const s = MeshBuilder.createState(256, 128);
     const r = 0.15;
-    saltBridges.forEach((sb, idx) => {
+    sbList.forEach((sb, idx) => {
       const a = sb.positive_atom.coordinates, b = sb.negative_atom.coordinates;
       s.currentGroup = idx;
       addCylinder(s, Vec3.create(a[0],a[1],a[2]), Vec3.create(b[0],b[1],b[2]), 1.0, { radiusTop: r, radiusBottom: r });
@@ -563,11 +655,11 @@ export default function Viewer3D({
   };
 
   /** Thin dashed cylinders — Hydrogen Bonds (cyan), no endpoint dots */
-  const buildHydrogenBondsMesh = () => {
+  const buildHydrogenBondsMesh = (hbList: HydrogenBond[]) => {
     const s = MeshBuilder.createState(512, 256);
     const r = 0.06;
     const segments = 8;
-    hydrogenBonds.forEach((hb, idx) => {
+    hbList.forEach((hb, idx) => {
       const startC = hb.donor_atom.coordinates, endC = hb.acceptor_atom.coordinates;
       const start = Vec3.create(startC[0],startC[1],startC[2]);
       const end = Vec3.create(endC[0],endC[1],endC[2]);
