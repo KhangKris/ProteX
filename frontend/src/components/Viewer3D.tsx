@@ -17,6 +17,8 @@ import { StateTransformer } from 'molstar/lib/mol-state';
 import { Sphere3D } from 'molstar/lib/mol-math/geometry';
 import { Loci } from 'molstar/lib/mol-model/loci';
 import { OrderedSet } from 'molstar/lib/mol-data/int';
+import { Script } from 'molstar/lib/mol-script/script';
+import { StructureElement } from 'molstar/lib/mol-model/structure';
 
 import 'molstar/build/viewer/molstar.css';
 
@@ -423,53 +425,77 @@ export default function Viewer3D({
     return () => { cancelled = true; active.current = false; };
   }, [plugin, isStructureLoaded, selectedInteractionId]);
 
-  // Focus camera on selected interaction (all 5 types)
+  // Select & focus the interacting residues on the 3D structure when a table row is clicked
   useEffect(() => {
-    if (!plugin || !selectedInteractionId) return;
+    if (!plugin) return;
 
-    let coords: [number, number, number] | null = null;
+    // If nothing is selected, clear any existing selection highlights
+    if (!selectedInteractionId) {
+      plugin.managers.interactivity.lociSelects.deselectAll();
+      plugin.managers.structure.focus.clear();
+      return;
+    }
+
+    // Collect the residue numbers involved in this interaction
+    const residueNumbers: number[] = [];
 
     const sb = saltBridges.find(x => x.id === selectedInteractionId);
-    if (sb) {
-      const p = sb.positive_atom.coordinates, n = sb.negative_atom.coordinates;
-      coords = [(p[0]+n[0])/2, (p[1]+n[1])/2, (p[2]+n[2])/2];
-    }
-    if (!coords) {
+    if (sb) { residueNumbers.push(sb.positive_residue.number, sb.negative_residue.number); }
+
+    if (residueNumbers.length === 0) {
       const hb = hydrogenBonds.find(x => x.id === selectedInteractionId);
-      if (hb) {
-        const d = hb.donor_atom.coordinates, a = hb.acceptor_atom.coordinates;
-        coords = [(d[0]+a[0])/2, (d[1]+a[1])/2, (d[2]+a[2])/2];
-      }
+      if (hb) { residueNumbers.push(hb.donor_residue.number, hb.acceptor_residue.number); }
     }
-    if (!coords) {
+    if (residueNumbers.length === 0) {
       const ss = disulfideBonds.find(x => x.id === selectedInteractionId);
-      if (ss) {
-        const a = ss.atom_a.coordinates, b = ss.atom_b.coordinates;
-        coords = [(a[0]+b[0])/2, (a[1]+b[1])/2, (a[2]+b[2])/2];
-      }
+      if (ss) { residueNumbers.push(ss.residue_a.number, ss.residue_b.number); }
     }
-    if (!coords) {
+    if (residueNumbers.length === 0) {
       const pi = piStacking.find(x => x.id === selectedInteractionId);
-      if (pi) {
-        const a = pi.centroid_a, b = pi.centroid_b;
-        coords = [(a[0]+b[0])/2, (a[1]+b[1])/2, (a[2]+b[2])/2];
-      }
+      if (pi) { residueNumbers.push(pi.residue_a.number, pi.residue_b.number); }
     }
-    if (!coords) {
+    if (residueNumbers.length === 0) {
       const hc = hydrophobicContacts.find(x => x.id === selectedInteractionId);
-      if (hc) {
-        const a = hc.atom_a.coordinates, b = hc.atom_b.coordinates;
-        coords = [(a[0]+b[0])/2, (a[1]+b[1])/2, (a[2]+b[2])/2];
-      }
+      if (hc) { residueNumbers.push(hc.residue_a.number, hc.residue_b.number); }
     }
 
-    if (coords) {
-      plugin.managers.camera.focusSphere(
-        Sphere3D.create(Vec3.create(coords[0], coords[1], coords[2]), 8),
-        { durationMs: 1000 }
-      );
+    if (residueNumbers.length === 0) return;
+
+    try {
+      // Get the loaded structure from Mol*'s hierarchy
+      const structures = plugin.managers.structure.hierarchy.current.structures;
+      if (!structures.length || !structures[0].cell?.obj?.data) return;
+      const structure = structures[0].cell.obj.data;
+
+      // Build a PyMOL-style selection string for the residues: "resi 27+34"
+      const resiStr = residueNumbers.join('+');
+      const script = Script(`resi ${resiStr}`, 'pymol');
+      const loci = Script.toLoci(script, structure);
+
+      if (StructureElement.Loci.isEmpty(loci)) {
+        console.warn('[WARN] Could not find residues', residueNumbers, 'in structure');
+        return;
+      }
+
+      // Clear previous selection and apply new one
+      plugin.managers.interactivity.lociSelects.deselectAll();
+      plugin.managers.interactivity.lociSelects.selectOnly({ loci });
+
+      // Focus + zoom camera onto the selected residues
+      plugin.managers.structure.focus.setFromLoci(loci);
+      plugin.managers.camera.focusLoci(loci, { durationMs: 800 });
+    } catch (err) {
+      console.error('[ERROR] Failed to select interaction residues:', err);
+      // Fallback: just move camera to midpoint
+      const coords = getSelectedCoords();
+      if (coords) {
+        plugin.managers.camera.focusSphere(
+          Sphere3D.create(Vec3.create(coords[0], coords[1], coords[2]), 8),
+          { durationMs: 800 }
+        );
+      }
     }
-  }, [selectedInteractionId]);
+  }, [plugin, selectedInteractionId, saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts]);
 
   const clearViewer = async () => {
     if (plugin) {
