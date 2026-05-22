@@ -47,7 +47,6 @@ try {
   });
 }
 
-let nodeCounter = 0;
 
 interface Viewer3DProps {
   fileId: string | null;
@@ -264,32 +263,31 @@ export default function Viewer3D({
     loadStructure();
   }, [plugin, fileId, retryCount]);
 
-  // ─── Helper: commit a single shape layer ──────────────────────────────────
-  async function commitShape(
-    active: { current: boolean },
+  // ─── Helper: Add a single shape layer to a StateBuilder ───────────────────
+  function addShapeToUpdate(
+    update: any,
     name: string,
     data: any[],
     mesh: any,
     colorHex: number,
     labelFn: (group: number) => string,
+    refId: string,
     cellRef: MutableRefObject<any>
   ) {
-    if (!active.current || data.length === 0) return;
+    if (data.length === 0) return;
     const shape = Shape.create(name, data, mesh, () => Color(colorHex), () => 1, labelFn);
-    const ref = `${name.toLowerCase().replace(/\s+/g, '-')}-${++nodeCounter}`;
-    const reprRef = `${ref}-repr`;
-    const shapeNode = await plugin!.build().toRoot().apply(CreateShape, { shape, label: name }, { ref }).commit();
-    if (!active.current) return;
-    cellRef.current = shapeNode;
-    await plugin!.build().to(shapeNode).apply(ShapeRepresentation3D, {}, { ref: reprRef }).commit();
-    if (!active.current) return;
-    console.log(`[DEBUG] ${name} rendered successfully`);
+    const reprRef = `${refId}-repr`;
+    
+    // Add CreateShape to update and apply representation
+    const shapeNode = update.toRoot().apply(CreateShape, { shape, label: name }, { ref: refId });
+    shapeNode.apply(ShapeRepresentation3D, {}, { ref: reprRef });
+    
+    cellRef.current = shapeNode.selector;
   }
 
   // ─── Main interaction drawing effect ──────────────────────────────────────
   useEffect(() => {
     // Only require plugin + isStructureLoaded — do NOT gate on structureRef.current
-    // (structureRef may be null for some preset configurations yet shapes still work via toRoot)
     if (!plugin || !isStructureLoaded) return;
 
     const active = { current: true };
@@ -305,80 +303,130 @@ export default function Viewer3D({
       try {
         console.log('[DEBUG] drawInteractions() started.');
 
-        // 1. Delete ALL previous shape cells in a single commit
+        // Build a single atomic state transaction
         const update = plugin!.state.data.build();
-        let changed = false;
-        const allCellRefs = [
-          saltBridgesCellRef, hBondsCellRef,
-          disulfideCellRef, piStackCellRef, hydrophobicCellRef, highlightCellRef,
+        
+        // 1. Delete previous shape layers if they exist
+        const shapeRefs = [
+          'salt-bridges-shape',
+          'h-bonds-shape',
+          'disulfide-bonds-shape',
+          'pi-stack-shape',
+          'hydrophobic-shape'
         ];
-        for (const ref of allCellRefs) {
-          if (ref.current) {
-            update.delete(ref.current);
-            ref.current = null;
-            changed = true;
+        
+        for (const refId of shapeRefs) {
+          if (plugin!.state.data.cells.has(refId)) {
+            update.delete(refId);
           }
         }
-        if (changed) {
-          await update.commit();
-          console.log('[DEBUG] All previous shapes deleted');
-        }
 
-        if (!active.current) return;
+        // Reset tracking refs
+        saltBridgesCellRef.current = null;
+        hBondsCellRef.current = null;
+        disulfideCellRef.current = null;
+        piStackCellRef.current = null;
+        hydrophobicCellRef.current = null;
 
         // 2. Render Salt Bridges — yellow solid thick cylinders (only active/non-snapped)
         if (showSaltBridges && saltBridges.length > 0) {
           const activeSaltBridges = saltBridges.filter(sb => !(sb as any).snapped);
-          await commitShape(active, 'Salt Bridges', activeSaltBridges, buildSaltBridgesMesh(activeSaltBridges), 0xfbbf24,
-            (g) => {
-              const sb = activeSaltBridges[g];
-              if (!sb) return 'Salt Bridge';
-              return `Salt Bridge (${sb.distance} Å): ${sb.positive_residue.name}${sb.positive_residue.number} – ${sb.negative_residue.name}${sb.negative_residue.number}`;
-            }, saltBridgesCellRef);
+          if (activeSaltBridges.length > 0) {
+            addShapeToUpdate(
+              update,
+              'Salt Bridges',
+              activeSaltBridges,
+              buildSaltBridgesMesh(activeSaltBridges),
+              0xfbbf24,
+              (g) => {
+                const sb = activeSaltBridges[g];
+                if (!sb) return 'Salt Bridge';
+                return `Salt Bridge (${sb.distance} Å): ${sb.positive_residue.name}${sb.positive_residue.number} – ${sb.negative_residue.name}${sb.negative_residue.number}`;
+              },
+              'salt-bridges-shape',
+              saltBridgesCellRef
+            );
+          }
         }
 
         // 3. Render Hydrogen Bonds — cyan dashed thin cylinders (only active/non-snapped)
         if (showHydrogenBonds && hydrogenBonds.length > 0) {
           const activeHBonds = hydrogenBonds.filter(hb => !(hb as any).snapped);
-          await commitShape(active, 'Hydrogen Bonds', activeHBonds, buildHydrogenBondsMesh(activeHBonds), 0x06b6d4,
-            (g) => {
-              const hb = activeHBonds[g];
-              if (!hb) return 'Hydrogen Bond';
-              const angleText = hb.angle ? `, ${hb.angle}°` : '';
-              return `H-Bond (${hb.distance} Å${angleText}): ${hb.donor_residue.name}${hb.donor_residue.number} → ${hb.acceptor_residue.name}${hb.acceptor_residue.number}${hb.fallback ? ' [fallback]' : ''}`;
-            }, hBondsCellRef);
+          if (activeHBonds.length > 0) {
+            addShapeToUpdate(
+              update,
+              'Hydrogen Bonds',
+              activeHBonds,
+              buildHydrogenBondsMesh(activeHBonds),
+              0x06b6d4,
+              (g) => {
+                const hb = activeHBonds[g];
+                if (!hb) return 'Hydrogen Bond';
+                const angleText = hb.angle ? `, ${hb.angle}°` : '';
+                return `H-Bond (${hb.distance} Å${angleText}): ${hb.donor_residue.name}${hb.donor_residue.number} → ${hb.acceptor_residue.name}${hb.acceptor_residue.number}${hb.fallback ? ' [fallback]' : ''}`;
+              },
+              'h-bonds-shape',
+              hBondsCellRef
+            );
+          }
         }
 
         // 4. Render Disulfide Bonds — gold solid thick cylinders
         if (showDisulfideBonds && disulfideBonds.length > 0) {
-          await commitShape(active, 'Disulfide Bonds', disulfideBonds, buildDisulfideMesh(), 0xd4a017,
+          addShapeToUpdate(
+            update,
+            'Disulfide Bonds',
+            disulfideBonds,
+            buildDisulfideMesh(),
+            0xd4a017,
             (g) => {
               const ss = disulfideBonds[g];
               if (!ss) return 'Disulfide Bond';
               return `S–S Bond (${ss.distance} Å): CYS${ss.residue_a.number} – CYS${ss.residue_b.number}`;
-            }, disulfideCellRef);
+            },
+            'disulfide-bonds-shape',
+            disulfideCellRef
+          );
         }
 
         // 5. Render Pi-Pi Stacking — purple dashed cylinders
         if (showPiStacking && piStacking.length > 0) {
-          await commitShape(active, 'Pi Stacking', piStacking, buildPiStackMesh(), 0xa855f7,
+          addShapeToUpdate(
+            update,
+            'Pi Stacking',
+            piStacking,
+            buildPiStackMesh(),
+            0xa855f7,
             (g) => {
               const pi = piStacking[g];
               if (!pi) return 'π–π Stacking';
               return `π–π ${pi.stack_type} (${pi.distance} Å, ${pi.angle}°): ${pi.residue_a.name}${pi.residue_a.number} – ${pi.residue_b.name}${pi.residue_b.number}`;
-            }, piStackCellRef);
+            },
+            'pi-stack-shape',
+            piStackCellRef
+          );
         }
 
         // 6. Render Hydrophobic Contacts — orange dotted cylinders
         if (showHydrophobic && hydrophobicContacts.length > 0) {
-          await commitShape(active, 'Hydrophobic Contacts', hydrophobicContacts, buildHydrophobicMesh(), 0xf97316,
+          addShapeToUpdate(
+            update,
+            'Hydrophobic Contacts',
+            hydrophobicContacts,
+            buildHydrophobicMesh(),
+            0xf97316,
             (g) => {
               const hc = hydrophobicContacts[g];
               if (!hc) return 'Hydrophobic Contact';
               return `Hydrophobic (${hc.distance} Å): ${hc.residue_a.name}${hc.residue_a.number} – ${hc.residue_b.name}${hc.residue_b.number}`;
-            }, hydrophobicCellRef);
+            },
+            'hydrophobic-shape',
+            hydrophobicCellRef
+          );
         }
 
+        // Commit all changes in a single atomic database frame to prevent visual flickering
+        await update.commit();
         console.log('[DEBUG] drawInteractions() completed successfully.');
       } catch (err: any) {
         console.error('[ERROR] Failed to draw interactions:', err);
@@ -409,10 +457,10 @@ export default function Viewer3D({
 
     async function updateHighlight() {
       try {
-        // Remove previous highlight
-        if (highlightCellRef.current) {
+        // Remove previous highlight if it exists in state tree cells
+        if (highlightCellRef.current || plugin!.state.data.cells.has('selection-highlight-shape')) {
           const u = plugin!.state.data.build();
-          u.delete(highlightCellRef.current);
+          u.delete('selection-highlight-shape');
           highlightCellRef.current = null;
           await u.commit();
           if (cancelled) return;
@@ -422,8 +470,13 @@ export default function Viewer3D({
         const hlCoords = getSelectedCoords();
         if (hlCoords) {
           const hlMesh = buildHighlightMesh(hlCoords);
-          await commitShape(active, 'Selection Highlight', [{}], hlMesh, 0xffffff,
-            () => 'Selected Interaction', highlightCellRef);
+          const shape = Shape.create('Selection Highlight', [{}], hlMesh, () => Color(0xffffff), () => 1, () => 'Selected Interaction');
+          const u = plugin!.state.data.build();
+          const shapeNode = u.toRoot().apply(CreateShape, { shape, label: 'Selection Highlight' }, { ref: 'selection-highlight-shape' });
+          shapeNode.apply(ShapeRepresentation3D, {}, { ref: 'selection-highlight-shape-repr' });
+          await u.commit();
+          if (cancelled) return;
+          highlightCellRef.current = 'selection-highlight-shape';
         }
       } catch (err) {
         console.error('[ERROR] Failed to update highlight:', err);

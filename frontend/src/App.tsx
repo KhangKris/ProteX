@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import UploadZone from './components/UploadZone';
+import logo from './assets/logo.png';
 import Viewer3D from './components/Viewer3D';
 import InteractionTable from './components/InteractionTable';
 import SequenceInput from './components/SequenceInput';
@@ -249,15 +250,15 @@ export default function App() {
 
       {/* Top Navigation / Header */}
       <header className="w-full glass-panel py-4 px-6 md:px-12 flex justify-between items-center z-40 sticky top-0 shadow-lg select-none">
-        <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-gradient-to-tr from-neon-purple to-neon-cyan text-white shadow-lg animate-pulse">
-            <Dna className="h-6 w-6" />
-          </div>
-          <div>
-            <h1 className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400">
-              BioInteract
-            </h1>
-            <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+        <div className="flex items-center gap-4">
+          <img 
+            src={logo} 
+            alt="ProFold Lab Logo" 
+            className="h-8 md:h-10 w-auto object-contain filter drop-shadow(0 0 8px rgba(0, 255, 200, 0.15)) brightness-110" 
+          />
+          <div className="hidden md:block border-l border-slate-700/80 h-7 mx-1" />
+          <div className="hidden md:block">
+            <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold font-outfit">
               3D Macromolecular Interactions
             </p>
           </div>
