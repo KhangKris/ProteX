@@ -5,7 +5,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: biointeract-backend
+    container_name: profold-lab-backend
     ports:
       - "8000:8000"
     volumes:
@@ -18,7 +18,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: biointeract-frontend
+    container_name: profold-lab-frontend
     ports:
       - "5173:5173"
     environment:
