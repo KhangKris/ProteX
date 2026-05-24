@@ -1,64 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    @apply bg-[#020202] text-slate-300;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
   }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace !important;
+  }
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism utility - Refined for "Void" theme */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(15, 23, 42, 0.8);
-  border-color: rgba(99, 102, 241, 0.25);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  transform: translateY(-2px);
+  background: rgba(15, 15, 15, 0.9);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.3);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Molstar styling overrides to fit beautifully inside our layout */
+/* Molstar styling overrides */
 .msp-plugin {
-  border-radius: 0.75rem;
+  border-radius: 4px !important;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 /* Neon glow classes */
 .glow-cyan {
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.35);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
 }
-.glow-yellow {
-  box-shadow: 0 0 15px rgba(251, 191, 36, 0.35);
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
 }
 
 /* Custom background animation */
@@ -69,10 +75,36 @@
   right: 0;
   bottom: 0;
   z-index: -10;
-  background-color: #030712;
+  background-color: #020202;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 0%, rgba(236, 72, 153, 0.05) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(50, 50, 50, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(30, 30, 30, 0.1) 0px, transparent 50%);
   background-size: cover;
 }
+
+/* Micro-grid background for a high-tech instrument panel feel */
+.bg-grid-lab {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* Sidebar expand/collapse animation transitions */
+.sidebar-transition {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scientific Instrument Styles */
+.instrument-label {
+  @apply text-[9px] font-mono font-bold text-slate-500 uppercase tracking-widest;
+}
+
+.instrument-value {
+  @apply text-[11px] font-mono font-medium text-cyan-400;
+}
+
+.instrument-border {
+  @apply border border-white/[0.03];
+}
+

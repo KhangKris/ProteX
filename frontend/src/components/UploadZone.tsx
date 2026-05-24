@@ -73,10 +73,10 @@ export default function UploadZone({
       onDrop={handleDrop}
       onClick={() => !loading && fileInputRef.current?.click()}
       id="upload-zone-container"
-      className={`relative w-full border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-all duration-350 select-none flex flex-col items-center justify-center min-h-[220px] ${
+      className={`relative w-full border border-dashed rounded-lg p-8 text-center cursor-pointer transition-all duration-200 select-none flex flex-col items-center justify-center min-h-[220px] ${
         isDragActive
-          ? 'border-neon-cyan bg-slate-900/60 shadow-[0_0_25px_rgba(6,182,212,0.15)] scale-[1.01]'
-          : 'border-slate-800 bg-slate-900/20 hover:border-slate-700 hover:bg-slate-900/30'
+          ? 'border-cyan-555 bg-cyan-950/15 shadow-[0_0_20px_rgba(6,182,212,0.1)] scale-[1.01]'
+          : 'border-slate-900 bg-slate-950/30 hover:border-slate-800 hover:bg-slate-950/60'
       } ${loading ? 'pointer-events-none opacity-80' : ''}`}
     >
       <input
@@ -89,37 +89,37 @@ export default function UploadZone({
       />
 
       {loading ? (
-        <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-10 w-10 text-neon-cyan animate-spin" />
+        <div className="flex flex-col items-center gap-4 font-mono">
+          <Loader2 className="h-8 w-8 text-cyan-400 animate-spin" />
           <div className="space-y-1">
-            <h3 className="text-base font-semibold text-slate-200">Uploading Macromolecule...</h3>
-            <p className="text-xs text-slate-400">Sending structural coordinates to scientific backend</p>
+            <h3 className="text-xs font-bold text-slate-205 uppercase">[UPLOADING_MACROMOLECULE...]</h3>
+            <p className="text-[9px] text-slate-500 uppercase">streaming coordinate telemetry to server</p>
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center gap-4">
-          <div className={`p-4 rounded-full transition-all duration-300 ${
-            isDragActive ? 'bg-neon-cyan/15 text-neon-cyan' : 'bg-slate-900 text-slate-400'
+        <div className="flex flex-col items-center gap-4 font-mono">
+          <div className={`p-3 rounded border transition-all duration-200 ${
+            isDragActive ? 'bg-cyan-950/50 border-cyan-800/40 text-cyan-400' : 'bg-slate-950 border-slate-900 text-slate-500'
           }`}>
             {isDragActive ? (
-              <FileCode className="h-8 w-8 animate-bounce" />
+              <FileCode className="h-6 w-6 animate-bounce" />
             ) : (
-              <Upload className="h-8 w-8" />
+              <Upload className="h-6 w-6" />
             )}
           </div>
           
-          <div className="space-y-1.5">
-            <h3 className="text-base font-semibold text-slate-200">
-              Drag & Drop your structural file here
+          <div className="space-y-1">
+            <h3 className="text-xs font-bold text-slate-200 uppercase">
+              [DRAG_PDB_STRUCTURE_HERE]
             </h3>
-            <p className="text-xs text-slate-400">
-              or click to browse local files (Supports <span className="text-neon-cyan font-semibold">.pdb</span>, <span className="text-neon-cyan font-semibold">.cif</span>, <span className="text-neon-cyan font-semibold">.mmcif</span> formats)
+            <p className="text-[9px] text-slate-500 uppercase">
+              or click to stream local file coordinates
             </p>
           </div>
           
-          <div className="flex gap-2.5 mt-2">
-            <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-slate-400 border border-slate-700">PDB</span>
-            <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-slate-400 border border-slate-700">mmCIF</span>
+          <div className="flex gap-2 mt-2 select-none">
+            <span className="px-2 py-0.5 rounded text-[8px] font-bold bg-slate-900 border border-slate-850 text-slate-500 uppercase">pdb_format</span>
+            <span className="px-2 py-0.5 rounded text-[8px] font-bold bg-slate-900 border border-slate-850 text-slate-500 uppercase">cif_format</span>
           </div>
         </div>
       )}

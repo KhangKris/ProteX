@@ -7,7 +7,6 @@ import { Shape, ShapeGroup } from 'molstar/lib/mol-model/shape';
 import { MeshBuilder } from 'molstar/lib/mol-geo/geometry/mesh/mesh-builder';
 import { addCylinder } from 'molstar/lib/mol-geo/geometry/mesh/builder/cylinder';
 
-
 import { Vec3 } from 'molstar/lib/mol-math/linear-algebra';
 import { Color } from 'molstar/lib/mol-util/color';
 import { ShapeRepresentation3D } from 'molstar/lib/mol-plugin-state/transforms/representation';
@@ -22,10 +21,11 @@ import { StructureElement } from 'molstar/lib/mol-model/structure';
 import { setStructureOverpaint, clearStructureOverpaint } from 'molstar/lib/mol-plugin-state/helpers/structure-overpaint';
 
 import 'molstar/build/viewer/molstar.css';
+import { X, Activity, Target } from 'lucide-react';
 
 import { HydrogenBond, SaltBridge, DisulfideBond, PiStack, HydrophobicContact, getFileUrl } from '../utils/api';
 
-// Define the custom CreateShape transformer for Mol* State, re-using it if already registered (e.g., during HMR)
+// Define the custom CreateShape transformer
 let CreateShape: StateTransformer<SO.Root, SO.Shape.Provider, { shape: Shape, label: string }>;
 try {
   CreateShape = StateTransformer.get('custom-shape-namespace.create-shape');
@@ -95,118 +95,302 @@ export default function Viewer3D({
   const [retryCount, setRetryCount] = useState(0);
   const [isStructureLoaded, setIsStructureLoaded] = useState(false);
 
-  // References to keep track of loaded Mol* state cells/nodes
+  // Helper to log errors safely
+  const safeError = (label: string, err: any) => {
+    const msg = typeof err === 'string' ? err : err?.message || '';
+    if (msg.includes('renderObject') || msg.includes('expected renderObject')) return; // Silenced per user request
+    console.error(`[Viewer3D] ${label}:`, err);
+  };
+
+  // Find selected interaction details
+  const getSelectedInteractionDetails = () => {
+    if (!selectedInteractionId) return null;
+    
+    const hb = hydrogenBonds.find(x => x.id === selectedInteractionId);
+    if (hb) {
+      return {
+        type: 'Hydrogen Bond',
+        color: '#06b6d4',
+        accentBg: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-400',
+        resA: `${hb.donor_residue.chain}:${hb.donor_residue.name}${hb.donor_residue.number}`,
+        atomA: hb.donor_atom.name,
+        resB: `${hb.acceptor_residue.chain}:${hb.acceptor_residue.name}${hb.acceptor_residue.number}`,
+        atomB: hb.acceptor_atom.name,
+        distance: hb.distance,
+        energy: hb.energy_kj_mol,
+        force: hb.force_pn,
+        extra: hb.angle ? `Angle: ${hb.angle.toFixed(1)}°` : null,
+      };
+    }
+
+    const sb = saltBridges.find(x => x.id === selectedInteractionId);
+    if (sb) {
+      return {
+        type: 'Salt Bridge',
+        color: '#fbbf24',
+        accentBg: 'bg-amber-500/10 border-amber-500/20 text-amber-400',
+        resA: `${sb.positive_residue.chain}:${sb.positive_residue.name}${sb.positive_residue.number}`,
+        atomA: sb.positive_atom.name,
+        resB: `${sb.negative_residue.chain}:${sb.negative_residue.name}${sb.negative_residue.number}`,
+        atomB: sb.negative_atom.name,
+        distance: sb.distance,
+        energy: sb.energy_kj_mol,
+        force: sb.force_pn,
+        extra: 'Electrostatic',
+      };
+    }
+
+    const ss = disulfideBonds.find(x => x.id === selectedInteractionId);
+    if (ss) {
+      return {
+        type: 'Disulfide Bond',
+        color: '#d4a017',
+        accentBg: 'bg-yellow-500/10 border-yellow-500/20 text-yellow-500',
+        resA: `${ss.residue_a.chain}:${ss.residue_a.name}${ss.residue_a.number}`,
+        atomA: ss.atom_a.name,
+        resB: `${ss.residue_b.chain}:${ss.residue_b.name}${ss.residue_b.number}`,
+        atomB: ss.atom_b.name,
+        distance: ss.distance,
+        energy: ss.energy_kj_mol,
+        force: ss.force_pn,
+        extra: 'Covalent S–S',
+      };
+    }
+
+    const pi = piStacking.find(x => x.id === selectedInteractionId);
+    if (pi) {
+      return {
+        type: 'π–π Stacking',
+        color: '#a855f7',
+        accentBg: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
+        resA: `${pi.residue_a.chain}:${pi.residue_a.name}${pi.residue_a.number}`,
+        atomA: 'Centroid A',
+        resB: `${pi.residue_b.chain}:${pi.residue_b.name}${pi.residue_b.number}`,
+        atomB: 'Centroid B',
+        distance: pi.distance,
+        energy: pi.energy_kj_mol,
+        force: pi.force_pn,
+        extra: `${pi.stack_type}, ${pi.angle.toFixed(1)}°`,
+      };
+    }
+
+    const hc = hydrophobicContacts.find(x => x.id === selectedInteractionId);
+    if (hc) {
+      return {
+        type: 'Hydrophobic',
+        color: '#f97316',
+        accentBg: 'bg-orange-500/10 border-orange-500/20 text-orange-400',
+        resA: `${hc.residue_a.chain}:${hc.residue_a.name}${hc.residue_a.number}`,
+        atomA: hc.atom_a.name,
+        resB: `${hc.residue_b.chain}:${hc.residue_b.name}${hc.residue_b.number}`,
+        atomB: hc.atom_b.name,
+        distance: hc.distance,
+        energy: hc.energy_kj_mol,
+        force: hc.force_pn,
+        extra: 'Dispersion',
+      };
+    }
+
+    return null;
+  };
+
+  const selectedDetails = getSelectedInteractionDetails();
   const structureRef = useRef<any>(null);
-  const saltBridgesCellRef = useRef<any>(null);
-  const hBondsCellRef = useRef<any>(null);
-  const disulfideCellRef = useRef<any>(null);
-  const piStackCellRef = useRef<any>(null);
-  const hydrophobicCellRef = useRef<any>(null);
-  const highlightCellRef = useRef<any>(null); // glowing sphere for selected interaction
+  const shapesCellRefs = useRef<Record<string, any>>({});
+  const highlightCellRef = useRef<any>(null);
   const isDrawingRef = useRef(false);
   const hasPendingDrawRef = useRef(false);
 
-  // Keep latest props in refs to avoid stale closure in subscription callback
-  const saltBridgesRef = useRef(saltBridges);
-  const hydrogenBondsRef = useRef(hydrogenBonds);
-  const disulfideBondsRef = useRef(disulfideBonds);
-  const piStackingRef = useRef(piStacking);
-  const hydrophobicContactsRef = useRef(hydrophobicContacts);
-  const onSelectInteractionRef = useRef(onSelectInteraction);
+  // Keep latest props in refs for event listeners
+  const propsRef = useRef({
+    saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts,
+    showSaltBridges, showHydrogenBonds, showDisulfideBonds, showPiStacking, showHydrophobic,
+    onSelectInteraction,
+    selectedInteractionId
+  });
 
   useEffect(() => {
-    saltBridgesRef.current = saltBridges;
-    hydrogenBondsRef.current = hydrogenBonds;
-    disulfideBondsRef.current = disulfideBonds;
-    piStackingRef.current = piStacking;
-    hydrophobicContactsRef.current = hydrophobicContacts;
-    onSelectInteractionRef.current = onSelectInteraction;
-  }, [saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts, onSelectInteraction]);
+    propsRef.current = {
+      saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts,
+      showSaltBridges, showHydrogenBonds, showDisulfideBonds, showPiStacking, showHydrophobic,
+      onSelectInteraction,
+      selectedInteractionId
+    };
+  }, [saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts, showSaltBridges, showHydrogenBonds, showDisulfideBonds, showPiStacking, showHydrophobic, onSelectInteraction, selectedInteractionId]);
 
   // Initialize Mol* Plugin
   useEffect(() => {
+    // Intercept console.error to filter out known noisy Mol* logs
+    const originalError = console.error;
+    console.error = (...args: any[]) => {
+      const msg = args.join(' ');
+      if (msg.includes('renderObject') || msg.includes('expected renderObject')) return;
+      originalError.apply(console, args);
+    };
+
     let pluginInstance: PluginUIContext | null = null;
     let clickSub: any = null;
-    let initTimeoutId: any = null;
 
     async function init() {
-      console.log('[DEBUG] init() started. containerRef.current exists:', !!containerRef.current);
       if (!containerRef.current) return;
-
       const spec = DefaultPluginUISpec();
-      spec.layout = {
-        initial: {
-          showControls: false,
-          isExpanded: false
-        }
-      };
-      
-      spec.config = [
-        [PluginConfig.Viewport.ShowAnimation, false],
-        [PluginConfig.Viewport.ShowTrajectoryControls, false]
-      ];
+      spec.layout = { initial: { showControls: false, isExpanded: false } };
+      spec.config = [[PluginConfig.Viewport.ShowAnimation, false], [PluginConfig.Viewport.ShowTrajectoryControls, false]];
 
       try {
-        console.log('[DEBUG] Invoking createPluginUI...');
         const p = await createPluginUI(containerRef.current, spec);
-        console.log('[DEBUG] createPluginUI returned plugin context successfully');
-        
-        // Set canvas background to matching slate dark color
         if (p.canvas3d) {
-          console.log('[DEBUG] canvas3d is present, setting dark background');
-          p.canvas3d.setProps({
-            renderer: { backgroundColor: Color(0x0f172a) }
-          });
-        } else {
-          console.log('[DEBUG] canvas3d is NOT present on plugin context');
+          p.canvas3d.setProps({ renderer: { backgroundColor: Color(0x020202) } });
         }
 
-        // Set up custom selection interaction click handler
+        // Custom click handler
         clickSub = p.behaviors.interaction.click.subscribe((event) => {
           const loci = event.current.loci;
+          
           if (Loci.isEmpty(loci)) return;
+
+          // Helper to log to the UI console
+          const logToUI = (msg: string, type: 'info' | 'success' | 'warn' = 'info') => {
+            if (!(window as any).__app_logs) (window as any).__app_logs = [];
+            const prefix = type === 'success' ? ' [SUCCESS] ' : type === 'warn' ? ' [WARN] ' : ' [SYSTEM] ';
+            (window as any).__app_logs.push(`${prefix}${msg}`);
+          };
+
+          // 1. Check if we clicked a custom interaction shape (The Bond Cylinder)
           if (ShapeGroup.isLoci(loci)) {
             const shape = loci.shape;
-            if (shape.name === 'Salt Bridges' || shape.name === 'Hydrogen Bonds') {
-              const firstGroup = loci.groups[0];
-              if (firstGroup) {
-                const group = OrderedSet.getAt(firstGroup.ids, 0);
-                if (group !== undefined) {
-                  const list = shape.name === 'Salt Bridges' ? saltBridgesRef.current : hydrogenBondsRef.current;
-                  const item = list[group];
-                  if (item) {
-                    onSelectInteractionRef.current(item.id);
-                  }
+            const validShapes = ['Salt Bridges', 'Hydrogen Bonds', 'Disulfide Bonds', 'Pi Stacking', 'Hydrophobic Contacts'];
+            
+            if (validShapes.includes(shape.name)) {
+              const group = OrderedSet.getAt(loci.groups[0].ids, 0);
+              let list: any[] = [];
+              const { saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts, onSelectInteraction, selectedInteractionId } = propsRef.current;
+              
+              if (shape.name === 'Salt Bridges') list = saltBridges.filter(sb => !(sb as any).snapped);
+              else if (shape.name === 'Hydrogen Bonds') list = hydrogenBonds.filter(hb => !(hb as any).snapped);
+              else if (shape.name === 'Disulfide Bonds') list = disulfideBonds;
+              else if (shape.name === 'Pi Stacking') list = piStacking;
+              else if (shape.name === 'Hydrophobic Contacts') list = hydrophobicContacts;
+              
+              const item = list[group];
+              if (item) {
+                // Clear Mol* default selection to avoid "Red" residue highlight
+                p.managers.interactivity.lociSelects.deselectAll();
+                
+                const isCurrentlySelected = selectedInteractionId === item.id;
+                logToUI(`${isCurrentlySelected ? 'Purging' : 'Locking'} ${shape.name} Spectrometry Stream: ${item.id.slice(0, 12)}...`, isCurrentlySelected ? 'info' : 'success');
+                onSelectInteraction(isCurrentlySelected ? null : item.id);
+                // Trigger a re-draw manually for the highlight state
+                requestAnimationFrame(() => {
+                    if (plugin && plugin.state) {
+                        plugin.state.data.build().commit();
+                    }
+                });
+              }
+              return;
+            }
+          } 
+          
+          // 2. Check if we clicked a residue in the protein structure
+          if (StructureElement.Loci.is(loci)) {
+            const location = StructureElement.Loci.getFirstLocation(loci);
+            if (location && location.unit && location.unit.model && location.unit.model.atomicHierarchy) {
+              const hierarchy = location.unit.model.atomicHierarchy;
+              
+              // Use derived mapping for residue lookup with full optional chaining
+              const rIdx = hierarchy.derived?.residue?.index?.[location.element] ?? 
+                           hierarchy.residueShare?.index?.[location.element];
+              
+              if (rIdx === undefined) {
+                console.warn('[Viewer3D] Residue index is undefined, attempting location-based fallback.');
+                // Fallback: Try identifying residue from the location object directly
+                const unit = location.unit;
+                const residueIndex = unit.residueIndex[location.element];
+                if (residueIndex === undefined) {
+                     console.warn('[Viewer3D] Residue index still undefined from unit fallback, skipping.');
+                     return;
                 }
               }
+
+              const rIdxFinal = rIdx ?? location.unit.residueIndex[location.element];
+              const rNumAuth = hierarchy.residues.auth_seq_id?.value(rIdxFinal);
+              const rNumLabel = hierarchy.residues.label_seq_id?.value(rIdxFinal);
+              
+              // Safely access chain information
+              const chainElementIndex = hierarchy.residueShare 
+                ? hierarchy.residueShare.chain[location.element] 
+                : hierarchy.derived?.residue?.chain?.[location.element];
+                
+              const chainId = chainElementIndex !== undefined 
+                ? hierarchy.chains.auth_asym_id.value(chainElementIndex)
+                : 'A';
+                
+              const rName = hierarchy.residues.label_comp_id?.value(rIdxFinal);
+              
+              console.log(`[Viewer3D] Clicked Residue: ${chainId}:${rName}${rNumAuth}`);
+              
+              // Normalize chain (some PDBs use ' ' or 'A')
+              const normChain = chainId.trim() || 'A';
+              
+              // Find matching interaction involving this residue
+              const { saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts, onSelectInteraction, selectedInteractionId } = propsRef.current;
+              
+              const isMatch = (res: any) => {
+                const resChain = res.chain.trim() || 'A';
+                return resChain === normChain && (res.number === rNumAuth || res.number === rNumLabel);
+              };
+
+              const matches = [
+                ...hydrogenBonds.filter(hb => isMatch(hb.donor_residue) || isMatch(hb.acceptor_residue)),
+                ...saltBridges.filter(sb => isMatch(sb.positive_residue) || isMatch(sb.negative_residue)),
+                ...disulfideBonds.filter(ss => isMatch(ss.residue_a) || isMatch(ss.residue_b)),
+                ...piStacking.filter(pi => isMatch(pi.residue_a) || isMatch(pi.residue_b)),
+                ...hydrophobicContacts.filter(hc => isMatch(hc.residue_a) || isMatch(hc.residue_b))
+              ];
+
+              console.log(`[Viewer3D] Residue ${normChain}:${rName}${rNumAuth} match results:`, matches);
+
+              if (matches.length > 0) {
+                // Clear Mol* default selection
+                p.managers.interactivity.lociSelects.deselectAll();
+
+                // Cycle through matches if the residue is already part of the selected interaction
+                let nextIdx = 0;
+                if (selectedInteractionId) {
+                  const currIdx = matches.findIndex(m => m.id === selectedInteractionId);
+                  if (currIdx !== -1) nextIdx = (currIdx + 1) % matches.length;
+                }
+                const selected = matches[nextIdx];
+                console.log(`[Viewer3D] Selecting match ID: ${selected.id}`);
+                logToUI(`Telemetry Lock: Residue ${normChain}:${rName}${rNumAuth} -> Binding to Stream ID: ${selected.id.slice(0, 12)}...`, 'success');
+                onSelectInteraction(selected.id);
+              } else {
+                console.log(`[Viewer3D] No matches for residue ${normChain}:${rName}${rNumAuth}`);
+                logToUI(`Spectrometry Null: No active connections detected for residue ${normChain}:${rName}${rNumAuth}.`, 'warn');
+                onSelectInteraction(null);
+              }
+            } else {
+              console.warn('[Viewer3D] Click location missing atomic hierarchy info.');
             }
           }
         });
 
         pluginInstance = p;
         setPlugin(p);
-        console.log('[DEBUG] setPlugin execution completed successfully');
       } catch (err: any) {
-        console.error('[ERROR] Failed to initialize Mol* viewer:', err);
+        safeError('Mol* Init Error', err);
         setError('Failed to initialize 3D molecular viewer');
       }
     }
 
-    initTimeoutId = setTimeout(() => {
-      init();
-    }, 100);
-
+    setTimeout(init, 100);
     return () => {
-      console.log('[DEBUG] useEffect cleanup running. Clearing timeout and disposing plugin if exists.');
-      if (initTimeoutId) clearTimeout(initTimeoutId);
       if (clickSub) clickSub.unsubscribe();
-      if (pluginInstance) {
-        pluginInstance.dispose();
-      }
+      if (pluginInstance) pluginInstance.dispose();
     };
   }, []);
 
-  // Load structure file when fileId changes
+  // Load structure file
   useEffect(() => {
     if (!plugin || !fileId) return;
 
@@ -215,47 +399,24 @@ export default function Viewer3D({
       setError(null);
       setIsStructureLoaded(false);
 
-      const fileUrl = getFileUrl(fileId!);
-      const ext = extension || '.pdb';
-      const isCif = ext === '.cif' || ext === '.mmcif';
-      
-      console.log(`[DEBUG] Starting loadStructure. fileId=${fileId}, ext=${ext}, url=${fileUrl}`);
-
       try {
-        // 1. Clear previous structure & shapes
-        await clearViewer();
-        console.log('[DEBUG] 1. Viewer cleared successfully');
-
-        // 2. Download and parse structure file
-        console.log('[DEBUG] 2. Downloading structure file...');
-        const data = await plugin!.builders.data.download({ url: fileUrl }, { state: { isGhost: true } });
-        console.log('[DEBUG] 2. Download completed. Parsing trajectory...');
-        const trajectory = await plugin!.builders.structure.parseTrajectory(data, isCif ? 'mmcif' : 'pdb');
-        console.log('[DEBUG] 2. Trajectory parsing completed');
-        
-        // 3. Apply default hierarchy preset (creates model, structure, and automatic representations)
-        console.log('[DEBUG] 3. Applying hierarchy preset...');
+        await plugin!.clear();
+        const data = await plugin!.builders.data.download({ url: getFileUrl(fileId!) }, { state: { isGhost: true } });
+        const trajectory = await plugin!.builders.structure.parseTrajectory(data, (extension === '.cif' || extension === '.mmcif') ? 'mmcif' : 'pdb');
         const preset = await plugin!.builders.structure.hierarchy.applyPreset(trajectory, 'default');
-        console.log('[DEBUG] 3. Preset application completed');
         
         if (preset && preset.structure) {
           structureRef.current = preset.structure;
         } else {
-          // Fallback: get first structure cell from hierarchy manager
-          const currentStructures = plugin!.managers.structure.hierarchy.current.structures;
-          if (currentStructures.length > 0) {
-            structureRef.current = currentStructures[0].cell;
-          }
+          const current = plugin!.managers.structure.hierarchy.current.structures;
+          if (current.length > 0) structureRef.current = current[0].cell;
         }
-        console.log(`[DEBUG] Structure reference: ${structureRef.current ? 'Found' : 'Missing'}`);
 
-        // 4. Zoom to structure
         plugin!.managers.camera.reset();
-        console.log('[DEBUG] 4. Camera reset completed');
         setIsStructureLoaded(true);
       } catch (err: any) {
-        console.error('Failed to load protein structure:', err);
-        setError(`Failed to load protein structure: ${err.message || err}`);
+        safeError('Structure Load Error', err);
+        setError(`Failed to load structure: ${err.message || err}`);
       } finally {
         setLoading(false);
       }
@@ -264,249 +425,127 @@ export default function Viewer3D({
     loadStructure();
   }, [plugin, fileId, retryCount]);
 
-  // ─── Helper: commit a single shape layer ──────────────────────────────────
-  async function commitShape(
-    active: { current: boolean },
-    name: string,
-    data: any[],
-    mesh: any,
-    colorHex: number,
-    labelFn: (group: number) => string,
-    cellRef: MutableRefObject<any>
-  ) {
-    if (!active.current || data.length === 0) return;
-    const shape = Shape.create(name, data, mesh, () => Color(colorHex), () => 1, labelFn);
-    const ref = `${name.toLowerCase().replace(/\s+/g, '-')}-${++nodeCounter}`;
-    const reprRef = `${ref}-repr`;
-    const shapeNode = await plugin!.build().toRoot().apply(CreateShape, { shape, label: name }, { ref }).commit();
-    if (!active.current) return;
-    cellRef.current = shapeNode;
-    await plugin!.build().to(shapeNode).apply(ShapeRepresentation3D, {}, { ref: reprRef }).commit();
-    if (!active.current) return;
-    console.log(`[DEBUG] ${name} rendered successfully`);
-  }
-
-  // ─── Main interaction drawing effect ──────────────────────────────────────
+  // Interaction drawing
   useEffect(() => {
-    // Only require plugin + isStructureLoaded — do NOT gate on structureRef.current
-    // (structureRef may be null for some preset configurations yet shapes still work via toRoot)
     if (!plugin || !isStructureLoaded) return;
-
     const active = { current: true };
 
     async function drawInteractions() {
-      if (isDrawingRef.current) {
-        hasPendingDrawRef.current = true;
-        return;
-      }
+      if (isDrawingRef.current) { hasPendingDrawRef.current = true; return; }
       isDrawingRef.current = true;
       hasPendingDrawRef.current = false;
 
       try {
-        console.log('[DEBUG] drawInteractions() started.');
-
-        // 1. Delete ALL previous shape cells in a single commit
         const update = plugin!.state.data.build();
-        let changed = false;
-        const allCellRefs = [
-          saltBridgesCellRef, hBondsCellRef,
-          disulfideCellRef, piStackCellRef, hydrophobicCellRef, highlightCellRef,
-        ];
-        for (const ref of allCellRefs) {
-          if (ref.current) {
-            update.delete(ref.current);
-            ref.current = null;
-            changed = true;
-          }
-        }
-        if (changed) {
-          await update.commit();
-          console.log('[DEBUG] All previous shapes deleted');
-        }
+        Object.values(shapesCellRefs.current).forEach(cell => { if (cell) update.delete(cell); });
+        // We delete highlightCellRef here too to avoid conflicts
+        if (highlightCellRef.current) update.delete(highlightCellRef.current);
+        
+        await update.commit();
+        shapesCellRefs.current = {};
+        highlightCellRef.current = null;
 
         if (!active.current) return;
 
-        // 2. Render Salt Bridges — yellow solid thick cylinders (only active/non-snapped)
+        const { saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts, showSaltBridges, showHydrogenBonds, showDisulfideBonds, showPiStacking, showHydrophobic, selectedInteractionId } = propsRef.current;
+
         if (showSaltBridges && saltBridges.length > 0) {
-          const activeSaltBridges = saltBridges.filter(sb => !(sb as any).snapped);
-          await commitShape(active, 'Salt Bridges', activeSaltBridges, buildSaltBridgesMesh(activeSaltBridges), 0xfbbf24,
-            (g) => {
-              const sb = activeSaltBridges[g];
-              if (!sb) return 'Salt Bridge';
-              return `Salt Bridge (${sb.distance} Å): ${sb.positive_residue.name}${sb.positive_residue.number} – ${sb.negative_residue.name}${sb.negative_residue.number}`;
-            }, saltBridgesCellRef);
+          await commitShape(active, 'Salt Bridges', saltBridges, buildSaltBridgesMesh(saltBridges, selectedInteractionId), 0xfbbf24, (g) => `Salt Bridge (${saltBridges[g].distance} Å)`, 'salt');
         }
-
-        // 3. Render Hydrogen Bonds — cyan dashed thin cylinders (only active/non-snapped)
         if (showHydrogenBonds && hydrogenBonds.length > 0) {
-          const activeHBonds = hydrogenBonds.filter(hb => !(hb as any).snapped);
-          await commitShape(active, 'Hydrogen Bonds', activeHBonds, buildHydrogenBondsMesh(activeHBonds), 0x06b6d4,
-            (g) => {
-              const hb = activeHBonds[g];
-              if (!hb) return 'Hydrogen Bond';
-              const angleText = hb.angle ? `, ${hb.angle}°` : '';
-              return `H-Bond (${hb.distance} Å${angleText}): ${hb.donor_residue.name}${hb.donor_residue.number} → ${hb.acceptor_residue.name}${hb.acceptor_residue.number}${hb.fallback ? ' [fallback]' : ''}`;
-            }, hBondsCellRef);
+          await commitShape(active, 'Hydrogen Bonds', hydrogenBonds, buildHydrogenBondsMesh(hydrogenBonds, selectedInteractionId), 0x06b6d4, (g) => `H-Bond (${hydrogenBonds[g].distance} Å)`, 'hb');
         }
-
-        // 4. Render Disulfide Bonds — gold solid thick cylinders
         if (showDisulfideBonds && disulfideBonds.length > 0) {
-          await commitShape(active, 'Disulfide Bonds', disulfideBonds, buildDisulfideMesh(), 0xd4a017,
-            (g) => {
-              const ss = disulfideBonds[g];
-              if (!ss) return 'Disulfide Bond';
-              return `S–S Bond (${ss.distance} Å): CYS${ss.residue_a.number} – CYS${ss.residue_b.number}`;
-            }, disulfideCellRef);
+          await commitShape(active, 'Disulfide Bonds', disulfideBonds, buildDisulfideMesh(disulfideBonds, selectedInteractionId), 0xd4a017, (g) => `S–S Bond (${disulfideBonds[g].distance} Å)`, 'ss');
         }
-
-        // 5. Render Pi-Pi Stacking — purple dashed cylinders
         if (showPiStacking && piStacking.length > 0) {
-          await commitShape(active, 'Pi Stacking', piStacking, buildPiStackMesh(), 0xa855f7,
-            (g) => {
-              const pi = piStacking[g];
-              if (!pi) return 'π–π Stacking';
-              return `π–π ${pi.stack_type} (${pi.distance} Å, ${pi.angle}°): ${pi.residue_a.name}${pi.residue_a.number} – ${pi.residue_b.name}${pi.residue_b.number}`;
-            }, piStackCellRef);
+          await commitShape(active, 'Pi Stacking', piStacking, buildPiStackMesh(piStacking, selectedInteractionId), 0xa855f7, (g) => `π–π Stack (${piStacking[g].distance} Å)`, 'pi');
         }
-
-        // 6. Render Hydrophobic Contacts — orange dotted cylinders
         if (showHydrophobic && hydrophobicContacts.length > 0) {
-          await commitShape(active, 'Hydrophobic Contacts', hydrophobicContacts, buildHydrophobicMesh(), 0xf97316,
-            (g) => {
-              const hc = hydrophobicContacts[g];
-              if (!hc) return 'Hydrophobic Contact';
-              return `Hydrophobic (${hc.distance} Å): ${hc.residue_a.name}${hc.residue_a.number} – ${hc.residue_b.name}${hc.residue_b.number}`;
-            }, hydrophobicCellRef);
+          await commitShape(active, 'Hydrophobic Contacts', hydrophobicContacts, buildHydrophobicMesh(hydrophobicContacts, selectedInteractionId), 0xf97316, (g) => `Hydrophobic (${hydrophobicContacts[g].distance} Å)`, 'hc');
         }
-
-        console.log('[DEBUG] drawInteractions() completed successfully.');
-      } catch (err: any) {
-        console.error('[ERROR] Failed to draw interactions:', err);
-      } finally {
+      } catch (err) { safeError('Draw Error', err); }
+      finally {
         isDrawingRef.current = false;
-        if (hasPendingDrawRef.current && active.current) {
-          drawInteractions();
-        }
+        if (hasPendingDrawRef.current && active.current) drawInteractions();
       }
     }
 
     drawInteractions();
+    return () => { active.current = false; };
+  }, [plugin, isStructureLoaded, saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts, showSaltBridges, showHydrogenBonds, showDisulfideBonds, showPiStacking, showHydrophobic, selectedInteractionId]);
 
-    return () => {
-      active.current = false;
-    };
-  }, [
-    plugin, fileId, isStructureLoaded,
-    showSaltBridges, showHydrogenBonds, showDisulfideBonds, showPiStacking, showHydrophobic,
-    saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts,
-  ]);
-
-  // ─── Fast highlight effect (selection only — doesn’t redraw all shapes) ───────────
+  // Fast highlight selection (Redundant with drawInteractions for cylinders, but useful for crosshair)
   useEffect(() => {
     if (!plugin || !isStructureLoaded) return;
-    let cancelled = false;
     const active = { current: true };
 
     async function updateHighlight() {
       try {
-        // Remove previous highlight
         if (highlightCellRef.current) {
           const u = plugin!.state.data.build();
           u.delete(highlightCellRef.current);
           highlightCellRef.current = null;
           await u.commit();
-          if (cancelled) return;
         }
 
-        // Add new highlight if something is selected
-        const hlCoords = getSelectedCoords();
-        if (hlCoords) {
-          const hlMesh = buildHighlightMesh(hlCoords);
-          await commitShape(active, 'Selection Highlight', [{}], hlMesh, 0xffffff,
-            () => 'Selected Interaction', highlightCellRef);
+        const coords = getSelectedCoords();
+        if (coords) {
+          const mesh = buildHighlightMesh(coords);
+          // Highlight is slightly larger and white to indicate selection
+          await commitShape(active, 'Selection Highlight', [{}], mesh, 0xffffff, () => 'Selected Interaction', 'highlight', true);
         }
-      } catch (err) {
-        console.error('[ERROR] Failed to update highlight:', err);
-      }
+      } catch (err) { safeError('Highlight Error', err); }
     }
 
     updateHighlight();
-    return () => { cancelled = true; active.current = false; };
+    return () => { active.current = false; };
   }, [plugin, isStructureLoaded, selectedInteractionId]);
 
-  // Select & focus the interacting residues on the 3D structure when a table row is clicked
+  // Selection focus & zoom
   useEffect(() => {
-    if (!plugin) return;
+    console.log(`[Viewer3D] Effect: selectedInteractionId changed to ${selectedInteractionId}`);
+    if (!plugin || !isStructureLoaded) return;
 
-    // If nothing is selected, clear any existing selection highlights
     if (!selectedInteractionId) {
       plugin.managers.interactivity.lociSelects.deselectAll();
       plugin.managers.structure.focus.clear();
       return;
     }
 
-    // Collect the residue numbers involved in this interaction
-    const residueNumbers: number[] = [];
+    const resNums: number[] = [];
+    const sb = saltBridges.find(x => x.id === selectedInteractionId); if (sb) resNums.push(sb.positive_residue.number, sb.negative_residue.number);
+    const hb = hydrogenBonds.find(x => x.id === selectedInteractionId); if (hb) resNums.push(hb.donor_residue.number, hb.acceptor_residue.number);
+    const ss = disulfideBonds.find(x => x.id === selectedInteractionId); if (ss) resNums.push(ss.residue_a.number, ss.residue_b.number);
+    const pi = piStacking.find(x => x.id === selectedInteractionId); if (pi) resNums.push(pi.residue_a.number, pi.residue_b.number);
+    const hc = hydrophobicContacts.find(x => x.id === selectedInteractionId); if (hc) resNums.push(hc.residue_a.number, hc.residue_b.number);
 
-    const sb = saltBridges.find(x => x.id === selectedInteractionId);
-    if (sb) { residueNumbers.push(sb.positive_residue.number, sb.negative_residue.number); }
-
-    if (residueNumbers.length === 0) {
-      const hb = hydrogenBonds.find(x => x.id === selectedInteractionId);
-      if (hb) { residueNumbers.push(hb.donor_residue.number, hb.acceptor_residue.number); }
-    }
-    if (residueNumbers.length === 0) {
-      const ss = disulfideBonds.find(x => x.id === selectedInteractionId);
-      if (ss) { residueNumbers.push(ss.residue_a.number, ss.residue_b.number); }
-    }
-    if (residueNumbers.length === 0) {
-      const pi = piStacking.find(x => x.id === selectedInteractionId);
-      if (pi) { residueNumbers.push(pi.residue_a.number, pi.residue_b.number); }
-    }
-    if (residueNumbers.length === 0) {
-      const hc = hydrophobicContacts.find(x => x.id === selectedInteractionId);
-      if (hc) { residueNumbers.push(hc.residue_a.number, hc.residue_b.number); }
-    }
-
-    if (residueNumbers.length === 0) return;
+    if (resNums.length === 0) return;
 
     try {
-      // Get the loaded structure from Mol*'s hierarchy
       const structures = plugin.managers.structure.hierarchy.current.structures;
       if (!structures.length || !structures[0].cell?.obj?.data) return;
-      const structure = structures[0].cell.obj.data;
+      const script = Script(`resi ${resNums.join('+')}`, 'pymol');
+      const loci = Script.toLoci(script, structures[0].cell.obj.data);
+      
+      if (!StructureElement.Loci.isEmpty(loci)) {
+        // Ensure the loci has an associated render object before focusing
+        // const hasRenderObject = plugin.canvas3d?.items.some(item => 
+        //   item.renderObject.type === 'mesh' || item.renderObject.type === 'lines'
+        // );
 
-      // Build a PyMOL-style selection string for the residues: "resi 27+34"
-      const resiStr = residueNumbers.join('+');
-      const script = Script(`resi ${resiStr}`, 'pymol');
-      const loci = Script.toLoci(script, structure);
-
-      if (StructureElement.Loci.isEmpty(loci)) {
-        console.warn('[WARN] Could not find residues', residueNumbers, 'in structure');
-        return;
+        // if (hasRenderObject) {
+          plugin.managers.interactivity.lociSelects.selectOnly({ loci });
+          plugin.managers.structure.focus.setFromLoci(loci);
+          plugin.managers.camera.focusLoci(loci, { durationMs: 800 });
+        // }
       }
-
-      // Clear previous selection and apply new one
-      plugin.managers.interactivity.lociSelects.deselectAll();
-      plugin.managers.interactivity.lociSelects.selectOnly({ loci });
-
-      // Focus + zoom camera onto the selected residues
-      plugin.managers.structure.focus.setFromLoci(loci);
-      plugin.managers.camera.focusLoci(loci, { durationMs: 800 });
-    } catch (err) {
-      console.error('[ERROR] Failed to select interaction residues:', err);
-      // Fallback: just move camera to midpoint
-      const coords = getSelectedCoords();
-      if (coords) {
-        plugin.managers.camera.focusSphere(
-          Sphere3D.create(Vec3.create(coords[0], coords[1], coords[2]), 8),
-          { durationMs: 800 }
-        );
-      }
+    } catch (err: any) { 
+      safeError('Focus Error', err);
     }
-  }, [plugin, selectedInteractionId, saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts]);
+  }, [plugin, isStructureLoaded, selectedInteractionId]);
 
-  // Overpaint effect for RMSF / Temperature Heatmap & Allosteric Path
+  // Overpaint effect
   useEffect(() => {
     if (!plugin || !isStructureLoaded || !structureRef.current) return;
     
@@ -515,266 +554,176 @@ export default function Viewer3D({
         const structures = plugin!.managers.structure.hierarchy.current.structures;
         if (structures.length === 0) return;
         const components = structures[0].components;
-        
-        // 1. Clear previous overpaint colors
         await clearStructureOverpaint(plugin!, components);
         
         if (colorMode === 'rmsf' && resFluc) {
-          // Dynamic color-coding based on fluctuation value
-          const categories: Record<number, string[]> = {
-            0xef4444: [], // Red (High RMSF > 0.6)
-            0xf59e0b: [], // Amber (Medium 0.4 - 0.6)
-            0x3b82f6: [], // Blue (Low <= 0.4)
-          };
-          
+          const categories: Record<number, string[]> = { 0xef4444: [], 0xf59e0b: [], 0x3b82f6: [] };
           for (const [key, val] of Object.entries(resFluc)) {
             const [chain, num] = key.split('_');
-            if (val > 0.6) {
-              categories[0xef4444].push(`(chain ${chain} and resi ${num})`);
-            } else if (val > 0.4) {
-              categories[0xf59e0b].push(`(chain ${chain} and resi ${num})`);
-            } else {
-              categories[0x3b82f6].push(`(chain ${chain} and resi ${num})`);
-            }
+            const color = val > 0.6 ? 0xef4444 : val > 0.4 ? 0xf59e0b : 0x3b82f6;
+            categories[color].push(`(chain ${chain} and resi ${num})`);
           }
-          
-          for (const [colorHex, selections] of Object.entries(categories)) {
+          for (const [color, selections] of Object.entries(categories)) {
             if (selections.length === 0) continue;
-            const queryStr = selections.join(' or ');
-            const script = Script(queryStr, 'pymol');
-            const loci = Script.toLoci(script, structures[0].cell.obj!.data);
-            
-            await setStructureOverpaint(
-              plugin!,
-              components,
-              Color(Number(colorHex)),
-              async () => loci
-            );
+            const loci = Script.toLoci(Script(selections.join(' or '), 'pymol'), structures[0].cell.obj!.data);
+            await setStructureOverpaint(plugin!, components, Color(Number(color)), async () => loci);
           }
-        } else if (colorMode === 'allosteric' && allostericPath && allostericPath.length > 0) {
-          // Color the path residues neon magenta (0xec4899) and others dimmed gray (0x334155)
-          const pathSelections = allostericPath.map(key => {
-            const [chain, num] = key.split('_');
-            return `(chain ${chain} and resi ${num})`;
-          });
-          
-          const pathQuery = pathSelections.join(' or ');
-          const scriptPath = Script(pathQuery, 'pymol');
-          const lociPath = Script.toLoci(scriptPath, structures[0].cell.obj!.data);
-          
-          // Color entire structure dimmed gray first
-          const scriptAll = Script('all', 'pymol');
-          const lociAll = Script.toLoci(scriptAll, structures[0].cell.obj!.data);
-          
-          await setStructureOverpaint(
-            plugin!,
-            components,
-            Color(0x334155),
-            async () => lociAll
-          );
-          
-          // Overpaint path in hot pink
-          await setStructureOverpaint(
-            plugin!,
-            components,
-            Color(0xec4899),
-            async () => lociPath
-          );
+        } else if (colorMode === 'allosteric' && allostericPath?.length) {
+          const lociAll = Script.toLoci(Script('all', 'pymol'), structures[0].cell.obj!.data);
+          await setStructureOverpaint(plugin!, components, Color(0x1a1a1a), async () => lociAll);
+          const lociPath = Script.toLoci(Script(allostericPath.map(k => `(chain ${k.split('_')[0]} and resi ${k.split('_')[1]})`).join(' or '), 'pymol'), structures[0].cell.obj!.data);
+          await setStructureOverpaint(plugin!, components, Color(0x06b6d4), async () => lociPath);
         }
-      } catch (err) {
-        console.error('[ERROR] Failed to apply overpaint coloring:', err);
+      } catch (err: any) { 
+        safeError('Overpaint Error', err);
       }
     }
-    
     applyColoring();
   }, [plugin, isStructureLoaded, colorMode, resFluc, allostericPath]);
 
-  const clearViewer = async () => {
-    if (plugin) {
-      await plugin.clear();
-      structureRef.current = null;
-      saltBridgesCellRef.current = null;
-      hBondsCellRef.current = null;
-      disulfideCellRef.current = null;
-      piStackCellRef.current = null;
-      hydrophobicCellRef.current = null;
-      highlightCellRef.current = null;
-    }
-  };
+  async function commitShape(active: { current: boolean }, name: string, list: any[], mesh: any, colorHex: number, labelFn: (group: number) => string, key: string, isHighlight = false) {
+    if (!active.current || list.length === 0) return;
+    
+    const { selectedInteractionId } = propsRef.current;
+    
+    const colorFn = (group: number) => {
+      if (isHighlight) return Color(colorHex);
+      const item = list[group];
+      return Color(item?.id === selectedInteractionId ? 0xffffff : colorHex);
+    };
 
-  // ─── Mesh Builders ────────────────────────────────────────────────────────
+    const shape = Shape.create(name, list, mesh, colorFn, () => 1, labelFn);
+    const ref = `${name.toLowerCase().replace(/\s+/g, '-')}-${++nodeCounter}`;
+    const shapeNode = await plugin!.build().toRoot().apply(CreateShape, { shape, label: name }, { ref }).commit();
+    if (!active.current) return;
+    if (isHighlight) highlightCellRef.current = shapeNode; else shapesCellRefs.current[key] = shapeNode;
+    await plugin!.build().to(shapeNode).apply(ShapeRepresentation3D, { alpha: isHighlight ? 0.6 : 1.0 }, { ref: `${ref}-repr` }).commit();
+  }
 
-  /** Returns midpoint coords of the currently selected interaction, or null */
   const getSelectedCoords = (): [number, number, number] | null => {
+    const { selectedInteractionId, saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts } = propsRef.current;
     if (!selectedInteractionId) return null;
-    const sb = saltBridges.find(x => x.id === selectedInteractionId);
-    if (sb) { const p = sb.positive_atom.coordinates, n = sb.negative_atom.coordinates; return [(p[0]+n[0])/2,(p[1]+n[1])/2,(p[2]+n[2])/2]; }
-    const hb = hydrogenBonds.find(x => x.id === selectedInteractionId);
-    if (hb) { const d = hb.donor_atom.coordinates, a = hb.acceptor_atom.coordinates; return [(d[0]+a[0])/2,(d[1]+a[1])/2,(d[2]+a[2])/2]; }
-    const ss = disulfideBonds.find(x => x.id === selectedInteractionId);
-    if (ss) { const a = ss.atom_a.coordinates, b = ss.atom_b.coordinates; return [(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2]; }
-    const pi = piStacking.find(x => x.id === selectedInteractionId);
-    if (pi) { const a = pi.centroid_a, b = pi.centroid_b; return [(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2]; }
-    const hc = hydrophobicContacts.find(x => x.id === selectedInteractionId);
-    if (hc) { const a = hc.atom_a.coordinates, b = hc.atom_b.coordinates; return [(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2]; }
+    const sb = saltBridges.find(x => x.id === selectedInteractionId); if (sb) { const p = sb.positive_atom.coordinates, n = sb.negative_atom.coordinates; return [(p[0]+n[0])/2,(p[1]+n[1])/2,(p[2]+n[2])/2]; }
+    const hb = hydrogenBonds.find(x => x.id === selectedInteractionId); if (hb) { const d = hb.donor_atom.coordinates, a = hb.acceptor_atom.coordinates; return [(d[0]+a[0])/2,(d[1]+a[1])/2,(d[2]+a[2])/2]; }
+    const ss = disulfideBonds.find(x => x.id === selectedInteractionId); if (ss) { const a = ss.atom_a.coordinates, b = ss.atom_b.coordinates; return [(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2]; }
+    const pi = piStacking.find(x => x.id === selectedInteractionId); if (pi) { const a = pi.centroid_a, b = pi.centroid_b; return [(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2]; }
+    const hc = hydrophobicContacts.find(x => x.id === selectedInteractionId); if (hc) { const a = hc.atom_a.coordinates, b = hc.atom_b.coordinates; return [(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2]; }
     return null;
   };
 
-  /** Builds a pulsing highlight: 3 concentric rings at the midpoint of the selected bond */
   const buildHighlightMesh = (coords: [number, number, number]) => {
-    const s = MeshBuilder.createState(64, 32);
+    const s = MeshBuilder.createState(32, 16);
     s.currentGroup = 0;
-    // Draw three orthogonal ring discs as cylinder pairs to create a glowing orb feel
-    const r = 0.30;
-    const axes: [Vec3, Vec3][] = [
-      [Vec3.create(coords[0]-r, coords[1], coords[2]), Vec3.create(coords[0]+r, coords[1], coords[2])],
-      [Vec3.create(coords[0], coords[1]-r, coords[2]), Vec3.create(coords[0], coords[1]+r, coords[2])],
-      [Vec3.create(coords[0], coords[1], coords[2]-r), Vec3.create(coords[0], coords[1], coords[2]+r)],
-    ];
-    for (const [a, b] of axes) {
-      addCylinder(s, a, b, 1.0, { radiusTop: r * 0.7, radiusBottom: r * 0.7 });
-    }
-    // Extra outer ring
-    const ro = 0.55;
-    addCylinder(s, Vec3.create(coords[0]-ro, coords[1], coords[2]), Vec3.create(coords[0]+ro, coords[1], coords[2]), 1.0, { radiusTop: ro * 0.2, radiusBottom: ro * 0.2 });
-    addCylinder(s, Vec3.create(coords[0], coords[1]-ro, coords[2]), Vec3.create(coords[0], coords[1]+ro, coords[2]), 1.0, { radiusTop: ro * 0.2, radiusBottom: ro * 0.2 });
-    addCylinder(s, Vec3.create(coords[0], coords[1], coords[2]-ro), Vec3.create(coords[0], coords[1], coords[2]+ro), 1.0, { radiusTop: ro * 0.2, radiusBottom: ro * 0.2 });
+    const r = 0.6;
+    addCylinder(s, Vec3.create(coords[0]-r, coords[1], coords[2]), Vec3.create(coords[0]+r, coords[1], coords[2]), 1.0, { radiusTop: 0.1, radiusBottom: 0.1 });
+    addCylinder(s, Vec3.create(coords[0], coords[1]-r, coords[2]), Vec3.create(coords[0], coords[1]+r, coords[2]), 1.0, { radiusTop: 0.1, radiusBottom: 0.1 });
+    addCylinder(s, Vec3.create(coords[0], coords[1], coords[2]-r), Vec3.create(coords[0], coords[1], coords[2]+r), 1.0, { radiusTop: 0.1, radiusBottom: 0.1 });
     return MeshBuilder.getMesh(s);
   };
 
+  const buildSaltBridgesMesh = (list: SaltBridge[]) => {
+    const s = MeshBuilder.createState(list.length * 8, list.length * 4);
+    list.forEach((sb, idx) => { s.currentGroup = idx; addCylinder(s, Vec3.create(sb.positive_atom.coordinates[0], sb.positive_atom.coordinates[1], sb.positive_atom.coordinates[2]), Vec3.create(sb.negative_atom.coordinates[0], sb.negative_atom.coordinates[1], sb.negative_atom.coordinates[2]), 1.0, { radiusTop: 0.30, radiusBottom: 0.30 }); });
+    return MeshBuilder.getMesh(s);
+  };
 
-  const buildSaltBridgesMesh = (sbList: SaltBridge[]) => {
-    const s = MeshBuilder.createState(256, 128);
-    const r = 0.15;
-    sbList.forEach((sb, idx) => {
-      const a = sb.positive_atom.coordinates, b = sb.negative_atom.coordinates;
+  const buildHydrogenBondsMesh = (list: HydrogenBond[]) => {
+    const s = MeshBuilder.createState(list.length * 16, list.length * 8);
+    list.forEach((hb, idx) => {
       s.currentGroup = idx;
-      addCylinder(s, Vec3.create(a[0],a[1],a[2]), Vec3.create(b[0],b[1],b[2]), 1.0, { radiusTop: r, radiusBottom: r });
-    });
-    return MeshBuilder.getMesh(s);
-  };
-
-  /** Thin dashed cylinders — Hydrogen Bonds (cyan), no endpoint dots */
-  const buildHydrogenBondsMesh = (hbList: HydrogenBond[]) => {
-    const s = MeshBuilder.createState(512, 256);
-    const r = 0.06;
-    const segments = 8;
-    hbList.forEach((hb, idx) => {
-      const startC = hb.donor_atom.coordinates, endC = hb.acceptor_atom.coordinates;
-      const start = Vec3.create(startC[0],startC[1],startC[2]);
-      const end = Vec3.create(endC[0],endC[1],endC[2]);
+      const start = Vec3.create(hb.donor_atom.coordinates[0], hb.donor_atom.coordinates[1], hb.donor_atom.coordinates[2]);
+      const end = Vec3.create(hb.acceptor_atom.coordinates[0], hb.acceptor_atom.coordinates[1], hb.acceptor_atom.coordinates[2]);
       const dir = Vec3.sub(Vec3(), end, start);
       const len = Vec3.magnitude(dir);
       Vec3.normalize(dir, dir);
-      const segLen = len / segments;
-      s.currentGroup = idx;
-      for (let i = 0; i < segments; i++) {
-        if (i % 2 === 0) {
-          const sS = Vec3.scaleAndAdd(Vec3(), start, dir, i * segLen);
-          const sE = Vec3.scaleAndAdd(Vec3(), start, dir, (i + 1) * segLen);
-          addCylinder(s, sS, sE, 1.0, { radiusTop: r, radiusBottom: r });
-        }
+      const segs = 6; const segLen = len / segs;
+      for (let i = 0; i < segs; i += 2) {
+        addCylinder(s, Vec3.scaleAndAdd(Vec3(), start, dir, i * segLen), Vec3.scaleAndAdd(Vec3(), start, dir, (i+1) * segLen), 1.0, { radiusTop: 0.20, radiusBottom: 0.20 });
       }
     });
     return MeshBuilder.getMesh(s);
   };
 
-  /** Thick solid cylinders — Disulfide Bonds (gold) */
-  const buildDisulfideMesh = () => {
-    const s = MeshBuilder.createState(128, 64);
-    const r = 0.20;
-    disulfideBonds.forEach((ss, idx) => {
-      const a = ss.atom_a.coordinates, b = ss.atom_b.coordinates;
-      s.currentGroup = idx;
-      addCylinder(s, Vec3.create(a[0],a[1],a[2]), Vec3.create(b[0],b[1],b[2]), 1.0, { radiusTop: r, radiusBottom: r });
-    });
+  const buildDisulfideMesh = (list: DisulfideBond[]) => {
+    const s = MeshBuilder.createState(list.length * 8, list.length * 4);
+    list.forEach((ss, idx) => { s.currentGroup = idx; addCylinder(s, Vec3.create(ss.atom_a.coordinates[0], ss.atom_a.coordinates[1], ss.atom_a.coordinates[2]), Vec3.create(ss.atom_b.coordinates[0], ss.atom_b.coordinates[1], ss.atom_b.coordinates[2]), 1.0, { radiusTop: 0.40, radiusBottom: 0.40 }); });
     return MeshBuilder.getMesh(s);
   };
 
-  /** Dashed thin cylinders — π–π Stacking (purple), centroid to centroid */
-  const buildPiStackMesh = () => {
-    const s = MeshBuilder.createState(256, 128);
-    const r = 0.07;
-    const segments = 6;
-    piStacking.forEach((pi, idx) => {
-      const start = Vec3.create(pi.centroid_a[0], pi.centroid_a[1], pi.centroid_a[2]);
-      const end = Vec3.create(pi.centroid_b[0], pi.centroid_b[1], pi.centroid_b[2]);
-      const dir = Vec3.sub(Vec3(), end, start);
-      const len = Vec3.magnitude(dir);
-      Vec3.normalize(dir, dir);
-      const segLen = len / segments;
-      s.currentGroup = idx;
-      for (let i = 0; i < segments; i++) {
-        if (i % 2 === 0) {
-          const sS = Vec3.scaleAndAdd(Vec3(), start, dir, i * segLen);
-          const sE = Vec3.scaleAndAdd(Vec3(), start, dir, (i + 1) * segLen);
-          addCylinder(s, sS, sE, 1.0, { radiusTop: r, radiusBottom: r });
-        }
-      }
-    });
+  const buildPiStackMesh = (list: PiStack[]) => {
+    const s = MeshBuilder.createState(list.length * 12, list.length * 6);
+    list.forEach((pi, idx) => { s.currentGroup = idx; addCylinder(s, Vec3.create(pi.centroid_a[0], pi.centroid_a[1], pi.centroid_a[2]), Vec3.create(pi.centroid_b[0], pi.centroid_b[1], pi.centroid_b[2]), 1.0, { radiusTop: 0.25, radiusBottom: 0.25 }); });
     return MeshBuilder.getMesh(s);
   };
 
-  /** Very short dotted cylinders — Hydrophobic Contacts (orange) */
-  const buildHydrophobicMesh = () => {
-    const s = MeshBuilder.createState(256, 128);
-    const r = 0.06;
-    const segments = 12;
-    hydrophobicContacts.forEach((hc, idx) => {
-      const start = Vec3.create(hc.atom_a.coordinates[0], hc.atom_a.coordinates[1], hc.atom_a.coordinates[2]);
-      const end = Vec3.create(hc.atom_b.coordinates[0], hc.atom_b.coordinates[1], hc.atom_b.coordinates[2]);
-      const dir = Vec3.sub(Vec3(), end, start);
-      const len = Vec3.magnitude(dir);
-      Vec3.normalize(dir, dir);
-      // dot pattern: very short segments (1/4 of dash length) with large gaps
-      const dotLen = len / segments * 0.4;
-      const gap = len / segments;
-      s.currentGroup = idx;
-      for (let i = 0; i < segments; i++) {
-        const sS = Vec3.scaleAndAdd(Vec3(), start, dir, i * gap);
-        const sE = Vec3.scaleAndAdd(Vec3(), start, dir, i * gap + dotLen);
-        addCylinder(s, sS, sE, 1.0, { radiusTop: r, radiusBottom: r });
-      }
-    });
+  const buildHydrophobicMesh = (list: HydrophobicContact[]) => {
+    const s = MeshBuilder.createState(list.length * 12, list.length * 6);
+    list.forEach((hc, idx) => { s.currentGroup = idx; addCylinder(s, Vec3.create(hc.atom_a.coordinates[0], hc.atom_a.coordinates[1], hc.atom_a.coordinates[2]), Vec3.create(hc.atom_b.coordinates[0], hc.atom_b.coordinates[1], hc.atom_b.coordinates[2]), 1.0, { radiusTop: 0.20, radiusBottom: 0.20 }); });
     return MeshBuilder.getMesh(s);
   };
 
   return (
-    <div className="relative w-full h-full min-h-[500px] flex flex-col items-stretch glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
-      {/* 3D viewport canvas target */}
-      <div ref={containerRef} className="flex-1 w-full relative min-h-[450px]" id="molstar-viewport" />
+    <div className="relative w-full h-full flex flex-col bg-black/40">
+      <div ref={containerRef} className="flex-1 w-full relative" id="molstar-viewport" />
 
-      {/* Loading overlay */}
       {loading && (
-        <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm flex flex-col items-center justify-center gap-4 z-50">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-neon-cyan"></div>
-          <p className="text-slate-300 font-medium">Loading macromolecule structures...</p>
+        <div className="absolute inset-0 bg-[#020202]/80 backdrop-blur-md flex flex-col items-center justify-center gap-4 z-50 animate-in fade-in duration-500">
+          <div className="w-12 h-12 rounded-full border-t-2 border-cyan-500 animate-spin" />
+          <p className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.3em] animate-pulse">Syncing_Orbital_Stream...</p>
         </div>
       )}
 
-      {/* Error display */}
-      {error && (
-        <div className="absolute inset-0 bg-slate-950/95 flex flex-col items-center justify-center p-6 text-center gap-4 z-50">
-          <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-400 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-          </div>
-          <p className="text-slate-200 font-semibold">{error}</p>
-          <button 
-            onClick={() => { setError(null); setRetryCount(prev => prev + 1); }}
-            className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-sm font-medium transition"
-          >
-            Retry Loading
-          </button>
+      {/* Selected HUD Overlay */}
+      {selectedDetails && (
+        <div className="absolute bottom-6 left-6 z-50 w-64 bg-black/90 border border-white/[0.08] rounded p-4 shadow-2xl backdrop-blur-xl animate-in slide-in-from-left-4 duration-500">
+           <div className="absolute top-0 left-0 right-0 h-0.5" style={{ backgroundColor: selectedDetails.color }} />
+           <div className="flex justify-between items-start mb-3">
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[7px] text-slate-500 font-bold uppercase tracking-widest">[ANALYSIS_CH_ACTIVE]</span>
+                <span className="text-[10px] font-bold uppercase tracking-tight" style={{ color: selectedDetails.color }}>{selectedDetails.type}</span>
+              </div>
+              <button onClick={() => onSelectInteraction(null)} className="text-slate-600 hover:text-white transition-colors"><X className="h-3 w-3" /></button>
+           </div>
+           
+           <div className="space-y-3">
+              <div className="flex items-center justify-between text-[11px] font-bold font-mono">
+                <span className="text-slate-300">{selectedDetails.resA}</span>
+                <div className="h-[1px] flex-1 mx-3 bg-white/5 relative">
+                   <div className="absolute inset-0 bg-white/10 animate-pulse" />
+                </div>
+                <span className="text-slate-300">{selectedDetails.resB}</span>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-2">
+                 <div className="p-2 rounded bg-white/[0.02] border border-white/[0.03]">
+                    <p className="text-[7px] text-slate-600 font-bold uppercase">Metric_Dist</p>
+                    <p className="text-[11px] text-cyan-400 font-bold font-mono">{selectedDetails.distance.toFixed(3)}Å</p>
+                 </div>
+                 <div className="p-2 rounded bg-white/[0.02] border border-white/[0.03]">
+                    <p className="text-[7px] text-slate-600 font-bold uppercase">Energy_KJ</p>
+                    <p className="text-[11px] text-emerald-500 font-bold font-mono">{selectedDetails.energy?.toFixed(1) || '—'}</p>
+                 </div>
+              </div>
+              
+              {selectedDetails.extra && (
+                <div className="text-[8px] font-bold text-slate-600 uppercase tracking-widest bg-white/[0.02] p-1.5 rounded border border-white/[0.03] text-center">
+                  :: {selectedDetails.extra}
+                </div>
+              )}
+           </div>
         </div>
       )}
 
-      {/* Camera help HUD overlay */}
-      <div className="absolute top-4 left-4 pointer-events-none glass-panel px-3 py-1.5 rounded-lg text-[10px] text-slate-400 flex gap-4 select-none z-10">
-        <div><span className="text-neon-cyan font-bold">Rotate:</span> Left Click + Drag</div>
-        <div><span className="text-neon-cyan font-bold">Zoom:</span> Scroll Wheel</div>
-        <div><span className="text-neon-cyan font-bold">Pan:</span> Right Click + Drag</div>
+      {/* Floating Viewport Controls */}
+      <div className="absolute top-6 left-6 z-40 flex flex-col gap-2">
+         <div className="px-3 py-1.5 bg-black/60 border border-white/[0.05] rounded backdrop-blur-md flex items-center gap-4 shadow-xl">
+            <div className="flex items-center gap-2">
+               <Target className="h-3 w-3 text-cyan-500" />
+               <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest">Aura_Enabled</span>
+            </div>
+            <div className="h-3 w-[1px] bg-white/10" />
+            <span className="text-[8px] text-slate-600 uppercase tracking-tighter">L-Click: Select // R-Drag: Pan // Scroll: Zoom</span>
+         </div>
       </div>
     </div>
   );

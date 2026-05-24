@@ -8308,28 +8308,14 @@
       ]
     },
     {
-      "id": "hph_437_147",
+      "id": "hph_147_437",
       "distance": 4.92,
       "residue_a": {
-        "name": "LEU",
-        "number": 56,
-        "chain": "A"
-      },
-      "atom_a": {
-        "id": 437,
-        "name": "CB",
-        "coordinates": [
-          26.083999633789062,
-          21.88800048828125,
-          11.833000183105469
-        ]
-      },
-      "residue_b": {
         "name": "PRO",
         "number": 19,
         "chain": "A"
       },
-      "atom_b": {
+      "atom_a": {
         "id": 147,
         "name": "CB",
         "coordinates": [
@@ -8338,15 +8324,29 @@
           7.952000141143799
         ]
       },
+      "residue_b": {
+        "name": "LEU",
+        "number": 56,
+        "chain": "A"
+      },
+      "atom_b": {
+        "id": 437,
+        "name": "CB",
+        "coordinates": [
+          26.083999633789062,
+          21.88800048828125,
+          11.833000183105469
+        ]
+      },
       "energy_kj_mol": -2.47,
       "force_pn": 41.59,
       "strength": "weak",
       "detailed_strength": "Weak (-2.5 kJ/mol, 41.6 pN)",
       "force_type": "van_der_waals",
       "force_vector": [
-        -13.653400038331455,
-        -21.608725764997153,
-        -32.81043568507529
+        13.653400038331455,
+        21.608725764997153,
+        32.81043568507529
       ]
     },
     {
@@ -8567,25 +8567,25 @@
     "num_protein_atoms": 602,
     "num_protein_residues": 76,
     "unique_residues": [
-      "PHE",
-      "GLY",
-      "ASN",
-      "ARG",
-      "TYR",
-      "SER",
-      "LEU",
-      "MET",
-      "PRO",
       "GLN",
       "GLU",
-      "HOH",
-      "LYS",
-      "VAL",
-      "THR",
-      "HIS",
-      "ILE",
+      "PRO",
       "ALA",
-      "ASP"
+      "TYR",
+      "ASP",
+      "SER",
+      "VAL",
+      "HOH",
+      "GLY",
+      "PHE",
+      "THR",
+      "LEU",
+      "ILE",
+      "LYS",
+      "MET",
+      "HIS",
+      "ASN",
+      "ARG"
     ],
     "file_id": "2b9e3144-ae88-469d-ab13-6ab9350f75df",
     "hbond_method": "Fallback (Distance-only)",
