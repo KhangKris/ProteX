@@ -17,6 +17,7 @@ from analysis import (
     detect_disulfide_bonds, detect_pi_stacking, detect_hydrophobic_contacts,
     enrich_interactions
 )
+from analysis.pipeline import run_high_precision_pipeline
 from analysis.utils import cleanup_uploads_dir
 from nim_client import NIMClient, NIMError
 
@@ -279,13 +280,25 @@ async def predict_structure(payload: PredictRequest):
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
 
 
-@app.get("/nim-status")
-async def nim_status():
-    """Check if the NVIDIA NIM API key is configured."""
-    return {
-        "configured": nim.is_configured(),
-        "message": "Ready" if nim.is_configured() else "Set NVIDIA_API_KEY in .env",
-    }
+@app.post("/analyze-high-precision")
+async def analyze_file_high_precision(payload: AnalyzeRequest, ph: float = 7.0):
+    file_id = payload.file_id
+    file_path, ext = get_file_path_and_ext(file_id)
+    
+    try:
+        results = run_high_precision_pipeline(file_path, ph=ph)
+        if results is None:
+             raise HTTPException(status_code=500, detail="High-precision analysis failed.")
+        
+        return {
+            "file_id": file_id,
+            "analysis": results,
+            "method": "PDB2PQR + MDTraj"
+        }
+    except Exception as e:
+        logger.error(f"High-precision analysis failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 
 @app.get("/results/{id}")
