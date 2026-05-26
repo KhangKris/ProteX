@@ -300,6 +300,14 @@ async def analyze_file_high_precision(payload: AnalyzeRequest, ph: float = 7.0):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/nim-status")
+async def nim_status():
+    """Check if the NVIDIA NIM API key is configured."""
+    return {
+        "configured": nim.is_configured(),
+        "message": "Ready" if nim.is_configured() else "Set NVIDIA_API_KEY in .env",
+    }
+
 
 @app.get("/results/{id}")
 async def get_results(id: str):
