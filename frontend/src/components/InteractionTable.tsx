@@ -239,7 +239,7 @@ export default function InteractionTable({
     </div>
   );
 
-  function renderRow(item: any, color: string, type: string, resA: any, resB: any, dist: number, energy: number | null, force: number | null, status: string | undefined) {
+  function renderRow(item: any, color: string, type: string, resA: any, resB: any, dist: number, energy: number | null | undefined, force: number | null | undefined, status: string | undefined) {
     const isSelected = selectedInteractionId === item.id;
     const isFlashing = flashId === item.id;
 

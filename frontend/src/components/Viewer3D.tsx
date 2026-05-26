@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, MutableRefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPluginUI } from 'molstar/lib/mol-plugin-ui';
 import { DefaultPluginUISpec } from 'molstar/lib/mol-plugin-ui/spec';
 import { PluginUIContext } from 'molstar/lib/mol-plugin-ui/context';
@@ -13,7 +13,6 @@ import { ShapeRepresentation3D } from 'molstar/lib/mol-plugin-state/transforms/r
 import { Mesh } from 'molstar/lib/mol-geo/geometry/mesh/mesh';
 import { PluginStateObject as SO } from 'molstar/lib/mol-plugin-state/objects';
 import { StateTransformer } from 'molstar/lib/mol-state';
-import { Sphere3D } from 'molstar/lib/mol-math/geometry';
 import { Loci } from 'molstar/lib/mol-model/loci';
 import { OrderedSet } from 'molstar/lib/mol-data/int';
 import { Script } from 'molstar/lib/mol-script/script';
@@ -21,7 +20,7 @@ import { StructureElement } from 'molstar/lib/mol-model/structure';
 import { setStructureOverpaint, clearStructureOverpaint } from 'molstar/lib/mol-plugin-state/helpers/structure-overpaint';
 
 import 'molstar/build/viewer/molstar.css';
-import { X, Activity, Target } from 'lucide-react';
+import { X, Target } from 'lucide-react';
 
 import { HydrogenBond, SaltBridge, DisulfideBond, PiStack, HydrophobicContact, getFileUrl } from '../utils/api';
 
@@ -295,37 +294,23 @@ export default function Viewer3D({
           if (StructureElement.Loci.is(loci)) {
             const location = StructureElement.Loci.getFirstLocation(loci);
             if (location && location.unit && location.unit.model && location.unit.model.atomicHierarchy) {
-              const hierarchy = location.unit.model.atomicHierarchy;
+              const hierarchy = location.unit.model.atomicHierarchy as any;
               
-              // Use derived mapping for residue lookup with full optional chaining
-              const rIdx = hierarchy.derived?.residue?.index?.[location.element] ?? 
-                           hierarchy.residueShare?.index?.[location.element];
-              
-              if (rIdx === undefined) {
-                console.warn('[Viewer3D] Residue index is undefined, attempting location-based fallback.');
-                // Fallback: Try identifying residue from the location object directly
-                const unit = location.unit;
-                const residueIndex = unit.residueIndex[location.element];
-                if (residueIndex === undefined) {
-                     console.warn('[Viewer3D] Residue index still undefined from unit fallback, skipping.');
-                     return;
-                }
+              const rIdxFinal = hierarchy.residueAtomSegments.index[location.element];
+              if (rIdxFinal === undefined) {
+                console.warn('[Viewer3D] Residue index is undefined.');
+                return;
               }
 
-              const rIdxFinal = rIdx ?? location.unit.residueIndex[location.element];
-              const rNumAuth = hierarchy.residues.auth_seq_id?.value(rIdxFinal);
-              const rNumLabel = hierarchy.residues.label_seq_id?.value(rIdxFinal);
+              const rNumAuth = hierarchy.residues.auth_seq_id.value(rIdxFinal);
+              const rNumLabel = hierarchy.residues.label_seq_id.value(rIdxFinal);
               
-              // Safely access chain information
-              const chainElementIndex = hierarchy.residueShare 
-                ? hierarchy.residueShare.chain[location.element] 
-                : hierarchy.derived?.residue?.chain?.[location.element];
-                
-              const chainId = chainElementIndex !== undefined 
-                ? hierarchy.chains.auth_asym_id.value(chainElementIndex)
+              const chainIdx = hierarchy.chainAtomSegments.index[location.element];
+              const chainId = chainIdx !== undefined 
+                ? hierarchy.chains.auth_asym_id.value(chainIdx)
                 : 'A';
                 
-              const rName = hierarchy.residues.label_comp_id?.value(rIdxFinal);
+              const rName = hierarchy.residues.label_comp_id.value(rIdxFinal);
               
               console.log(`[Viewer3D] Clicked Residue: ${chainId}:${rName}${rNumAuth}`);
               
@@ -447,22 +432,22 @@ export default function Viewer3D({
 
         if (!active.current) return;
 
-        const { saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts, showSaltBridges, showHydrogenBonds, showDisulfideBonds, showPiStacking, showHydrophobic, selectedInteractionId } = propsRef.current;
+        const { saltBridges, hydrogenBonds, disulfideBonds, piStacking, hydrophobicContacts, showSaltBridges, showHydrogenBonds, showDisulfideBonds, showPiStacking, showHydrophobic } = propsRef.current;
 
         if (showSaltBridges && saltBridges.length > 0) {
-          await commitShape(active, 'Salt Bridges', saltBridges, buildSaltBridgesMesh(saltBridges, selectedInteractionId), 0xfbbf24, (g) => `Salt Bridge (${saltBridges[g].distance} Å)`, 'salt');
+          await commitShape(active, 'Salt Bridges', saltBridges, buildSaltBridgesMesh(saltBridges), 0xfbbf24, (g) => `Salt Bridge (${saltBridges[g].distance} Å)`, 'salt');
         }
         if (showHydrogenBonds && hydrogenBonds.length > 0) {
-          await commitShape(active, 'Hydrogen Bonds', hydrogenBonds, buildHydrogenBondsMesh(hydrogenBonds, selectedInteractionId), 0x06b6d4, (g) => `H-Bond (${hydrogenBonds[g].distance} Å)`, 'hb');
+          await commitShape(active, 'Hydrogen Bonds', hydrogenBonds, buildHydrogenBondsMesh(hydrogenBonds), 0x06b6d4, (g) => `H-Bond (${hydrogenBonds[g].distance} Å)`, 'hb');
         }
         if (showDisulfideBonds && disulfideBonds.length > 0) {
-          await commitShape(active, 'Disulfide Bonds', disulfideBonds, buildDisulfideMesh(disulfideBonds, selectedInteractionId), 0xd4a017, (g) => `S–S Bond (${disulfideBonds[g].distance} Å)`, 'ss');
+          await commitShape(active, 'Disulfide Bonds', disulfideBonds, buildDisulfideMesh(disulfideBonds), 0xd4a017, (g) => `S–S Bond (${disulfideBonds[g].distance} Å)`, 'ss');
         }
         if (showPiStacking && piStacking.length > 0) {
-          await commitShape(active, 'Pi Stacking', piStacking, buildPiStackMesh(piStacking, selectedInteractionId), 0xa855f7, (g) => `π–π Stack (${piStacking[g].distance} Å)`, 'pi');
+          await commitShape(active, 'Pi Stacking', piStacking, buildPiStackMesh(piStacking), 0xa855f7, (g) => `π–π Stack (${piStacking[g].distance} Å)`, 'pi');
         }
         if (showHydrophobic && hydrophobicContacts.length > 0) {
-          await commitShape(active, 'Hydrophobic Contacts', hydrophobicContacts, buildHydrophobicMesh(hydrophobicContacts, selectedInteractionId), 0xf97316, (g) => `Hydrophobic (${hydrophobicContacts[g].distance} Å)`, 'hc');
+          await commitShape(active, 'Hydrophobic Contacts', hydrophobicContacts, buildHydrophobicMesh(hydrophobicContacts), 0xf97316, (g) => `Hydrophobic (${hydrophobicContacts[g].distance} Å)`, 'hc');
         }
       } catch (err) { safeError('Draw Error', err); }
       finally {
@@ -725,6 +710,13 @@ export default function Viewer3D({
             <span className="text-[8px] text-slate-600 uppercase tracking-tighter">L-Click: Select // R-Drag: Pan // Scroll: Zoom</span>
          </div>
       </div>
+      {error && (
+        <div className="absolute inset-0 bg-[#020202]/90 backdrop-blur-md flex flex-col items-center justify-center gap-4 z-50">
+          <p className="text-xs text-red-500 font-bold uppercase tracking-wider">[Viewer Error]</p>
+          <p className="text-[10px] text-slate-400 font-mono">{error}</p>
+          <button onClick={() => { setError(null); setRetryCount(c => c + 1); }} className="px-3 py-1.5 bg-cyan-950 border border-cyan-800 text-cyan-400 text-[10px] font-bold rounded uppercase hover:bg-cyan-900 transition-colors">Retry</button>
+        </div>
+      )}
     </div>
   );
 }

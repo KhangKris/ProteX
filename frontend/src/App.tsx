@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 import {
   Dna,
-  RefreshCw,
   Sparkles,
   Database,
-  FileCheck,
   RotateCcw,
-  Upload,
   FlaskConical,
   Activity,
   Terminal,
