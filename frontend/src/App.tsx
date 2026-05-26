@@ -271,7 +271,7 @@ export default function App() {
             </div>
             <div className="flex flex-col">
               <h1 className="text-xs font-bold tracking-tighter text-white uppercase">
-                ProteX // Orbital Lab
+                ProFoldlab // Orbital Lab
               </h1>
               <span className="text-[8px] text-slate-500 uppercase tracking-widest font-bold">
                 Structural Mechanical Spectrometry
@@ -644,7 +644,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="text-[8px] text-slate-700 font-bold uppercase tracking-[0.2em]">DeepSpace_Spectrometry_Array</span>
             <span className="text-[8px] text-slate-800 font-bold">::</span>
-            <span className="text-[8px] text-slate-700 font-bold uppercase tracking-[0.2em]">ProteX Labs v3</span>
+            <span className="text-[8px] text-slate-700 font-bold uppercase tracking-[0.2em]">ProFoldlab Labs v3</span>
           </div>
         </div>
       </footer>
